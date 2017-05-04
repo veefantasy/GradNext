@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Alamofire
 
 class SigninViewController: UIViewController {
 
@@ -24,6 +24,18 @@ class SigninViewController: UIViewController {
         
         passwordTxtField.attributedPlaceholder = NSAttributedString(string: "Password",
                                                                     attributes: [NSForegroundColorAttributeName: UIColor.lightGray])
+        
+        
+        Alamofire.request("http://gradnext.phoenixlab.in/api/", method: .post, parameters: ["name":"", "email": "","subject":"","mobileNo":"123333","address":"adyar","RequestDate":"today","message":""]).responseJSON{ (responseData) -> Void in
+            if((responseData.result.value) != nil) {
+                
+            }
+            else
+            {
+            }
+         
+        }
+
         
     }
     
