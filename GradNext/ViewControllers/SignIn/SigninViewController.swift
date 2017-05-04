@@ -51,6 +51,10 @@ class SigninViewController: UIViewController {
 //        userNameTxtField.layer.masksToBounds = true
     }
 
+    @IBAction func signInButtonClicked(_ sender: Any) {
+        self.performSegue(withIdentifier: "loginToCompanyProfile", sender: nil)
+    }
+   
     @IBAction func exitAction(_ sender: AnyObject) {
         
         self.presentingViewController?.dismiss(animated: true, completion: nil)

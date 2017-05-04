@@ -39,7 +39,7 @@ class LandingViewController: UIViewController {
     @IBAction func signinAction(_ sender: AnyObject) {
     
          print("signinAction")
-        //self.performSegueWithIdentifier("signin", sender: self)
+        self.performSegue(withIdentifier: "signin", sender: self)
     }
     
     
