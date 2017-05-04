@@ -18,4 +18,12 @@ class Utilities: NSObject {
         textField.layer.addSublayer(border)
         textField.layer.masksToBounds = true
     }
+    
+    
+    class func setTextFieldCornerRadius(forTextField : UITextField,withRadius : Float, withBorderColor : UIColor) {
+        forTextField.layer.cornerRadius = CGFloat(withRadius)
+        forTextField.layer.borderWidth = 1.0
+        forTextField.layer.borderColor = withBorderColor.cgColor
+    }
+    
 }
