@@ -217,6 +217,16 @@
                                             <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forgot Password ?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BHY-ES-DRM">
+                                        <rect key="frame" x="106.5" y="334" width="142" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="142" id="O21-7y-p7d"/>
+                                            <constraint firstAttribute="height" constant="21" id="Xlu-AC-y9E"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
+                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="150" placeholderIntrinsicHeight="30" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZG6-F0-Al1">
                                         <rect key="frame" x="20" y="282" width="315" height="44"/>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -234,16 +244,6 @@
                                             <action selector="signInButtonClicked:" destination="5Zd-ik-UdO" eventType="touchUpInside" id="v6a-gd-GLO"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forgot Password ?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BHY-ES-DRM">
-                                        <rect key="frame" x="106.5" y="334" width="142" height="21"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="142" id="O21-7y-p7d"/>
-                                            <constraint firstAttribute="height" constant="21" id="Xlu-AC-y9E"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
-                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -282,6 +282,7 @@
                         <outlet property="passwordTxtField" destination="7Sa-7F-gda" id="9kW-ld-iYp"/>
                         <outlet property="userNameTxtField" destination="mcU-g1-Q3q" id="Ycb-Db-u1A"/>
                         <segue destination="cBY-2R-1vq" kind="show" identifier="loginToCompanyProfile" id="nFd-4B-COl"/>
+                        <segue destination="DqC-o9-rMv" kind="show" identifier="loginToCandidateProfile" id="Y7M-m5-wPC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C07-YL-RET" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -567,6 +568,61 @@
             </objects>
             <point key="canvasLocation" x="1758" y="348"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="co4-WM-v77">
+            <objects>
+                <viewController id="DqC-o9-rMv" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9lS-ur-GaQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="EOW-Wy-yW4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="enW-yy-94N">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="candidateProfile" translatesAutoresizingMaskIntoConstraints="NO" id="mal-O1-EWX">
+                                <rect key="frame" x="92" y="64" width="191" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="191" id="EMC-32-ojT"/>
+                                    <constraint firstAttribute="height" constant="200" id="aXs-CF-hRi"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qbn-X5-QQP">
+                                <rect key="frame" x="335" y="67" width="32" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="Ts3-wr-Uwc"/>
+                                    <constraint firstAttribute="width" constant="32" id="jAg-ho-CuJ"/>
+                                </constraints>
+                                <state key="normal" image="camera"/>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GRz-6s-Q41">
+                                <rect key="frame" x="0.0" y="265" width="375" height="40"/>
+                                <color key="backgroundColor" red="0.85005742311477661" green="0.95694369077682495" blue="0.9575316309928894" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="37u-Ba-M2F"/>
+                                </constraints>
+                            </view>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="eF9-T8-Yzc">
+                                <rect key="frame" x="78" y="424" width="142" height="2"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </progressView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="GRz-6s-Q41" firstAttribute="leading" secondItem="enW-yy-94N" secondAttribute="leading" id="1Fq-3w-VaN"/>
+                            <constraint firstAttribute="trailing" secondItem="GRz-6s-Q41" secondAttribute="trailing" id="5N0-JO-ueJ"/>
+                            <constraint firstItem="mal-O1-EWX" firstAttribute="centerX" secondItem="enW-yy-94N" secondAttribute="centerX" id="7OL-uA-xZD"/>
+                            <constraint firstAttribute="trailing" secondItem="Qbn-X5-QQP" secondAttribute="trailing" constant="8" id="Nje-K3-N5r"/>
+                            <constraint firstItem="Qbn-X5-QQP" firstAttribute="top" secondItem="9lS-ur-GaQ" secondAttribute="bottom" constant="3" id="SeY-OO-XF4"/>
+                            <constraint firstItem="GRz-6s-Q41" firstAttribute="top" secondItem="mal-O1-EWX" secondAttribute="bottom" constant="1" id="VHy-SL-QXu"/>
+                            <constraint firstItem="mal-O1-EWX" firstAttribute="top" secondItem="9lS-ur-GaQ" secondAttribute="bottom" id="hAI-cg-K35"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DBV-3h-Pol" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2468" y="346.77661169415296"/>
+        </scene>
         <!--Join Now View Controller-->
         <scene sceneID="571-CW-R6L">
             <objects>
@@ -724,6 +780,7 @@
     <resources>
         <image name="Company-icon" width="256" height="256"/>
         <image name="camera" width="32" height="32"/>
+        <image name="candidateProfile" width="316" height="360"/>
         <image name="circle" width="32" height="32"/>
         <image name="gallery" width="32" height="32"/>
     </resources>

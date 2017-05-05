@@ -12,6 +12,7 @@
 		140A35D21D096A7E00D89FD8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 140A35D11D096A7E00D89FD8 /* Assets.xcassets */; };
 		140A35D51D096A7E00D89FD8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 140A35D31D096A7E00D89FD8 /* LaunchScreen.storyboard */; };
 		E8618AE282A8F319FDBBBA83 /* Pods_GradNext.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2674BB98347D00F71EE15AF6 /* Pods_GradNext.framework */; };
+		F26476131EBCA0C20069C041 /* CandidateProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26476121EBCA0C20069C041 /* CandidateProfileViewController.swift */; };
 		F290E1D11EBBA41F008D35A2 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F290E1D01EBBA41F008D35A2 /* Extensions.swift */; };
 		F2DCEEBD1EAD0FE300D996BC /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DCEEB81EAD0FE300D996BC /* LandingViewController.swift */; };
 		F2DCEEBE1EAD0FE300D996BC /* SigninViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DCEEBA1EAD0FE300D996BC /* SigninViewController.swift */; };
@@ -30,6 +31,7 @@
 		2674BB98347D00F71EE15AF6 /* Pods_GradNext.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GradNext.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E26B4850DD196B5A01EDB370 /* Pods-GradNext.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GradNext.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GradNext/Pods-GradNext.debug.xcconfig"; sourceTree = "<group>"; };
 		F1BCD2D0435A995256118447 /* Pods-GradNext.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GradNext.release.xcconfig"; path = "Pods/Target Support Files/Pods-GradNext/Pods-GradNext.release.xcconfig"; sourceTree = "<group>"; };
+		F26476121EBCA0C20069C041 /* CandidateProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CandidateProfileViewController.swift; sourceTree = "<group>"; };
 		F290E1D01EBBA41F008D35A2 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		F2DCEEB81EAD0FE300D996BC /* LandingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
 		F2DCEEBA1EAD0FE300D996BC /* SigninViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SigninViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +105,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F26476111EBC915D0069C041 /* CandidateProfile */ = {
+			isa = PBXGroup;
+			children = (
+				F26476121EBCA0C20069C041 /* CandidateProfileViewController.swift */,
+			);
+			path = CandidateProfile;
+			sourceTree = "<group>";
+		};
 		F2DCEEAC1EAD0EBE00D996BC /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +125,7 @@
 		F2DCEEAE1EAD0F0000D996BC /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				F26476111EBC915D0069C041 /* CandidateProfile */,
 				F2ECB5771EBB86F800C4B2E9 /* CompanyProfile */,
 				F2ECB5741EBB86E400C4B2E9 /* SignUp */,
 				F2DCEEB71EAD0FE300D996BC /* Home */,
@@ -312,6 +323,7 @@
 				F2DCEEBD1EAD0FE300D996BC /* LandingViewController.swift in Sources */,
 				F2ECB5761EBB86E400C4B2E9 /* JoinNowViewController.swift in Sources */,
 				140A35CB1D096A7D00D89FD8 /* AppDelegate.swift in Sources */,
+				F26476131EBCA0C20069C041 /* CandidateProfileViewController.swift in Sources */,
 				F2DCEEC11EAD100A00D996BC /* Utilities.swift in Sources */,
 				F2DCEEBE1EAD0FE300D996BC /* SigninViewController.swift in Sources */,
 				F290E1D11EBBA41F008D35A2 /* Extensions.swift in Sources */,

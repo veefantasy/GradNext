@@ -47,7 +47,7 @@ class SigninViewController: UIViewController {
     }
 
     @IBAction func signInButtonClicked(_ sender: Any) {
-        self.performSegue(withIdentifier: "loginToCompanyProfile", sender: nil)
+        self.performSegue(withIdentifier: "loginToCandidateProfile", sender: nil)
     }
    
     @IBAction func exitAction(_ sender: AnyObject) {
