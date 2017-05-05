@@ -44,23 +44,6 @@ class SigninViewController: UIViewController {
         
         Utilities.setTextFieldBorderBelow(forTextField: passwordTxtField)
         Utilities.setTextFieldBorderBelow(forTextField: userNameTxtField)
-//        let borderWidth     = CGFloat(2.0)
-//        var border          = CALayer()
-//        border.borderColor  = UIColor.white.cgColor
-//        border.borderWidth  = borderWidth
-//       
-//        border.frame        = CGRect(x: 0, y: passwordTxtField.frame.size.height - borderWidth, width: passwordTxtField.frame.size.width, height: borderWidth)
-//        
-//        passwordTxtField.layer.addSublayer(border)
-//        passwordTxtField.layer.masksToBounds = true
-//        
-//        border              = CALayer()
-//        border.borderColor  = UIColor.white.cgColor
-//        border.borderWidth  = borderWidth
-//        border.frame        = CGRect(x: 0, y: userNameTxtField.frame.size.height - borderWidth, width: userNameTxtField.frame.size.width, height: borderWidth)
-//        
-//        userNameTxtField.layer.addSublayer(border)
-//        userNameTxtField.layer.masksToBounds = true
     }
 
     @IBAction func signInButtonClicked(_ sender: Any) {
