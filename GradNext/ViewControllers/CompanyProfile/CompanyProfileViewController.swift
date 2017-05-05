@@ -30,7 +30,6 @@ class CompanyProfileViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
     func customViews() {
          Utilities.setTextFieldCornerRadius(forTextField: txtCompanyName, withRadius: 3.0, withBorderColor: UIColor.gray)
          Utilities.setTextFieldCornerRadius(forTextField: txtAddress, withRadius: 3.0, withBorderColor: UIColor.gray)
@@ -58,7 +57,6 @@ class CompanyProfileViewController: UIViewController {
     */
 
     @IBAction func createButtonClicked(_ sender: Any) {
-        
         
     }
 }
