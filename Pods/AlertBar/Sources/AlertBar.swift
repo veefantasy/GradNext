@@ -23,11 +23,13 @@ public enum AlertBarType {
             case .error:
                 return UIColor(0xf44336)
             case .notice:
-                return UIColor(0x2196F3)
+                
+                return UIColor(0xDA331E)
             case .warning:
                 return UIColor(0xFFC107)
             case .info:
-                return UIColor(0x009688)
+                return UIColor(0xDA331E)
+                
             case .custom(let backgroundColor, _):
                 return backgroundColor
             }
@@ -50,20 +52,23 @@ open class AlertBar: UIView {
     static var alertBars: [AlertBar] = []
     
     let messageLabel = UILabel()
-
+    
     required public init?(coder aDecoder: NSCoder) {
         fatalError("NSCoding not supported")
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        messageLabel.frame = CGRect(x: 2, y: 2, width: frame.width - 4, height: frame.height - 4)
-        messageLabel.font = UIFont.systemFont(ofSize: 12)
+        var widthVal : CGFloat = self.frame.size.width
+        
+        messageLabel.frame = CGRect(x: 0, y: 2, width: widthVal, height: frame.height - 4)
+        messageLabel.textAlignment = .center
+        messageLabel.font = UIFont.systemFont(ofSize: 14)
         self.addSubview(messageLabel)
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.handleRotate(_:)), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
     }
-
+    
     deinit {
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
     }
@@ -74,21 +79,23 @@ open class AlertBar: UIView {
     }
     
     open class func show(_ type: AlertBarType, message: String, duration: Double = 2, completion: (() -> Void)? = nil) {
-        let statusBarHeight = UIApplication.shared.statusBarFrame.height
-        let alertBar = AlertBar(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: statusBarHeight))
+        //        let statusBarHeight = UIApplication.shared.statusBarFrame.height
+        let statusBarHeight : CGFloat = 40.0
+        
+        let alertBar = AlertBar(frame: CGRect(x: 0, y: 40, width: UIScreen.main.bounds.width, height: statusBarHeight))
         alertBar.messageLabel.text = message
-        alertBar.messageLabel.textAlignment = AlertBar.textAlignment
+        alertBar.messageLabel.textAlignment = .center
         alertBar.backgroundColor = type.backgroundColor
         alertBar.messageLabel.textColor = type.textColor
         AlertBar.alertBars.append(alertBar)
         
         let width = UIScreen.main.bounds.width
         let height = UIScreen.main.bounds.height
-
+        
         let baseView = UIView(frame: UIScreen.main.bounds)
         baseView.isUserInteractionEnabled = false
         baseView.addSubview(alertBar)
-
+        
         let window: UIWindow
         let orientation = UIApplication.shared.statusBarOrientation
         if orientation.isLandscape {
@@ -109,25 +116,29 @@ open class AlertBar: UIView {
         
         alertBar.transform = CGAffineTransform(translationX: 0, y: -statusBarHeight)
         UIView.animate(withDuration: 0.2,
-            animations: { () -> Void in
-                alertBar.transform = CGAffineTransform.identity
-            }, completion: { _ in
-                UIView.animate(withDuration: 0.2,
-                    delay: duration,
-                    options: UIViewAnimationOptions(),
-                    animations: { () -> Void in
-                        alertBar.transform = CGAffineTransform(translationX: 0, y: -statusBarHeight)
-                    },
-                    completion: { (animated: Bool) -> Void in
-                        alertBar.removeFromSuperview()
-                        if let index = AlertBar.alertBars.index(of: alertBar) {
-                            AlertBar.alertBars.remove(at: index)
-                        }
-                        // To hold window instance
-                        window.isHidden = true
-                        completion?()
-                })
+                       animations: { () -> Void in
+                        alertBar.transform = CGAffineTransform.identity
+        }, completion: { _ in
+            UIView.animate(withDuration: 0.2,
+                           delay: duration,
+                           options: UIViewAnimationOptions(),
+                           animations: { () -> Void in
+                            alertBar.transform = CGAffineTransform(translationX: 0, y: -statusBarHeight)
+            },
+                           completion: { (animated: Bool) -> Void in
+                            alertBar.removeFromSuperview()
+                            if let index = AlertBar.alertBars.index(of: alertBar) {
+                                
+                                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "NotificationIdentifier"), object: nil)
+                                
+                                
+                                AlertBar.alertBars.remove(at: index)
+                            }
+                            // To hold window instance
+                            window.isHidden = true
+                            completion?()
             })
+        })
     }
     
     open class func show(error: Error, duration: Double = 2, completion: (() -> Void)? = nil) {

@@ -8,15 +8,19 @@
 
 import UIKit
 import Alamofire
-
+import AlertBar
 class SigninViewController: UIViewController {
 
+    @IBOutlet weak var SignInButton: UIButton!
     @IBOutlet weak var userNameTxtField: UITextField!
     @IBOutlet weak var passwordTxtField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(JoinNowViewController.methodOfReceivedNotification(notification:)), name: Notification.Name("NotificationIdentifier"), object: nil)
+        
         // Do any additional setup after loading the view.
         
         userNameTxtField.attributedPlaceholder = NSAttributedString(string: "User Name",
@@ -26,16 +30,7 @@ class SigninViewController: UIViewController {
                                                                     attributes: [NSForegroundColorAttributeName: UIColor.lightGray])
         
         
-        Alamofire.request("http://gradnext.phoenixlab.in/api/", method: .post, parameters: ["name":"", "email": "","subject":"","mobileNo":"123333","address":"adyar","RequestDate":"today","message":""]).responseJSON{ (responseData) -> Void in
-            if((responseData.result.value) != nil) {
-                
-            }
-            else
-            {
-            }
-         
-        }
-
+      
         
     }
     

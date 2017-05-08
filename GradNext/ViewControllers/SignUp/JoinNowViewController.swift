@@ -7,13 +7,15 @@
 //
 
 import UIKit
-
+import Alamofire
+import AlertBar
 class JoinNowViewController: UIViewController {
 
     @IBOutlet weak var firstNameTxtField: UITextField!
     
     @IBOutlet weak var lastNameTxtField: UITextField!
     
+    @IBOutlet weak var submitButton: UIButton!
     @IBOutlet weak var termsLabel: UILabel!
     @IBOutlet weak var emailTxtField: UITextField!
     @IBOutlet weak var mobileTextField: UITextField!
@@ -22,6 +24,8 @@ class JoinNowViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(JoinNowViewController.methodOfReceivedNotification(notification:)), name: Notification.Name("NotificationIdentifier"), object: nil)
         
         firstNameTxtField.attributedPlaceholder = NSAttributedString(string: "First Name",
                                                                     attributes: [NSForegroundColorAttributeName: UIColor.white])
@@ -75,6 +79,141 @@ class JoinNowViewController: UIViewController {
         mobileTextField.layer.masksToBounds = true
         
     }
+    /*
+ 
+     {
+     
+     "UserFirstName": "sara",
+     "UserLastName": "raj",
+     "EmailId": "testlab7027@gmail.com",
+     "MobileNumber": "9788768693",
+     "UserOptionCode": "CAND",
+     "AddressLine1": "GUINDY",
+     "AddressLine2": "CHENNAI",
+     "SuburbName": "TN",
+     "StateName": "TN",
+     "CountryName": "INDIA",
+     "PostCode": "600028",
+     "PasswordDesc": "123",
+     }
+*/
+    @IBAction func SignUp(_ sender: Any) {
+        
+
+        var messageString = "";
+        var value  = false
+        
+        if(firstNameTxtField.text == "")
+        {
+            messageString = "Please enter your first Name"
+            submitButton.isEnabled  = value
+            AlertBar.show(.info, message: messageString)
+            
+            firstNameTxtField.becomeFirstResponder()
+        }
+        else if(lastNameTxtField.text == "")
+        {
+            messageString = "Please enter your last Name "
+            submitButton.isEnabled  = value
+            AlertBar.show(.info, message: messageString)
+            lastNameTxtField.becomeFirstResponder()
+        }
+        else if(emailTxtField.text == "")
+        {
+            messageString = "Please enter your Email-id"
+            submitButton.isEnabled  = value
+            AlertBar.show(.info, message: messageString)
+            
+            emailTxtField.becomeFirstResponder()
+            
+        }
+        else if((commonMethods.isValidEmail(testStr :emailTxtField.text! as String)) == false)
+        {
+            messageString = "Please enter a valid Email-id"
+            submitButton.isEnabled  = value
+            AlertBar.show(.info, message: messageString)
+            
+            emailTxtField.becomeFirstResponder()
+        }
+        else if(mobileTextField.text == "")
+        {
+            messageString = "Please enter your mobile number"
+            submitButton.isEnabled  = value
+            AlertBar.show(.info, message: messageString)
+            
+            mobileTextField.becomeFirstResponder()
+        }
+            
+       
+        else
+        {
+            if(commonMethods.hasConnectivity())
+            {
+                self.view.showLoader()
+                
+                Alamofire.request("http://service.gradnext.com/swagger/ui/index#!/User/User_RegisterUser", method: .post, parameters: ["UserFirstName":firstNameTxtField.text!,"UserLastName": lastNameTxtField.text!, "EmailId": emailTxtField.text!,"MobileNumber":mobileTextField.text!,"UserOptionCode":"CAND",]).responseJSON{ (responseData) -> Void in
+                    if((responseData.result.value) != nil) {
+                        
+                        self.view.hideLoader()
+                    }
+                    else
+                    {
+                        self.view.hideLoader()
+                    }
+                    value = true
+                    self.emailTxtField.text = "";
+                    self.lastNameTxtField.text = "";
+                    self.firstNameTxtField.text = "";
+                    self.mobileTextField.text = "";
+
+
+                    messageString = "Your message was sent successfully. Thanks."
+                    self.view.endEditing(true)
+                    self.submitButton.isEnabled  = value
+                    AlertBar.show(.info, message: messageString)
+                }
+            }
+            else
+            {
+                alert(title: "No InternetConnection", message: "Internet connection appears to be offline", buttonTitle: "Ok")
+                
+                self.submitButton.isEnabled  = true
+            }
+        }
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+//        
+//        Alamofire.request("http://service.gradnext.com/swagger/ui/index#!/User/User_SignInUser", method: .post, parameters: ["UserFirstName":firstNameTxtField.text!,"UserLastName": lastNameTxtField.text!, "EmailId": emailTxtField.text!,"MobileNumber":mobileTextField.text!,"UserOptionCode":"CAND",]).responseJSON{ (responseData) -> Void in
+//            if((responseData.result.value) != nil) {
+//                
+//                
+//                print(responseData.result.value!)
+//            }
+//            else
+//            {
+//                print(Error.self)
+//            }
+//            
+//        }
+        
+
+
+        
+        
+    }
+    
+    func methodOfReceivedNotification(notification: NSNotification){
+        //Take Action on Notification
+        submitButton.isEnabled  = true
+    }
     
     @IBAction func exitAction(_ sender: AnyObject) {
         self.presentingViewController?.dismiss(animated: true, completion: nil)
@@ -95,5 +234,16 @@ class JoinNowViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    //        Alamofire.request("http://service.gradnext.com/swagger/ui/index#!/User/User_SignInUser", method: .post, parameters: ["UserFirstName":"Mk","UserLastName": "kumar", "EmailId": "muthukumar.test@gmail.com","MobileNumber":"9500172887","UserOptionCode":"CAND",]).responseJSON{ (responseData) -> Void in
+    //            if((responseData.result.value) != nil) {
+    //
+    //
+    //                print(responseData.result.value!)
+    //            }
+    //            else
+    //            {
+    //                print(Error.self)
+    //            }
+    //            
+    //        }
 }

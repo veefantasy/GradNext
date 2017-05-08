@@ -11,6 +11,8 @@
 		140A35D01D096A7E00D89FD8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 140A35CE1D096A7E00D89FD8 /* Main.storyboard */; };
 		140A35D21D096A7E00D89FD8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 140A35D11D096A7E00D89FD8 /* Assets.xcassets */; };
 		140A35D51D096A7E00D89FD8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 140A35D31D096A7E00D89FD8 /* LaunchScreen.storyboard */; };
+		4D42EE721EBF787C00675DFC /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D42EE711EBF787C00675DFC /* Reachability.m */; };
+		4D42EE741EBF78F200675DFC /* commonMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D42EE731EBF78F200675DFC /* commonMethods.swift */; };
 		E8618AE282A8F319FDBBBA83 /* Pods_GradNext.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2674BB98347D00F71EE15AF6 /* Pods_GradNext.framework */; };
 		F26476131EBCA0C20069C041 /* CandidateProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26476121EBCA0C20069C041 /* CandidateProfileViewController.swift */; };
 		F290E1D11EBBA41F008D35A2 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F290E1D01EBBA41F008D35A2 /* Extensions.swift */; };
@@ -29,6 +31,10 @@
 		140A35D41D096A7E00D89FD8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		140A35D61D096A7E00D89FD8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2674BB98347D00F71EE15AF6 /* Pods_GradNext.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GradNext.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D42EE6F1EBF787B00675DFC /* GradNext-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GradNext-Bridging-Header.h"; sourceTree = "<group>"; };
+		4D42EE701EBF787C00675DFC /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		4D42EE711EBF787C00675DFC /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		4D42EE731EBF78F200675DFC /* commonMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = commonMethods.swift; path = Utilities/commonMethods.swift; sourceTree = "<group>"; };
 		E26B4850DD196B5A01EDB370 /* Pods-GradNext.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GradNext.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GradNext/Pods-GradNext.debug.xcconfig"; sourceTree = "<group>"; };
 		F1BCD2D0435A995256118447 /* Pods-GradNext.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GradNext.release.xcconfig"; path = "Pods/Target Support Files/Pods-GradNext/Pods-GradNext.release.xcconfig"; sourceTree = "<group>"; };
 		F26476121EBCA0C20069C041 /* CandidateProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CandidateProfileViewController.swift; sourceTree = "<group>"; };
@@ -73,7 +79,10 @@
 		140A35C91D096A7D00D89FD8 /* GradNext */ = {
 			isa = PBXGroup;
 			children = (
+				4D42EE731EBF78F200675DFC /* commonMethods.swift */,
 				140A35CA1D096A7D00D89FD8 /* AppDelegate.swift */,
+				4D42EE701EBF787C00675DFC /* Reachability.h */,
+				4D42EE711EBF787C00675DFC /* Reachability.m */,
 				F2DCEEAC1EAD0EBE00D996BC /* Utilities */,
 				F2DCEEB01EAD0F3200D996BC /* Parser */,
 				F2DCEEAF1EAD0F2C00D996BC /* Modal */,
@@ -84,6 +93,7 @@
 				140A35D11D096A7E00D89FD8 /* Assets.xcassets */,
 				140A35D31D096A7E00D89FD8 /* LaunchScreen.storyboard */,
 				140A35D61D096A7E00D89FD8 /* Info.plist */,
+				4D42EE6F1EBF787B00675DFC /* GradNext-Bridging-Header.h */,
 			);
 			path = GradNext;
 			sourceTree = "<group>";
@@ -326,7 +336,9 @@
 				F26476131EBCA0C20069C041 /* CandidateProfileViewController.swift in Sources */,
 				F2DCEEC11EAD100A00D996BC /* Utilities.swift in Sources */,
 				F2DCEEBE1EAD0FE300D996BC /* SigninViewController.swift in Sources */,
+				4D42EE721EBF787C00675DFC /* Reachability.m in Sources */,
 				F290E1D11EBBA41F008D35A2 /* Extensions.swift in Sources */,
+				4D42EE741EBF78F200675DFC /* commonMethods.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -445,11 +457,14 @@
 			baseConfigurationReference = E26B4850DD196B5A01EDB370 /* Pods-GradNext.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = VS7R82J633;
 				INFOPLIST_FILE = GradNext/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mma.grad;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "GradNext/GradNext-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -459,11 +474,13 @@
 			baseConfigurationReference = F1BCD2D0435A995256118447 /* Pods-GradNext.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = VS7R82J633;
 				INFOPLIST_FILE = GradNext/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mma.grad;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "GradNext/GradNext-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

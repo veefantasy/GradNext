@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="2TY-wT-bf5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ULI-8C-SzH">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,23 +16,6 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Navigation Controller-->
-        <scene sceneID="jkK-4f-iLq">
-            <objects>
-                <navigationController id="2TY-wT-bf5" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eh7-dy-cbx">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="ULI-8C-SzH" kind="relationship" relationship="rootViewController" id="LZg-hl-1pc"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="n8q-9h-x1Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-511" y="348"/>
-        </scene>
         <!--Landing View Controller-->
         <scene sceneID="yeQ-CQ-BiL">
             <objects>
@@ -279,6 +262,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="SignInButton" destination="ZG6-F0-Al1" id="f2J-LL-uww"/>
                         <outlet property="passwordTxtField" destination="7Sa-7F-gda" id="9kW-ld-iYp"/>
                         <outlet property="userNameTxtField" destination="mcU-g1-Q3q" id="Ycb-Db-u1A"/>
                         <segue destination="cBY-2R-1vq" kind="show" identifier="loginToCompanyProfile" id="nFd-4B-COl"/>
@@ -684,6 +668,7 @@
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="SignUp:" destination="OnY-Ba-5ZN" eventType="touchUpInside" id="yJI-ua-J5b"/>
                                     <action selector="signinAction:" destination="ULI-8C-SzH" eventType="touchUpInside" id="5WD-30-TJH"/>
                                 </connections>
                             </button>
@@ -702,7 +687,6 @@
                                 </state>
                                 <connections>
                                     <action selector="exitAction:" destination="OnY-Ba-5ZN" eventType="touchUpInside" id="SkD-sv-7YP"/>
-                                    <action selector="exitAction:" destination="5Zd-ik-UdO" eventType="touchUpInside" id="dWm-kj-dhU"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6cJ-fa-Wr7">
@@ -769,6 +753,7 @@
                         <outlet property="firstNameTxtField" destination="Jzt-im-LNM" id="jW4-R9-rIo"/>
                         <outlet property="lastNameTxtField" destination="8ow-hn-dVT" id="cRf-4R-uFH"/>
                         <outlet property="mobileTextField" destination="8WN-u0-lBw" id="nzf-WB-bxt"/>
+                        <outlet property="submitButton" destination="yRn-g8-J8b" id="2RB-4h-VDZ"/>
                         <outlet property="termsLabel" destination="huX-f7-VF7" id="Zqb-Y2-iOR"/>
                     </connections>
                 </viewController>
