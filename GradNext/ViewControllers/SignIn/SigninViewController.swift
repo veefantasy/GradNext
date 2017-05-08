@@ -41,7 +41,6 @@ class SigninViewController: UIViewController {
     
     override func viewDidLayoutSubviews()
     {
-        
         Utilities.setTextFieldBorderBelow(forTextField: passwordTxtField)
         Utilities.setTextFieldBorderBelow(forTextField: userNameTxtField)
     }
@@ -51,7 +50,6 @@ class SigninViewController: UIViewController {
     }
    
     @IBAction func exitAction(_ sender: AnyObject) {
-        
         self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
     
