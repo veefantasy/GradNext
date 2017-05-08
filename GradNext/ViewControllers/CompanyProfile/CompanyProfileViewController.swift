@@ -163,10 +163,12 @@ class CompanyProfileViewController: UIViewController, UITextFieldDelegate,UIImag
         
     }
     func textFieldDidBeginEditing(_ textField: UITextField){
+        Utilities.setTextFieldCornerRadius(forTextField: textField, withRadius: 3.0, withBorderColor: UIColor.blue)
         activeField = textField
     }
     
     func textFieldDidEndEditing(_ textField: UITextField){
+         Utilities.setTextFieldCornerRadius(forTextField: textField, withRadius: 3.0, withBorderColor: UIColor.gray)
         activeField = nil
     }
     
