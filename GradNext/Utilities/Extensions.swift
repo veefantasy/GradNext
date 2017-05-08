@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import MBProgressHUD
 
 extension UITextField {
     func setLeftPaddingPoints(_ amount:CGFloat){
@@ -25,5 +26,34 @@ extension UIScrollView {
     func scrollToTop() {
         let desiredOffset = CGPoint(x: 0, y: -contentInset.top)
         setContentOffset(desiredOffset, animated: true)
+    }
+}
+
+
+extension UIViewController {
+    
+    func alert(title: String?, message: String?, buttonTitle: String = "OK") {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: buttonTitle, style: .default, handler: { action in
+            self.dismiss(animated: true, completion: nil)
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+}
+extension UIView
+{
+    func showLoader()
+    {
+        let loadingNotification = MBProgressHUD.showAdded(to: self, animated: true)
+        loadingNotification.mode = MBProgressHUDMode.indeterminate
+        loadingNotification.bezelView.style = .solidColor // you should change the bezelview style to solid color.
+        
+        loadingNotification.label.text = "Loading"
+    }
+    func hideLoader()
+    {
+        MBProgressHUD.hide(for: self, animated: true)
+        
     }
 }

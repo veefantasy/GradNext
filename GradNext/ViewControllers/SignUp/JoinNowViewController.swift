@@ -127,7 +127,7 @@ class JoinNowViewController: UIViewController {
             emailTxtField.becomeFirstResponder()
             
         }
-        else if((commonMethods.isValidEmail(testStr :emailTxtField.text! as String)) == false)
+        else if((Utilities.isValidEmail(testStr :emailTxtField.text! as String)) == false)
         {
             messageString = "Please enter a valid Email-id"
             submitButton.isEnabled  = value
@@ -147,7 +147,7 @@ class JoinNowViewController: UIViewController {
        
         else
         {
-            if(commonMethods.hasConnectivity())
+            if(Utilities.hasConnectivity())
             {
                 self.view.showLoader()
                 
