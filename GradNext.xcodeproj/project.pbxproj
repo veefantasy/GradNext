@@ -11,6 +11,13 @@
 		140A35D01D096A7E00D89FD8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 140A35CE1D096A7E00D89FD8 /* Main.storyboard */; };
 		140A35D21D096A7E00D89FD8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 140A35D11D096A7E00D89FD8 /* Assets.xcassets */; };
 		140A35D51D096A7E00D89FD8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 140A35D31D096A7E00D89FD8 /* LaunchScreen.storyboard */; };
+		4D1EA09B1EC7322D007AA187 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1EA09A1EC7322D007AA187 /* HomeViewController.swift */; };
+		4D1EA09D1EC73243007AA187 /* ApplicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1EA09C1EC73243007AA187 /* ApplicationViewController.swift */; };
+		4D1EA09F1EC73272007AA187 /* LeftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1EA09E1EC73272007AA187 /* LeftViewController.swift */; };
+		4D1EA0A11EC7327A007AA187 /* RightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1EA0A01EC7327A007AA187 /* RightViewController.swift */; };
+		4D1EA0A31EC733E5007AA187 /* SlideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1EA0A21EC733E5007AA187 /* SlideMenuController.swift */; };
+		4D1EA0A61EC73439007AA187 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1EA0A51EC73439007AA187 /* UIApplication.swift */; };
+		4D1EA0A81EC73754007AA187 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1EA0A71EC73754007AA187 /* UIViewController.swift */; };
 		4D42EE721EBF787C00675DFC /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D42EE711EBF787C00675DFC /* Reachability.m */; };
 		E8618AE282A8F319FDBBBA83 /* Pods_GradNext.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2674BB98347D00F71EE15AF6 /* Pods_GradNext.framework */; };
 		F26476131EBCA0C20069C041 /* CandidateProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26476121EBCA0C20069C041 /* CandidateProfileViewController.swift */; };
@@ -30,6 +37,14 @@
 		140A35D41D096A7E00D89FD8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		140A35D61D096A7E00D89FD8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2674BB98347D00F71EE15AF6 /* Pods_GradNext.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GradNext.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D1EA09A1EC7322D007AA187 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		4D1EA09C1EC73243007AA187 /* ApplicationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationViewController.swift; sourceTree = "<group>"; };
+		4D1EA09E1EC73272007AA187 /* LeftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftViewController.swift; sourceTree = "<group>"; };
+		4D1EA0A01EC7327A007AA187 /* RightViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RightViewController.swift; sourceTree = "<group>"; };
+		4D1EA0A21EC733E5007AA187 /* SlideMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideMenuController.swift; sourceTree = "<group>"; };
+		4D1EA0A41EC73416007AA187 /* SlideMenuControllerSwift.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideMenuControllerSwift.h; sourceTree = "<group>"; };
+		4D1EA0A51EC73439007AA187 /* UIApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIApplication.swift; path = Utilities/UIApplication.swift; sourceTree = "<group>"; };
+		4D1EA0A71EC73754007AA187 /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		4D42EE6F1EBF787B00675DFC /* GradNext-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GradNext-Bridging-Header.h"; sourceTree = "<group>"; };
 		4D42EE701EBF787C00675DFC /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		4D42EE711EBF787C00675DFC /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
@@ -80,6 +95,14 @@
 				140A35CA1D096A7D00D89FD8 /* AppDelegate.swift */,
 				4D42EE701EBF787C00675DFC /* Reachability.h */,
 				4D42EE711EBF787C00675DFC /* Reachability.m */,
+				4D1EA09A1EC7322D007AA187 /* HomeViewController.swift */,
+				4D1EA09E1EC73272007AA187 /* LeftViewController.swift */,
+				4D1EA0A01EC7327A007AA187 /* RightViewController.swift */,
+				4D1EA0A71EC73754007AA187 /* UIViewController.swift */,
+				4D1EA0A21EC733E5007AA187 /* SlideMenuController.swift */,
+				4D1EA0A41EC73416007AA187 /* SlideMenuControllerSwift.h */,
+				4D1EA0A51EC73439007AA187 /* UIApplication.swift */,
+				4D1EA09C1EC73243007AA187 /* ApplicationViewController.swift */,
 				F2DCEEAC1EAD0EBE00D996BC /* Utilities */,
 				F2DCEEB01EAD0F3200D996BC /* Parser */,
 				F2DCEEAF1EAD0F2C00D996BC /* Modal */,
@@ -237,7 +260,7 @@
 				TargetAttributes = {
 					140A35C61D096A7D00D89FD8 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = VS7R82J633;
+						DevelopmentTeam = 46AAQHF37A;
 						LastSwiftMigration = 0820;
 					};
 				};
@@ -328,13 +351,20 @@
 			files = (
 				F2ECB5791EBB870D00C4B2E9 /* CompanyProfileViewController.swift in Sources */,
 				F2DCEEBD1EAD0FE300D996BC /* LandingViewController.swift in Sources */,
+				4D1EA0A11EC7327A007AA187 /* RightViewController.swift in Sources */,
+				4D1EA0A61EC73439007AA187 /* UIApplication.swift in Sources */,
 				F2ECB5761EBB86E400C4B2E9 /* JoinNowViewController.swift in Sources */,
 				140A35CB1D096A7D00D89FD8 /* AppDelegate.swift in Sources */,
 				F26476131EBCA0C20069C041 /* CandidateProfileViewController.swift in Sources */,
+				4D1EA09B1EC7322D007AA187 /* HomeViewController.swift in Sources */,
 				F2DCEEC11EAD100A00D996BC /* Utilities.swift in Sources */,
+				4D1EA0A31EC733E5007AA187 /* SlideMenuController.swift in Sources */,
 				F2DCEEBE1EAD0FE300D996BC /* SigninViewController.swift in Sources */,
 				4D42EE721EBF787C00675DFC /* Reachability.m in Sources */,
+				4D1EA09F1EC73272007AA187 /* LeftViewController.swift in Sources */,
 				F290E1D11EBBA41F008D35A2 /* Extensions.swift in Sources */,
+				4D1EA0A81EC73754007AA187 /* UIViewController.swift in Sources */,
+				4D1EA09D1EC73243007AA187 /* ApplicationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,8 +484,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = VS7R82J633;
+				DEVELOPMENT_TEAM = 46AAQHF37A;
 				INFOPLIST_FILE = GradNext/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mma.grad;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -471,8 +502,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = VS7R82J633;
+				DEVELOPMENT_TEAM = 46AAQHF37A;
 				INFOPLIST_FILE = GradNext/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mma.grad;
 				PRODUCT_NAME = "$(TARGET_NAME)";
