@@ -34,6 +34,7 @@ class CandidateProfileViewController: UIViewController,UITextFieldDelegate,UIIma
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        imagePicker.delegate = self
         customViews()
         // Do any additional setup after loading the view.
          registerForKeyboardNotifications()

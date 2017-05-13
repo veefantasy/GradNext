@@ -578,7 +578,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ghi-Zf-VGE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1758" y="348"/>
+            <point key="canvasLocation" x="1782" y="168"/>
         </scene>
         <!--Candidate Profile View Controller-->
         <scene sceneID="co4-WM-v77">
@@ -821,8 +821,6 @@
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="100" id="4Ya-ik-GLo"/>
-                                                    <constraint firstAttribute="width" constant="335" id="FVz-1Q-cuN"/>
-                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="UsD-0P-VIy"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>

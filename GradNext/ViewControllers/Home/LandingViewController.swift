@@ -22,12 +22,13 @@ class LandingViewController: UIViewController {
         exploreButton.backgroundColor = UIColor.white
         exploreButton.layer.borderWidth = 2.0
         exploreButton.layer.borderColor = UIColor.white.cgColor
-        
+        exploreButton.layer.cornerRadius = 3.0
         
         SigninButton.titleLabel?.textColor =  UIColor.white
         SigninButton.backgroundColor = UIColor.black
         SigninButton.layer.borderWidth = 2.0
         SigninButton.layer.borderColor = UIColor.black.cgColor
+        SigninButton.layer.cornerRadius = 3.0
         
     }
 
