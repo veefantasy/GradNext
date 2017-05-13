@@ -13,6 +13,11 @@ class LandingViewController: UIViewController {
     @IBOutlet weak var SigninButton: UIButton!
     @IBOutlet weak var exploreButton: UIButton!
     
+    @IBAction func exploreAction(_ sender: Any) {
+        
+       let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+       appDelegate.window?.rootViewController = appDelegate.createMenuView()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -31,10 +36,7 @@ class LandingViewController: UIViewController {
         
     }
 
-    @IBAction func exploreAction(_ sender: AnyObject) {
-     
-    }
-    
+  
     
     @IBAction func signinAction(_ sender: AnyObject) {
     

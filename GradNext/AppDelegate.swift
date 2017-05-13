@@ -11,11 +11,52 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
+        //createMenuView()
+
         // Override point for customization after application launch.
         return true
+    }
+    
+    public func createMenuView()-> SlideMenuController{
+        
+        // create viewController code...
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        let leftViewController = storyboard.instantiateViewController(withIdentifier: "LeftViewcontroller") as! LeftViewController
+        let rightViewController = storyboard.instantiateViewController(withIdentifier: "RightViewcontroller") as! RightViewController
+        
+        let mainViewController = storyboard.instantiateViewController(withIdentifier: "MainViewController") as! HomeViewController
+        let nvc: UINavigationController = UINavigationController()
+        nvc.viewControllers = [mainViewController]
+        
+        
+        let channelViewController = storyboard.instantiateViewController(withIdentifier: "ApplicationViewController") as! ApplicationViewController
+        let channel: UINavigationController = UINavigationController()
+        channel.viewControllers = [channelViewController]
+     
+        
+        let tabBar :UITabBarController = UITabBarController()
+        
+        nvc.tabBarItem = UITabBarItem(title: "Home", image: UIImage(named:"Home_Tab"), selectedImage: UIImage(named:"Home_TabSelected"))
+        
+        channel.tabBarItem = UITabBarItem(title: "Applications", image: UIImage(named:""), selectedImage: UIImage(named:""))
+        
+        
+        tabBar.viewControllers  = [nvc,channel]
+        UITabBar.appearance().tintColor = Utilities.UIColorFromRGB(rgbValue: 0x39B7ED)
+        UITabBar.appearance().selectedImageTintColor = Utilities.UIColorFromRGB(rgbValue: 0xe8392c)
+        
+        UINavigationBar.appearance().tintColor = Utilities.UIColorFromRGB(rgbValue: 0xe8392c)
+        
+        let slideMenuController = SlideMenuController(mainViewController: tabBar, leftMenuViewController: leftViewController, rightMenuViewController: rightViewController)
+        
+        slideMenuController.automaticallyAdjustsScrollViewInsets = true
+        self.window?.backgroundColor = UIColor(red: 236.0, green: 238.0, blue: 241.0, alpha: 1.0)
+        
+        return slideMenuController
+        
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
