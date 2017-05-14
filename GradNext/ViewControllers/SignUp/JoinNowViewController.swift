@@ -9,10 +9,11 @@
 import UIKit
 import Alamofire
 import AlertBar
-class JoinNowViewController: UIViewController {
+class JoinNowViewController: UIViewController,UITextFieldDelegate {
 
     @IBOutlet weak var firstNameTxtField: UITextField!
     
+    @IBOutlet weak var blueView: UIView!
     @IBOutlet weak var lastNameTxtField: UITextField!
     
     @IBOutlet weak var submitButton: UIButton!
@@ -20,63 +21,45 @@ class JoinNowViewController: UIViewController {
     @IBOutlet weak var emailTxtField: UITextField!
     @IBOutlet weak var mobileTextField: UITextField!
     
-    
+    @IBOutlet weak var scrollView: UIScrollView!
+    var activeField: UITextField?
     override func viewDidLoad() {
         super.viewDidLoad()
 
         
         NotificationCenter.default.addObserver(self, selector: #selector(JoinNowViewController.methodOfReceivedNotification(notification:)), name: Notification.Name("NotificationIdentifier"), object: nil)
         
+        
+        
         firstNameTxtField.attributedPlaceholder = NSAttributedString(string: "First Name",
-                                                                    attributes: [NSForegroundColorAttributeName: UIColor.white])
+                                                                    attributes: [NSForegroundColorAttributeName: UIColor.gray])
         
         lastNameTxtField.attributedPlaceholder = NSAttributedString(string: "Last Name",
-                                                                    attributes: [NSForegroundColorAttributeName: UIColor.white])
+                                                                    attributes: [NSForegroundColorAttributeName: UIColor.gray])
         
         emailTxtField.attributedPlaceholder = NSAttributedString(string: "Email Address",
-                                                                    attributes: [NSForegroundColorAttributeName: UIColor.white])
+                                                                    attributes: [NSForegroundColorAttributeName: UIColor.gray])
         
         mobileTextField.attributedPlaceholder = NSAttributedString(string: "Mobile Number",
-                                                                    attributes: [NSForegroundColorAttributeName: UIColor.white])
+                                                                    attributes: [NSForegroundColorAttributeName: UIColor.gray])
+        registerForKeyboardNotifications()
+     //   self.view.layoutIfNeeded()
+      //  blueView.roundCorners([.bottomLeft,.bottomRight], radius: blueView.frame.size.width/2)
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        deregisterFromKeyboardNotifications()
         
-        // Do any additional setup after loading the view.
     }
     
     override func viewDidLayoutSubviews()
     {
-        let borderWidth     = CGFloat(2.0)
-        var border          = CALayer()
-        border.borderColor  = UIColor.white.cgColor
-        border.borderWidth  = borderWidth
+        submitButton.layer.cornerRadius = 3
+      
+        Utilities.setTextFieldBorderBelow(forTextField: lastNameTxtField,color: UIColor.gray)
+        Utilities.setTextFieldBorderBelow(forTextField: firstNameTxtField,color: UIColor.gray)
+        Utilities.setTextFieldBorderBelow(forTextField: mobileTextField,color: UIColor.gray)
+        Utilities.setTextFieldBorderBelow(forTextField: emailTxtField,color: UIColor.gray)
         
-        border.frame        = CGRect(x: 0, y: firstNameTxtField.frame.size.height - borderWidth, width: firstNameTxtField.frame.size.width, height: borderWidth)
-        
-        firstNameTxtField.layer.addSublayer(border)
-        firstNameTxtField.layer.masksToBounds = true
-        
-        border              = CALayer()
-        border.borderColor  = UIColor.white.cgColor
-        border.borderWidth  = borderWidth
-        border.frame        = CGRect(x: 0, y: lastNameTxtField.frame.size.height - borderWidth, width: lastNameTxtField.frame.size.width, height: borderWidth)
-    
-        lastNameTxtField.layer.addSublayer(border)
-        lastNameTxtField.layer.masksToBounds = true
-        
-        border              = CALayer()
-        border.borderColor  = UIColor.white.cgColor
-        border.borderWidth  = borderWidth
-        border.frame        = CGRect(x: 0, y: emailTxtField.frame.size.height - borderWidth, width: emailTxtField.frame.size.width, height: borderWidth)
-        
-        emailTxtField.layer.addSublayer(border)
-        emailTxtField.layer.masksToBounds = true
-        
-        border              = CALayer()
-        border.borderColor  = UIColor.white.cgColor
-        border.borderWidth  = borderWidth
-        border.frame        = CGRect(x: 0, y: mobileTextField.frame.size.height - borderWidth, width: mobileTextField.frame.size.width, height: borderWidth)
-        
-        mobileTextField.layer.addSublayer(border)
-        mobileTextField.layer.masksToBounds = true
         
     }
     /*
@@ -224,6 +207,77 @@ class JoinNowViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    // MARK: - TextField Delegate Methods
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return false
+    }
+    
+    
+    func registerForKeyboardNotifications(){
+        //Adding notifies on keyboard appearing
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWasShown(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillBeHidden(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+    }
+    
+    func deregisterFromKeyboardNotifications(){
+        //Removing notifies on keyboard appearing
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+    }
+    
+    func keyboardWasShown(notification: NSNotification){
+        //Need to calculate keyboard exact size due to Apple suggestions
+        self.scrollView.isScrollEnabled = true
+        var info = notification.userInfo!
+        let keyboardSize = (info[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue.size
+        let contentInsets : UIEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, keyboardSize!.height, 0.0)
+        
+        self.scrollView.contentInset = contentInsets
+        self.scrollView.scrollIndicatorInsets = contentInsets
+        
+        var aRect : CGRect = self.view.frame
+        aRect.size.height -= keyboardSize!.height
+        if let activeField = self.activeField {
+            if (!aRect.contains(activeField.frame.origin)){
+                self.scrollView.scrollRectToVisible(activeField.frame, animated: true)
+            }
+        }
+    }
+    
+    func keyboardWillBeHidden(notification: NSNotification){
+        
+        let contentInsets : UIEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 0.0)
+        self.scrollView.contentInset = contentInsets
+        self.scrollView.scrollIndicatorInsets = contentInsets
+        
+    }
+    func textFieldDidBeginEditing(_ textField: UITextField){
+        // Utilities.setTextFieldCornerRadius(forTextField: textField, withRadius: 3.0, withBorderColor: UIColor.blue)
+        // Utilities.setTextFieldBorderBelow(forTextField: textField,color: UIColor.blue)
+        
+        
+        activeField = textField
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField){
+        //Utilities.setTextFieldCornerRadius(forTextField: textField, withRadius: 3.0, withBorderColor: UIColor.gray)
+        //  Utilities.setTextFieldBorderBelow(forTextField: textField,color: UIColor.gray)
+        activeField = nil
+    }
+    
+    @objc @IBAction private func logSelectedButton(radioButton : DLRadioButton) {
+        if (radioButton.isMultipleSelectionEnabled) {
+            for button in radioButton.selectedButtons() {
+                print(String(format: "%@ is selected.\n", button.titleLabel!.text!));
+            }
+        } else {
+            print(String(format: "%@ is selected.\n", radioButton.selected()!.titleLabel!.text!));
+        }
+    }
+
 
     /*
     // MARK: - Navigation

@@ -21,6 +21,7 @@ extension UITextField {
         self.rightView = paddingView
         self.rightViewMode = .always
     }
+    
 }
 extension UIScrollView {
     func scrollToTop() {
@@ -56,4 +57,12 @@ extension UIView
         MBProgressHUD.hide(for: self, animated: true)
         
     }
+    func roundCorners(_ corners: UIRectCorner, radius: CGFloat) {
+        let path = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
+        let mask = CAShapeLayer()
+        mask.path = path.cgPath
+        self.layer.mask = mask
+    }
 }
+
+

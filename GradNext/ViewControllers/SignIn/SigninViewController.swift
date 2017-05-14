@@ -9,16 +9,19 @@
 import UIKit
 import Alamofire
 import AlertBar
-class SigninViewController: UIViewController {
+class SigninViewController: UIViewController ,UITextFieldDelegate{
 
     @IBOutlet weak var SignInButton: UIButton!
     @IBOutlet weak var userNameTxtField: UITextField!
     @IBOutlet weak var passwordTxtField: UITextField!
     
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var viewRememberMe: UIView!
+     var activeField: UITextField?
+    var rememberMeCheckBox: CheckBox = CheckBox()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
         NotificationCenter.default.addObserver(self, selector: #selector(JoinNowViewController.methodOfReceivedNotification(notification:)), name: Notification.Name("NotificationIdentifier"), object: nil)
         
         // Do any additional setup after loading the view.
@@ -29,15 +32,25 @@ class SigninViewController: UIViewController {
         passwordTxtField.attributedPlaceholder = NSAttributedString(string: "Password",
                                                                     attributes: [NSForegroundColorAttributeName: UIColor.lightGray])
         
-        
-      
-        
+         registerForKeyboardNotifications()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        
+        createRememberMeCheckBox()
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        deregisterFromKeyboardNotifications()
+        
+    }
     override func viewDidLayoutSubviews()
     {
-        Utilities.setTextFieldBorderBelow(forTextField: passwordTxtField)
-        Utilities.setTextFieldBorderBelow(forTextField: userNameTxtField)
+        Utilities.setTextFieldBorderBelow(forTextField: passwordTxtField,color: UIColor.gray)
+        Utilities.setTextFieldBorderBelow(forTextField: userNameTxtField,color: UIColor.gray)
+        SignInButton.layer.cornerRadius = 3.0
+        
+        passwordTxtField.setLeftPaddingPoints(10)
+        userNameTxtField.setLeftPaddingPoints(10)
     }
 
     @IBAction func signInButtonClicked(_ sender: Any) {
@@ -98,7 +111,7 @@ class SigninViewController: UIViewController {
 //        }
 //        
 //        
-
+     
         
         
         
@@ -110,6 +123,25 @@ class SigninViewController: UIViewController {
         self.SignInButton.isEnabled  = true
     }
    
+    func createRememberMeCheckBox()
+    {
+        rememberMeCheckBox = CheckBox(delegate: self)
+        rememberMeCheckBox.frame = CGRect(x: 0, y: 5, width: 160, height: 30)
+        rememberMeCheckBox.setTitle("Remember me", for: UIControlState.normal)
+        viewRememberMe.addSubview(rememberMeCheckBox)
+        
+        if UserDefaults.standard.object(forKey: "RememberMe") != nil{
+            if UserDefaults.standard.object(forKey: "RememberMe") as! String == "Yes"{
+                rememberMeCheckBox.checked = true
+                userNameTxtField.text = UserDefaults.standard.object(forKey: "Username") as! String?
+                passwordTxtField.text = UserDefaults.standard.object(forKey: "Password") as! String?
+            }else{
+                rememberMeCheckBox.checked = false
+            }
+        }
+    }
+    
+    
     @IBAction func exitAction(_ sender: AnyObject) {
         self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
@@ -119,15 +151,88 @@ class SigninViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // MARK: - TextField Delegate Methods
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return false
     }
-    */
+    
+   
+    func registerForKeyboardNotifications(){
+        //Adding notifies on keyboard appearing
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWasShown(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillBeHidden(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+    }
+    
+    func deregisterFromKeyboardNotifications(){
+        //Removing notifies on keyboard appearing
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+    }
+    
+    func keyboardWasShown(notification: NSNotification){
+        //Need to calculate keyboard exact size due to Apple suggestions
+        self.scrollView.isScrollEnabled = true
+        var info = notification.userInfo!
+        let keyboardSize = (info[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue.size
+        let contentInsets : UIEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, keyboardSize!.height, 0.0)
+        
+        self.scrollView.contentInset = contentInsets
+        self.scrollView.scrollIndicatorInsets = contentInsets
+        
+        var aRect : CGRect = self.view.frame
+        aRect.size.height -= keyboardSize!.height
+        if let activeField = self.activeField {
+            if (!aRect.contains(activeField.frame.origin)){
+                self.scrollView.scrollRectToVisible(activeField.frame, animated: true)
+            }
+        }
+    }
+    
+    func keyboardWillBeHidden(notification: NSNotification){
+        
+        let contentInsets : UIEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 0.0)
+        self.scrollView.contentInset = contentInsets
+        self.scrollView.scrollIndicatorInsets = contentInsets
+        
+    }
+    func textFieldDidBeginEditing(_ textField: UITextField){
+       // Utilities.setTextFieldCornerRadius(forTextField: textField, withRadius: 3.0, withBorderColor: UIColor.blue)
+       // Utilities.setTextFieldBorderBelow(forTextField: textField,color: UIColor.blue)
+       
+        
+        activeField = textField
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField){
+        //Utilities.setTextFieldCornerRadius(forTextField: textField, withRadius: 3.0, withBorderColor: UIColor.gray)
+       //  Utilities.setTextFieldBorderBelow(forTextField: textField,color: UIColor.gray)
+        activeField = nil
+    }
+  
+
+      // MARK: CheckBox Delegate Method
+    func didSelectedCheckBox(_ checkbox: CheckBox!, checked: Bool) {
+        
+        if(checkbox == rememberMeCheckBox){
+            if(checked){
+                UserDefaults.standard.set("Yes", forKey: "RememberMe")
+            }else{
+                UserDefaults.standard.set("No", forKey: "RememberMe")
+            }
+        }
+    }
+    
+    /*
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+
 
 }
