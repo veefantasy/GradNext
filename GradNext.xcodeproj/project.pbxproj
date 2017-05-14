@@ -19,6 +19,7 @@
 		4D1EA0A61EC73439007AA187 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1EA0A51EC73439007AA187 /* UIApplication.swift */; };
 		4D1EA0A81EC73754007AA187 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1EA0A71EC73754007AA187 /* UIViewController.swift */; };
 		4D42EE721EBF787C00675DFC /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D42EE711EBF787C00675DFC /* Reachability.m */; };
+		4D52737D1EC8AD4100F127A0 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D52737C1EC8AD4100F127A0 /* TableViewCell.swift */; };
 		E8618AE282A8F319FDBBBA83 /* Pods_GradNext.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2674BB98347D00F71EE15AF6 /* Pods_GradNext.framework */; };
 		F24E74321EC867ED0061826F /* DLRadioButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F24E74311EC867ED0061826F /* DLRadioButton.m */; };
 		F24E743A1EC88DF90061826F /* CompanyAddUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24E74391EC88DF90061826F /* CompanyAddUserViewController.swift */; };
@@ -51,6 +52,7 @@
 		4D1EA0A71EC73754007AA187 /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		4D42EE701EBF787C00675DFC /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		4D42EE711EBF787C00675DFC /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		4D52737C1EC8AD4100F127A0 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		E26B4850DD196B5A01EDB370 /* Pods-GradNext.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GradNext.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GradNext/Pods-GradNext.debug.xcconfig"; sourceTree = "<group>"; };
 		F1BCD2D0435A995256118447 /* Pods-GradNext.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GradNext.release.xcconfig"; path = "Pods/Target Support Files/Pods-GradNext/Pods-GradNext.release.xcconfig"; sourceTree = "<group>"; };
 		F24E74301EC867ED0061826F /* DLRadioButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLRadioButton.h; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				4D1EA09A1EC7322D007AA187 /* HomeViewController.swift */,
 				4D1EA09E1EC73272007AA187 /* LeftViewController.swift */,
 				4D1EA0A01EC7327A007AA187 /* RightViewController.swift */,
+				4D52737C1EC8AD4100F127A0 /* TableViewCell.swift */,
 				4D1EA0A71EC73754007AA187 /* UIViewController.swift */,
 				4D1EA0A21EC733E5007AA187 /* SlideMenuController.swift */,
 				4D1EA0A41EC73416007AA187 /* SlideMenuControllerSwift.h */,
@@ -326,7 +329,7 @@
 				TargetAttributes = {
 					140A35C61D096A7D00D89FD8 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = VS7R82J633;
+						DevelopmentTeam = 46AAQHF37A;
 						LastSwiftMigration = 0820;
 					};
 				};
@@ -427,6 +430,7 @@
 				4D1EA09B1EC7322D007AA187 /* HomeViewController.swift in Sources */,
 				F2DCEEC11EAD100A00D996BC /* Utilities.swift in Sources */,
 				4D1EA0A31EC733E5007AA187 /* SlideMenuController.swift in Sources */,
+				4D52737D1EC8AD4100F127A0 /* TableViewCell.swift in Sources */,
 				F24E74321EC867ED0061826F /* DLRadioButton.m in Sources */,
 				F2DCEEBE1EAD0FE300D996BC /* SigninViewController.swift in Sources */,
 				4D42EE721EBF787C00675DFC /* Reachability.m in Sources */,
@@ -499,7 +503,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -540,7 +544,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -554,7 +558,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = VS7R82J633;
+				DEVELOPMENT_TEAM = 46AAQHF37A;
 				INFOPLIST_FILE = GradNext/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -572,7 +576,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = VS7R82J633;
+				DEVELOPMENT_TEAM = 46AAQHF37A;
 				INFOPLIST_FILE = GradNext/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

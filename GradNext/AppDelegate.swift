@@ -46,9 +46,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         tabBar.viewControllers  = [nvc,channel]
         UITabBar.appearance().tintColor = Utilities.UIColorFromRGB(rgbValue: 0x39B7ED)
-        UITabBar.appearance().selectedImageTintColor = Utilities.UIColorFromRGB(rgbValue: 0xe8392c)
+        UITabBar.appearance().selectedImageTintColor = Utilities.UIColorFromRGB(rgbValue: 0x242424)
         
-        UINavigationBar.appearance().tintColor = Utilities.UIColorFromRGB(rgbValue: 0xe8392c)
+        UINavigationBar.appearance().tintColor = Utilities.UIColorFromRGB(rgbValue: 0x242424)
         
         let slideMenuController = SlideMenuController(mainViewController: tabBar, leftMenuViewController: leftViewController, rightMenuViewController: rightViewController)
         

@@ -13,6 +13,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.title = "GradNext"
         self.setNavigationBarItem(controllerName: "Home")
 
         // Do any additional setup after loading the view.
