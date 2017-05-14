@@ -1,5 +1,5 @@
 //
-//  CandidateFilterViewController.swift
+//  CompanyAddUserViewController.swift
 //  GradNext
 //
 //  Created by Aravind on 5/14/17.
@@ -8,50 +8,43 @@
 
 import UIKit
 
-class CandidateFilterViewController: UIViewController,UITextFieldDelegate {
-    @IBOutlet weak var txtKeywords: UITextField!
-    @IBOutlet weak var btnReset: UIButton!
-    @IBOutlet weak var btnFilter: UIButton!
-    @IBOutlet weak var txtSkills: UITextField!
-    
-    @IBOutlet weak var btnApply: UIButton!
-    
-    var activeField: UITextField?
+class CompanyAddUserViewController: UIViewController ,UITextFieldDelegate {
+
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var btnSubmit: UIButton!
+    @IBOutlet weak var txtMobileNumber: UITextField!
+    @IBOutlet weak var txtEmailId: UITextField!
+    @IBOutlet weak var txtLastName: UITextField!
+    @IBOutlet weak var txtFirstName: UITextField!
+     var activeField: UITextField?
     override func viewDidLoad() {
         super.viewDidLoad()
-       
-        
+
         // Do any additional setup after loading the view.
     }
-    
-    override func viewDidLayoutSubviews()
-    {
-       
-    }
-    
+
     override func viewWillAppear(_ animated: Bool) {
-       customControls()
-       registerForKeyboardNotifications()
+        
+      registerForKeyboardNotifications()
     }
+    
     override func viewWillDisappear(_ animated: Bool) {
         deregisterFromKeyboardNotifications()
         
     }
-
+    override func viewDidLayoutSubviews()
+    {
+          customControls()
+    }
+    
     func customControls() {
         
-        Utilities.setTextFieldCornerRadius(forTextField: txtKeywords, withRadius: 3.0, withBorderColor:  UIColor.gray)
-        Utilities.setTextFieldCornerRadius(forTextField: txtSkills, withRadius: 3.0, withBorderColor:  UIColor.gray)
+        btnSubmit.layer.cornerRadius = 3
         
-        Utilities.setButtonCornerRadius(button: btnFilter, withRadius: 3.0, withBorderColor: UIColor.gray)
-        
-        txtSkills.setLeftPaddingPoints(10)
-        txtKeywords.setLeftPaddingPoints(10)
-        
-        btnApply.layer.cornerRadius = 3.0
-        btnReset.layer.cornerRadius = 3.0
-        
+        Utilities.setTextFieldBorderBelow(forTextField: txtMobileNumber,color: UIColor.gray)
+        Utilities.setTextFieldBorderBelow(forTextField: txtEmailId,color: UIColor.gray)
+        Utilities.setTextFieldBorderBelow(forTextField: txtLastName,color: UIColor.gray)
+        Utilities.setTextFieldBorderBelow(forTextField: txtFirstName,color: UIColor.gray)
     }
     
     override func didReceiveMemoryWarning() {
@@ -59,14 +52,11 @@ class CandidateFilterViewController: UIViewController,UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+
+    @IBAction func submitButtonClicked(_ sender: Any) {
+    }
     @IBAction func closeButtonClicked(_ sender: Any) {
-        self.presentingViewController?.dismiss(animated: true, completion: nil)
-    }
-  
-    @IBAction func applyButtonClicked(_ sender: Any) {
-    }
-   
-    @IBAction func resetButtonClicked(_ sender: Any) {
+         self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
     
     // MARK: - TextField Delegate Methods
@@ -116,7 +106,7 @@ class CandidateFilterViewController: UIViewController,UITextFieldDelegate {
         
     }
     func textFieldDidBeginEditing(_ textField: UITextField){
-         Utilities.setTextFieldCornerRadius(forTextField: textField, withRadius: 3.0, withBorderColor: UIColor.blue)
+       // Utilities.setTextFieldCornerRadius(forTextField: textField, withRadius: 3.0, withBorderColor: UIColor.blue)
         // Utilities.setTextFieldBorderBelow(forTextField: textField,color: UIColor.blue)
         
         
@@ -124,12 +114,11 @@ class CandidateFilterViewController: UIViewController,UITextFieldDelegate {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField){
-        Utilities.setTextFieldCornerRadius(forTextField: textField, withRadius: 3.0, withBorderColor: UIColor.gray)
+      //  Utilities.setTextFieldCornerRadius(forTextField: textField, withRadius: 3.0, withBorderColor: UIColor.gray)
         //Utilities.setTextFieldBorderBelow(forTextField: textField,color: UIColor.gray)
         activeField = nil
     }
     
-   
     /*
     // MARK: - Navigation
 

@@ -48,6 +48,9 @@ class SigninViewController: UIViewController ,UITextFieldDelegate{
         Utilities.setTextFieldBorderBelow(forTextField: passwordTxtField,color: UIColor.gray)
         Utilities.setTextFieldBorderBelow(forTextField: userNameTxtField,color: UIColor.gray)
         SignInButton.layer.cornerRadius = 3.0
+        
+        passwordTxtField.setLeftPaddingPoints(10)
+        userNameTxtField.setLeftPaddingPoints(10)
     }
 
     @IBAction func signInButtonClicked(_ sender: Any) {
@@ -113,7 +116,7 @@ class SigninViewController: UIViewController ,UITextFieldDelegate{
         
         
         
-        self.performSegue(withIdentifier: "candidateFilter", sender: nil)
+        self.performSegue(withIdentifier: "loginToCandidateProfile", sender: nil)
     }
     func methodOfReceivedNotification(notification: NSNotification){
         //Take Action on Notification

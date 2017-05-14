@@ -21,11 +21,7 @@ extension UITextField {
         self.rightView = paddingView
         self.rightViewMode = .always
     }
-    func setBottomPaddingPoints(_ amount:CGFloat) {
-        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: amount, height: self.frame.size.height))
-        self.rightView = paddingView
-        self.rightViewMode = .always
-    }
+    
 }
 extension UIScrollView {
     func scrollToTop() {

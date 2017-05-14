@@ -24,7 +24,7 @@
         
         self.exclusiveTouch = YES;
         [self setImage:[UIImage imageNamed:@"circle"] forState:UIControlStateNormal];
-        [self setImage:[UIImage imageNamed:@"checked"] forState:UIControlStateSelected];
+        [self setImage:[UIImage imageNamed:@"chkd"] forState:UIControlStateSelected];
         [self addTarget:self action:@selector(checkboxBtnChecked) forControlEvents:UIControlEventTouchUpInside];
         [self setTitleColor:[UIColor grayColor]  forState:UIControlStateNormal];
         [self.titleLabel setFont:[UIFont fontWithName:@"HelveticaNeue" size:16]];

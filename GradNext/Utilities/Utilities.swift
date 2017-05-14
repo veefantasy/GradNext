@@ -25,6 +25,13 @@ class Utilities: NSObject {
         forTextField.layer.borderWidth = 1.0
         forTextField.layer.borderColor = withBorderColor.cgColor
     }
+    class func setButtonCornerRadius(button:UIButton,withRadius : Float,withBorderColor:UIColor) {
+        
+        button.layer.cornerRadius = CGFloat(withRadius)
+        button.layer.borderWidth = 1.0
+        button.layer.borderColor = withBorderColor.cgColor
+    }
+    
     class func isValidEmail(testStr:String) -> Bool {
         // print("validate calendar: \(testStr)")
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
@@ -56,5 +63,7 @@ class Utilities: NSObject {
         )
     }
 
+    
+    
     
 }

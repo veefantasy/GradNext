@@ -21,6 +21,7 @@
 		4D42EE721EBF787C00675DFC /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D42EE711EBF787C00675DFC /* Reachability.m */; };
 		E8618AE282A8F319FDBBBA83 /* Pods_GradNext.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2674BB98347D00F71EE15AF6 /* Pods_GradNext.framework */; };
 		F24E74321EC867ED0061826F /* DLRadioButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F24E74311EC867ED0061826F /* DLRadioButton.m */; };
+		F24E743A1EC88DF90061826F /* CompanyAddUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24E74391EC88DF90061826F /* CompanyAddUserViewController.swift */; };
 		F26476131EBCA0C20069C041 /* CandidateProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26476121EBCA0C20069C041 /* CandidateProfileViewController.swift */; };
 		F26C73411EC850F5001F9641 /* CheckBox.m in Sources */ = {isa = PBXBuildFile; fileRef = F26C73401EC850F5001F9641 /* CheckBox.m */; };
 		F28F35C71EC8442100E38053 /* CandidateFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28F35C61EC8442100E38053 /* CandidateFilterViewController.swift */; };
@@ -55,6 +56,7 @@
 		F24E74301EC867ED0061826F /* DLRadioButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLRadioButton.h; sourceTree = "<group>"; };
 		F24E74311EC867ED0061826F /* DLRadioButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLRadioButton.m; sourceTree = "<group>"; };
 		F24E74331EC86BA70061826F /* GradNex-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GradNex-Bridging-Header.h"; sourceTree = "<group>"; };
+		F24E74391EC88DF90061826F /* CompanyAddUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompanyAddUserViewController.swift; sourceTree = "<group>"; };
 		F26476121EBCA0C20069C041 /* CandidateProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CandidateProfileViewController.swift; sourceTree = "<group>"; };
 		F26C733F1EC850F5001F9641 /* CheckBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckBox.h; sourceTree = "<group>"; };
 		F26C73401EC850F5001F9641 /* CheckBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckBox.m; sourceTree = "<group>"; };
@@ -144,6 +146,50 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F24E74341EC86C110061826F /* CheckBox */ = {
+			isa = PBXGroup;
+			children = (
+				F26C733F1EC850F5001F9641 /* CheckBox.h */,
+				F26C73401EC850F5001F9641 /* CheckBox.m */,
+			);
+			name = CheckBox;
+			sourceTree = "<group>";
+		};
+		F24E74351EC86C290061826F /* RadioButton */ = {
+			isa = PBXGroup;
+			children = (
+				F24E74301EC867ED0061826F /* DLRadioButton.h */,
+				F24E74311EC867ED0061826F /* DLRadioButton.m */,
+			);
+			name = RadioButton;
+			sourceTree = "<group>";
+		};
+		F24E74361EC88DB40061826F /* Company */ = {
+			isa = PBXGroup;
+			children = (
+				F24E74381EC88DE50061826F /* CompanyAddUser */,
+				F2ECB5771EBB86F800C4B2E9 /* CompanyProfile */,
+			);
+			name = Company;
+			sourceTree = "<group>";
+		};
+		F24E74371EC88DBE0061826F /* Candidate */ = {
+			isa = PBXGroup;
+			children = (
+				F28F35C51EC8440900E38053 /* CandidateFilter */,
+				F26476111EBC915D0069C041 /* CandidateProfile */,
+			);
+			name = Candidate;
+			sourceTree = "<group>";
+		};
+		F24E74381EC88DE50061826F /* CompanyAddUser */ = {
+			isa = PBXGroup;
+			children = (
+				F24E74391EC88DF90061826F /* CompanyAddUserViewController.swift */,
+			);
+			path = CompanyAddUser;
+			sourceTree = "<group>";
+		};
 		F26476111EBC915D0069C041 /* CandidateProfile */ = {
 			isa = PBXGroup;
 			children = (
@@ -163,10 +209,8 @@
 		F2DCEEAC1EAD0EBE00D996BC /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				F24E74301EC867ED0061826F /* DLRadioButton.h */,
-				F24E74311EC867ED0061826F /* DLRadioButton.m */,
-				F26C733F1EC850F5001F9641 /* CheckBox.h */,
-				F26C73401EC850F5001F9641 /* CheckBox.m */,
+				F24E74351EC86C290061826F /* RadioButton */,
+				F24E74341EC86C110061826F /* CheckBox */,
 				F2DCEEC01EAD100A00D996BC /* Utilities.swift */,
 				F290E1D01EBBA41F008D35A2 /* Extensions.swift */,
 			);
@@ -176,9 +220,8 @@
 		F2DCEEAE1EAD0F0000D996BC /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				F28F35C51EC8440900E38053 /* CandidateFilter */,
-				F26476111EBC915D0069C041 /* CandidateProfile */,
-				F2ECB5771EBB86F800C4B2E9 /* CompanyProfile */,
+				F24E74371EC88DBE0061826F /* Candidate */,
+				F24E74361EC88DB40061826F /* Company */,
 				F2ECB5741EBB86E400C4B2E9 /* SignUp */,
 				F2DCEEB71EAD0FE300D996BC /* Home */,
 				F2DCEEB91EAD0FE300D996BC /* SignIn */,
@@ -391,6 +434,7 @@
 				F290E1D11EBBA41F008D35A2 /* Extensions.swift in Sources */,
 				4D1EA0A81EC73754007AA187 /* UIViewController.swift in Sources */,
 				4D1EA09D1EC73243007AA187 /* ApplicationViewController.swift in Sources */,
+				F24E743A1EC88DF90061826F /* CompanyAddUserViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
