@@ -20,6 +20,7 @@
 		4D1EA0A81EC73754007AA187 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1EA0A71EC73754007AA187 /* UIViewController.swift */; };
 		4D42EE721EBF787C00675DFC /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D42EE711EBF787C00675DFC /* Reachability.m */; };
 		4D52737D1EC8AD4100F127A0 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D52737C1EC8AD4100F127A0 /* TableViewCell.swift */; };
+		4D5273811EC8CF1F00F127A0 /* UserShortListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5273801EC8CF1F00F127A0 /* UserShortListViewController.swift */; };
 		E8618AE282A8F319FDBBBA83 /* Pods_GradNext.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2674BB98347D00F71EE15AF6 /* Pods_GradNext.framework */; };
 		F24E74321EC867ED0061826F /* DLRadioButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F24E74311EC867ED0061826F /* DLRadioButton.m */; };
 		F24E743A1EC88DF90061826F /* CompanyAddUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24E74391EC88DF90061826F /* CompanyAddUserViewController.swift */; };
@@ -54,6 +55,7 @@
 		4D42EE701EBF787C00675DFC /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		4D42EE711EBF787C00675DFC /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		4D52737C1EC8AD4100F127A0 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		4D5273801EC8CF1F00F127A0 /* UserShortListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserShortListViewController.swift; sourceTree = "<group>"; };
 		E26B4850DD196B5A01EDB370 /* Pods-GradNext.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GradNext.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GradNext/Pods-GradNext.debug.xcconfig"; sourceTree = "<group>"; };
 		F1BCD2D0435A995256118447 /* Pods-GradNext.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GradNext.release.xcconfig"; path = "Pods/Target Support Files/Pods-GradNext/Pods-GradNext.release.xcconfig"; sourceTree = "<group>"; };
 		F24E74301EC867ED0061826F /* DLRadioButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLRadioButton.h; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				4D42EE711EBF787C00675DFC /* Reachability.m */,
 				4D1EA09A1EC7322D007AA187 /* HomeViewController.swift */,
 				4D1EA09E1EC73272007AA187 /* LeftViewController.swift */,
+				4D5273801EC8CF1F00F127A0 /* UserShortListViewController.swift */,
 				4D1EA0A01EC7327A007AA187 /* RightViewController.swift */,
 				4D52737C1EC8AD4100F127A0 /* TableViewCell.swift */,
 				4D1EA0A71EC73754007AA187 /* UIViewController.swift */,
@@ -433,6 +436,7 @@
 				F2ECB5791EBB870D00C4B2E9 /* CompanyProfileViewController.swift in Sources */,
 				F2DCEEBD1EAD0FE300D996BC /* LandingViewController.swift in Sources */,
 				F28F35C71EC8442100E38053 /* CandidateFilterViewController.swift in Sources */,
+				4D5273811EC8CF1F00F127A0 /* UserShortListViewController.swift in Sources */,
 				4D1EA0A11EC7327A007AA187 /* RightViewController.swift in Sources */,
 				4D1EA0A61EC73439007AA187 /* UIApplication.swift in Sources */,
 				F2ECB5761EBB86E400C4B2E9 /* JoinNowViewController.swift in Sources */,

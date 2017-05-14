@@ -1147,6 +1147,24 @@
             </objects>
             <point key="canvasLocation" x="2520.8000000000002" y="31.03448275862069"/>
         </scene>
+        <!--User Short List View Controller-->
+        <scene sceneID="adp-pm-i0O">
+            <objects>
+                <viewController storyboardIdentifier="userlistViewController" id="ytA-28-vEA" customClass="UserShortListViewController" customModule="GradNext" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="UAS-KN-1MK"/>
+                        <viewControllerLayoutGuide type="bottom" id="8QE-ls-eOT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nDT-40-qag">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S9y-q9-pU8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2650" y="532"/>
+        </scene>
         <!--Right View Controller-->
         <scene sceneID="KiR-Ko-NNa">
             <objects>

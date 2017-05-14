@@ -32,19 +32,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         nvc.viewControllers = [mainViewController]
         
         
-        let channelViewController = storyboard.instantiateViewController(withIdentifier: "ApplicationViewController") as! ApplicationViewController
+        let applicationViewController = storyboard.instantiateViewController(withIdentifier: "ApplicationViewController") as! ApplicationViewController
         let channel: UINavigationController = UINavigationController()
-        channel.viewControllers = [channelViewController]
+        channel.viewControllers = [applicationViewController]
+        
+        let userlistViewController = storyboard.instantiateViewController(withIdentifier: "userlistViewController") as! UserShortListViewController
+        let shortList: UINavigationController = UINavigationController()
+        channel.viewControllers = [userlistViewController]
      
         
         let tabBar :UITabBarController = UITabBarController()
         
         nvc.tabBarItem = UITabBarItem(title: "Home", image: UIImage(named:"Home_Tab"), selectedImage: UIImage(named:"Home_TabSelected"))
         
-        channel.tabBarItem = UITabBarItem(title: "Applications", image: UIImage(named:""), selectedImage: UIImage(named:""))
+        channel.tabBarItem = UITabBarItem(title: "My Applications", image: UIImage(named:""), selectedImage: UIImage(named:""))
         
         
-        tabBar.viewControllers  = [nvc,channel]
+        shortList.tabBarItem = UITabBarItem(title: "My Shortlist", image: UIImage(named:""), selectedImage: UIImage(named:""))
+
+        
+        tabBar.viewControllers  = [nvc,channel,shortList]
         UITabBar.appearance().tintColor = Utilities.UIColorFromRGB(rgbValue: 0x39B7ED)
         UITabBar.appearance().selectedImageTintColor = Utilities.UIColorFromRGB(rgbValue: 0x242424)
         

@@ -1,22 +1,20 @@
 //
-//  HomeViewController.swift
+//  UserShortListViewController.swift
 //  GradNext
 //
-//  Created by Muthu Kumar M on 5/13/17.
+//  Created by Muthu Kumar M on 5/14/17.
 //  Copyright © 2017 swathi. All rights reserved.
 //
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class UserShortListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.title = "Search"
-        self.navigationController?.navigationBar.topItem?.title = "GradNext";
 
-        self.setNavigationBarItem(controllerName: "Home")
+        self.navigationController?.navigationBar.topItem?.title = "My Shortlist";
+        self.setNavigationBarItem(controllerName: "Application")
 
         // Do any additional setup after loading the view.
     }
