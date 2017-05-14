@@ -9,10 +9,10 @@
 import UIKit
 
 class Utilities: NSObject {
-    class func setTextFieldBorderBelow(forTextField textField : UITextField) {
+    class func setTextFieldBorderBelow(forTextField textField : UITextField,color: UIColor) {
         let borderWidth     = CGFloat(2.0)
         let border          = CALayer()
-        border.borderColor  = UIColor.white.cgColor
+        border.borderColor  = color.cgColor
         border.borderWidth  = borderWidth
         border.frame        = CGRect(x: 0, y: textField.frame.size.height - borderWidth, width: textField.frame.size.width, height: borderWidth)
         textField.layer.addSublayer(border)
