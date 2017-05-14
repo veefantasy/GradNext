@@ -25,6 +25,13 @@ class Utilities: NSObject {
         forTextField.layer.borderWidth = 1.0
         forTextField.layer.borderColor = withBorderColor.cgColor
     }
+    
+    class func setTextViewCornerRadius(forTextView : UITextView,withRadius : Float, withBorderColor : UIColor) {
+        forTextView.layer.cornerRadius = CGFloat(withRadius)
+        forTextView.layer.borderWidth = 1.0
+        forTextView.layer.borderColor = withBorderColor.cgColor
+    }
+    
     class func setButtonCornerRadius(button:UIButton,withRadius : Float,withBorderColor:UIColor) {
         
         button.layer.cornerRadius = CGFloat(withRadius)

@@ -116,7 +116,7 @@ class SigninViewController: UIViewController ,UITextFieldDelegate{
         
         
         
-        self.performSegue(withIdentifier: "loginToCandidateProfile", sender: nil)
+        self.performSegue(withIdentifier: "postJob", sender: nil)
     }
     func methodOfReceivedNotification(notification: NSNotification){
         //Take Action on Notification
