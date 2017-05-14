@@ -54,6 +54,7 @@
 		F1BCD2D0435A995256118447 /* Pods-GradNext.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GradNext.release.xcconfig"; path = "Pods/Target Support Files/Pods-GradNext/Pods-GradNext.release.xcconfig"; sourceTree = "<group>"; };
 		F24E74301EC867ED0061826F /* DLRadioButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLRadioButton.h; sourceTree = "<group>"; };
 		F24E74311EC867ED0061826F /* DLRadioButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLRadioButton.m; sourceTree = "<group>"; };
+		F24E74331EC86BA70061826F /* GradNex-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GradNex-Bridging-Header.h"; sourceTree = "<group>"; };
 		F26476121EBCA0C20069C041 /* CandidateProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CandidateProfileViewController.swift; sourceTree = "<group>"; };
 		F26C733F1EC850F5001F9641 /* CheckBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckBox.h; sourceTree = "<group>"; };
 		F26C73401EC850F5001F9641 /* CheckBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckBox.m; sourceTree = "<group>"; };
@@ -210,6 +211,7 @@
 		F2DCEEB91EAD0FE300D996BC /* SignIn */ = {
 			isa = PBXGroup;
 			children = (
+				F24E74331EC86BA70061826F /* GradNex-Bridging-Header.h */,
 				F2DCEEBA1EAD0FE300D996BC /* SigninViewController.swift */,
 			);
 			path = SignIn;
