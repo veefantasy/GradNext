@@ -11,6 +11,9 @@ import UIKit
 class LeftViewController: UIViewController {
 
     var menus = ["Company Profile","Messages","Manage Subscription","Notificaitons","Settings","Logout"]
+    
+    var menusImage = ["","message","message","notification","settings","logout"]
+
     @IBOutlet weak var leftTableView: UITableView!
 
     
@@ -89,14 +92,13 @@ extension LeftViewController : UITableViewDataSource {
         else
         {
             let cell = tableView.dequeueReusableCell(withIdentifier: "MenuCell", for: indexPath) as! TableViewCell
-            cell.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
             cell.textLabel?.font = UIFont(name: "HelveticaNeue", size: 16)
-            cell.textLabel?.text = menus[indexPath.row]
-            cell.textLabel?.textColor =  UIColor.white
+            cell.menuLabel?.text = menus[indexPath.row]
+            cell.menuLabel?.textColor =  UIColor.white
 
-            cell.imageView?.image = UIImage(named: "LeftIcon")
-            cell.imageView?.layer.masksToBounds = true
-            cell.imageView?.layer.cornerRadius = 20
+//            cell.iconImageView.image = UIImage(named: menusImage[indexPath.row])
+            cell.iconImageView?.layer.masksToBounds = true
+            cell.iconImageView?.layer.cornerRadius = 20
             cell.backgroundColor = Utilities.UIColorFromRGB(rgbValue: 0x242424)
 
             return cell
