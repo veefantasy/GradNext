@@ -12,7 +12,7 @@ class LeftViewController: UIViewController {
 
     var menus = ["Company Profile","Messages","Manage Subscription","Notificaitons","Settings","Logout"]
     
-    var menusImage = ["","message","message","notification","settings","logout"]
+    var menusImage = ["","menu_candidateprofile","menu_message","menu_notification","menu_settings","menu_logout"]
 
     @IBOutlet weak var leftTableView: UITableView!
 
@@ -96,7 +96,7 @@ extension LeftViewController : UITableViewDataSource {
             cell.menuLabel?.text = menus[indexPath.row]
             cell.menuLabel?.textColor =  UIColor.white
 
-//            cell.iconImageView.image = UIImage(named: menusImage[indexPath.row])
+           cell.iconImageView.image = UIImage(named: menusImage[indexPath.row])
             cell.iconImageView?.layer.masksToBounds = true
             cell.iconImageView?.layer.cornerRadius = 20
             cell.backgroundColor = Utilities.UIColorFromRGB(rgbValue: 0x242424)

@@ -22,17 +22,12 @@ class HomeViewController: UIViewController,UIScrollViewDelegate {
     }
     else{
         
-        
-        
-        
-        RightButton.backgroundColor = Utilities.UIColorFromRGB(rgbValue: 0xf5f5f5)
+                RightButton.backgroundColor = Utilities.UIColorFromRGB(rgbValue: 0xf5f5f5)
         RightButton.setTitleColor(Utilities.UIColorFromRGB(rgbValue: 0x800000), for: .normal)
         
         leftButton.backgroundColor = Utilities.UIColorFromRGB(rgbValue: 0xe33936)
         leftButton.setTitleColor(Utilities.UIColorFromRGB(rgbValue: 0xf5f5f5), for: .normal)
-        
-        
-        
+            
         }
         
             scrollView.setContentOffset(CGPoint(x: self.view.frame.size.width * CGFloat((sender as AnyObject).tag), y: 0), animated: true)

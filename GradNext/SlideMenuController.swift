@@ -1044,12 +1044,24 @@ extension UIViewController {
     
     public func addLeftBarButtonWithImage(_ buttonImage: UIImage) {
         let leftButton: UIBarButtonItem = UIBarButtonItem(image: buttonImage, style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.toggleLeft))
-        navigationItem.leftBarButtonItem = leftButton
+      
+          let leftButton1: UIBarButtonItem = UIBarButtonItem(image: UIImage(named:"message"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.toggleLeft))
+        navigationItem.leftBarButtonItems = [leftButton,leftButton1]
+
     }
     
     public func addRightBarButtonWithImage(_ buttonImage: UIImage) {
         let rightButton: UIBarButtonItem = UIBarButtonItem(image: buttonImage, style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.toggleRight))
-        navigationItem.rightBarButtonItem = rightButton
+        
+        
+        let rightButton1: UIBarButtonItem = UIBarButtonItem(image: UIImage(named:"filter"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.toggleRight))
+        
+        
+        navigationItem.rightBarButtonItems = [rightButton,rightButton1]
+//        navigationItem.rightBarButtonItem = rightButton
+        
+        
+        
     }
     
     //self.addRightBarButtonWithTwoImage(UIImage(named: "ic_menu_black_24dp")!, _HomeImage: UIImage(named: "home")!)
