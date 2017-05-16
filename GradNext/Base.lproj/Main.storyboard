@@ -1711,7 +1711,6 @@
                                                         </state>
                                                         <connections>
                                                             <action selector="closeButtonClicked:" destination="gCP-J7-Fd6" eventType="touchUpInside" id="oXU-oO-YEC"/>
-                                                            <action selector="exitAction:" destination="5Zd-ik-UdO" eventType="touchUpInside" id="WrB-mj-BDo"/>
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Post Job" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0vf-La-2i3">

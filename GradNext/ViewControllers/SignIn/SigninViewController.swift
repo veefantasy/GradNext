@@ -55,68 +55,103 @@ class SigninViewController: UIViewController ,UITextFieldDelegate{
 
     @IBAction func signInButtonClicked(_ sender: Any) {
         
-//        
-//        var messageString = "";
-//        var value  = false
-//        
-//        if(userNameTxtField.text == "")
-//        {
-//            messageString = "Please enter your first Name"
-//            SignInButton.isEnabled  = value
-//            AlertBar.show(.info, message: messageString)
+       
+       var messageString = "";
+       var value  = false
+       
+        
+      print(["EmailId":userNameTxtField.text!,"PasswordDesc": passwordTxtField.text!])
+        
+       if(userNameTxtField.text == "")
+       {
+           messageString = "Please enter your first Name"
+           SignInButton.isEnabled  = value
+           AlertBar.show(.info, message: messageString)
+           
+           userNameTxtField.becomeFirstResponder()
+       }
+       else if(passwordTxtField.text == "")
+       {
+           messageString = "Please enter your last Name "
+           SignInButton.isEnabled  = value
+           AlertBar.show(.info, message: messageString)
+           passwordTxtField.becomeFirstResponder()
+       }
+       else
+       {
+        
+        //http://service.gradnext.com/swagger/ui/index#!/User/User_SignInUser
+           if(Utilities.hasConnectivity())
+           {
+               self.view.showLoader()
+            
+//            // Step : 1
+//            var manager = Ala.sharedInstance
 //            
-//            userNameTxtField.becomeFirstResponder()
-//        }
-//        else if(passwordTxtField.text == "")
-//        {
-//            messageString = "Please enter your last Name "
-//            SignInButton.isEnabled  = value
-//            AlertBar.show(.info, message: messageString)
-//            passwordTxtField.becomeFirstResponder()
-//        }
+//            // Specifying the Headers we need
+//            manager.session.configuration.HTTPAdditionalHeaders = [
+//                "Content-Type": "application/graphql",
+//                "Accept": "application/json" //Optional
+//            ]
 //            
-//            
-//        else
-//        {
-//            if(Utilities.hasConnectivity())
-//            {
-//                self.view.showLoader()
-//                
-//                Alamofire.request("http://service.gradnext.com/swagger/ui/index#!/User/User_SignInUser", method: .post, parameters: ["EmailId":userNameTxtField.text!,"PasswordDesc": passwordTxtField.text!,]).responseJSON{ (responseData) -> Void in
-//                    if((responseData.result.value) != nil) {
-//                        
-//                        self.view.hideLoader()
-//                    }
-//                    else
-//                    {
-//                        self.view.hideLoader()
-//                    }
-//                    value = true
-//                    self.userNameTxtField.text = "";
-//                    self.passwordTxtField.text = "";
-//                   
+//             Alamofire.request("http://service.gradnext.com/swagger/ui/index#!/User/User_SignInUser", method: .post, parameters: parameters, encoding: URLEncoding.default )
+            let headers = ["contentType": "application/json"]
+
+            
+            let parameters: [String: String] = ["EmailId":"veefantasy@gmail.com","PasswordDesc": "Test@123"]
+            
+        Alamofire.request("http://service.gradnext.com/swagger/ui/index#!/User/User_SignInUser", method: .post, parameters: parameters, encoding: URLEncoding.default, headers: headers).responseJSON { response in
+                switch response.result {
+                case .success:
+                    if let value = response.result.value {
+                        print(value)
+                    }
+                case .failure(let error):
+                    print(error)
+                }
+            }
+
+            
+            
+//               Alamofire.request("http://service.gradnext.com/swagger/ui/index#!/User/User_SignInUser", method: .post, parameters: parameters).responseJSON{ (responseData) -> Void in
+//                   if((responseData.result.value) != nil) {
 //                    
-//                    messageString = "Your message was sent successfully. Thanks."
-//                    self.view.endEditing(true)
-//                    self.SignInButton.isEnabled  = value
-//                    AlertBar.show(.info, message: messageString)
-//                }
-//            }
-//            else
-//            {
-//                alert(title: "No InternetConnection", message: "Internet connection appears to be offline", buttonTitle: "Ok")
-//                
-//                self.SignInButton.isEnabled  = true
-//            }
-//        }
-//        
-//        
-     
+//                    print(responseData.result.value!)
+//                       
+//                       self.view.hideLoader()
+//                   }
+//                   else
+//                   {
+//                       self.view.hideLoader()
+//                   }
+            
+
+                   value = true
+                   self.userNameTxtField.text = "";
+                   self.passwordTxtField.text = "";
+                  
+                   
+                   messageString = "Your message was sent successfully. Thanks."
+                   self.view.endEditing(true)
+                   self.SignInButton.isEnabled  = value
+                   AlertBar.show(.info, message: messageString)
+               }
+           
+           else
+           {
+               alert(title: "No InternetConnection", message: "Internet connection appears to be offline", buttonTitle: "Ok")
+               
+               self.SignInButton.isEnabled  = true
+           }
+       }
+       
+       
+  
         
         
         
         
-        self.performSegue(withIdentifier: "postJob", sender: nil)
+//        self.performSegue(withIdentifier: "postJob", sender: nil)
     }
     func methodOfReceivedNotification(notification: NSNotification){
         //Take Action on Notification
