@@ -16,7 +16,7 @@ class LeftViewController: UIViewController {
 
     @IBOutlet weak var leftTableView: UITableView!
 
-    
+    //Final
     override func viewDidLoad() {
         super.viewDidLoad()
 
