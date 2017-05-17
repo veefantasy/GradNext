@@ -79,52 +79,35 @@ class SigninViewController: UIViewController ,UITextFieldDelegate{
        }
        else
        {
-        
-        //http://service.gradnext.com/swagger/ui/index#!/User/User_SignInUser
            if(Utilities.hasConnectivity())
            {
-               self.view.showLoader()
             
-//            // Step : 1
-//            var manager = Ala.sharedInstance
-//            
-//            // Specifying the Headers we need
-//            manager.session.configuration.HTTPAdditionalHeaders = [
-//                "Content-Type": "application/graphql",
-//                "Accept": "application/json" //Optional
-//            ]
-//            
-//             Alamofire.request("http://service.gradnext.com/swagger/ui/index#!/User/User_SignInUser", method: .post, parameters: parameters, encoding: URLEncoding.default )
-            let headers = ["contentType": "application/json"]
-
             
-            let parameters: [String: String] = ["EmailId":"veefantasy@gmail.com","PasswordDesc": "Test@123"]
+            self.view.showLoader()
             
-        Alamofire.request("http://service.gradnext.com/swagger/ui/index#!/User/User_SignInUser", method: .post, parameters: parameters, encoding: URLEncoding.default, headers: headers).responseJSON { response in
-                switch response.result {
-                case .success:
-                    if let value = response.result.value {
-                        print(value)
-                    }
-                case .failure(let error):
-                    print(error)
-                }
+            let parameters: [String: String] = ["EmailId":userNameTxtField.text!,"PasswordDesc": passwordTxtField.text!]
+            let url = URL(string: "http://service.gradnext.com/api/User/SignInUser")!
+            var urlRequest = URLRequest(url: url)
+            urlRequest.httpMethod = "POST"
+            do {
+                urlRequest.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: [])
+            } catch {
             }
-
             
-            
-//               Alamofire.request("http://service.gradnext.com/swagger/ui/index#!/User/User_SignInUser", method: .post, parameters: parameters).responseJSON{ (responseData) -> Void in
-//                   if((responseData.result.value) != nil) {
-//                    
-//                    print(responseData.result.value!)
-//                       
-//                       self.view.hideLoader()
-//                   }
-//                   else
-//                   {
-//                       self.view.hideLoader()
-//                   }
-            
+            urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            Alamofire.request(urlRequest).responseJSON {
+                response in
+                            switch response.result {
+                            case .success:
+                                if let value = response.result.value {
+                                    print(value)
+                                }
+                            case .failure(let error):
+                                print(response.result.value!)
+                                print(error)
+            }
+       
+                 self.view.hideLoader()
 
                    value = true
                    self.userNameTxtField.text = "";
@@ -136,7 +119,7 @@ class SigninViewController: UIViewController ,UITextFieldDelegate{
                    self.SignInButton.isEnabled  = value
                    AlertBar.show(.info, message: messageString)
                }
-           
+           }
            else
            {
                alert(title: "No InternetConnection", message: "Internet connection appears to be offline", buttonTitle: "Ok")
