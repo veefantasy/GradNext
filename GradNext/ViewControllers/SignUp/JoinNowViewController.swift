@@ -21,6 +21,8 @@ class JoinNowViewController: UIViewController,UITextFieldDelegate {
     @IBOutlet weak var emailTxtField: UITextField!
     @IBOutlet weak var mobileTextField: UITextField!
     
+    var selectedValue = ""
+    
     @IBOutlet weak var scrollView: UIScrollView!
     var activeField: UITextField?
     override func viewDidLoad() {
@@ -127,32 +129,68 @@ class JoinNowViewController: UIViewController,UITextFieldDelegate {
             mobileTextField.becomeFirstResponder()
         }
             
+        else if(selectedValue == "")
+        {
+            
+            messageString = "Please Select Company or Candidate"
+
+            submitButton.isEnabled  = value
+
+            AlertBar.show(.info, message: messageString)
+
+        }
+            
         else
         {
             if(Utilities.hasConnectivity())
             {
                 self.view.showLoader()
                 
-                Alamofire.request("http://service.gradnext.com/swagger/ui/index#!/User/User_RegisterUser", method: .post, parameters: ["UserFirstName":firstNameTxtField.text!,"UserLastName": lastNameTxtField.text!, "EmailId": emailTxtField.text!,"MobileNumber":mobileTextField.text!,"UserOptionCode":"CAND",]).responseJSON{ (responseData) -> Void in
-                    if((responseData.result.value) != nil) {
+                    let parameters: [String: String] = ["UserFirstName":firstNameTxtField.text!,"UserLastName": lastNameTxtField.text!, "EmailId": emailTxtField.text!,"MobileNumber":mobileTextField.text!,"UserOptionCode":selectedValue]
+                
+                    let url = URL(string: "http://service.gradnext.com/api/User/RegisterUser")!
+                    var urlRequest = URLRequest(url: url)
+                    urlRequest.httpMethod = "POST"
+                    do {
+                        urlRequest.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: [])
+                    } catch {
+                    }
+                    urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+                    Alamofire.request(urlRequest).responseJSON {
+                        response in
+                        switch response.result {
+                        case .success:
+                            if let value = response.result.value {
+                                
+                                 let final =  value as! [String : Any]
+                                
+                                if (final["StatusMessage"] as! String == "Registration Successful")
+                                {
+                                messageString = "Thank you for registering.Your Profile has been created and an activation link has been sent to your email ."
+                                
+                                self.alert(title:  "Success", message: messageString, buttonTitle: "Ok")
+
+                                }
+                                else{
+                                    self.alert(title:  "Success", message: final["StatusMessage"] as? String, buttonTitle: "Ok")
+
+                                }
+                            
+                            }
+                        case .failure(let error):
+                            print(error)
+                        }
                         
-                        self.view.hideLoader()
-                    }
-                    else
-                    {
-                        self.view.hideLoader()
-                    }
+
+                    self.view.hideLoader()
                     value = true
                     self.emailTxtField.text = "";
                     self.lastNameTxtField.text = "";
                     self.firstNameTxtField.text = "";
                     self.mobileTextField.text = "";
 
-
-                    messageString = "Your message was sent successfully. Thanks."
                     self.view.endEditing(true)
                     self.submitButton.isEnabled  = value
-                    AlertBar.show(.info, message: messageString)
                 }
             }
             else
@@ -162,30 +200,6 @@ class JoinNowViewController: UIViewController,UITextFieldDelegate {
                 self.submitButton.isEnabled  = true
             }
         }
-
-        
-        
-        
-        
-        
-        
-        
-        
-        
-//        
-//        Alamofire.request("http://service.gradnext.com/swagger/ui/index#!/User/User_SignInUser", method: .post, parameters: ["UserFirstName":firstNameTxtField.text!,"UserLastName": lastNameTxtField.text!, "EmailId": emailTxtField.text!,"MobileNumber":mobileTextField.text!,"UserOptionCode":"CAND",]).responseJSON{ (responseData) -> Void in
-//            if((responseData.result.value) != nil) {
-//                
-//                
-//                print(responseData.result.value!)
-//            }
-//            else
-//            {
-//                print(Error.self)
-//            }
-//            
-//        }
-        
 
 
         
@@ -271,8 +285,12 @@ class JoinNowViewController: UIViewController,UITextFieldDelegate {
         if (radioButton.isMultipleSelectionEnabled) {
             for button in radioButton.selectedButtons() {
                 print(String(format: "%@ is selected.\n", button.titleLabel!.text!));
+                selectedValue = "CAND"
+                
             }
         } else {
+            
+            selectedValue = "COMP"
             print(String(format: "%@ is selected.\n", radioButton.selected()!.titleLabel!.text!));
         }
     }

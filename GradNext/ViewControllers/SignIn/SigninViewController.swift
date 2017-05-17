@@ -81,8 +81,6 @@ class SigninViewController: UIViewController ,UITextFieldDelegate{
        {
            if(Utilities.hasConnectivity())
            {
-            
-            
             self.view.showLoader()
             
             let parameters: [String: String] = ["EmailId":userNameTxtField.text!,"PasswordDesc": passwordTxtField.text!]
@@ -93,18 +91,30 @@ class SigninViewController: UIViewController ,UITextFieldDelegate{
                 urlRequest.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: [])
             } catch {
             }
-            
             urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
             Alamofire.request(urlRequest).responseJSON {
                 response in
-                            switch response.result {
-                            case .success:
-                                if let value = response.result.value {
-                                    print(value)
-                                }
-                            case .failure(let error):
-                                print(response.result.value!)
-                                print(error)
+                switch response.result {
+                    case .success:
+                if let value = response.result.value {
+                                    
+                let final =  value as! [String : Any]
+               
+               if (final["StatusMessage"] as! String == "Login Success")
+               {
+                   messageString = ""
+                
+
+                   self.alert(title:  "Info", message: final["StatusMessage"] as? String, buttonTitle: "Ok")
+               }
+               else{
+                AlertBar.show(.info, message: (final["StatusMessage"] as? String)!)
+                
+               }
+               
+           }
+            case .failure(let error):
+                    print(error)
             }
        
                  self.view.hideLoader()
@@ -113,11 +123,8 @@ class SigninViewController: UIViewController ,UITextFieldDelegate{
                    self.userNameTxtField.text = "";
                    self.passwordTxtField.text = "";
                   
-                   
-                   messageString = "Your message was sent successfully. Thanks."
                    self.view.endEditing(true)
                    self.SignInButton.isEnabled  = value
-                   AlertBar.show(.info, message: messageString)
                }
            }
            else

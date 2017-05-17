@@ -35,4 +35,9 @@ extension UIViewController {
         self.slideMenuController()?.removeLeftGestures()
         self.slideMenuController()?.removeRightGestures()
     }
+    
+   
+    
+    
+    
 }
