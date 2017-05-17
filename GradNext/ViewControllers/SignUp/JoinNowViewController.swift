@@ -127,7 +127,6 @@ class JoinNowViewController: UIViewController,UITextFieldDelegate {
             mobileTextField.becomeFirstResponder()
         }
             
-       
         else
         {
             if(Utilities.hasConnectivity())
