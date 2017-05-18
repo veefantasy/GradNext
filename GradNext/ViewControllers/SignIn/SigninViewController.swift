@@ -55,68 +55,93 @@ class SigninViewController: UIViewController ,UITextFieldDelegate{
 
     @IBAction func signInButtonClicked(_ sender: Any) {
         
-//        
-//        var messageString = "";
-//        var value  = false
-//        
-//        if(userNameTxtField.text == "")
-//        {
-//            messageString = "Please enter your first Name"
-//            SignInButton.isEnabled  = value
-//            AlertBar.show(.info, message: messageString)
-//            
-//            userNameTxtField.becomeFirstResponder()
-//        }
-//        else if(passwordTxtField.text == "")
-//        {
-//            messageString = "Please enter your last Name "
-//            SignInButton.isEnabled  = value
-//            AlertBar.show(.info, message: messageString)
-//            passwordTxtField.becomeFirstResponder()
-//        }
-//            
-//            
-//        else
-//        {
-//            if(Utilities.hasConnectivity())
-//            {
-//                self.view.showLoader()
-//                
-//                Alamofire.request("http://service.gradnext.com/swagger/ui/index#!/User/User_SignInUser", method: .post, parameters: ["EmailId":userNameTxtField.text!,"PasswordDesc": passwordTxtField.text!,]).responseJSON{ (responseData) -> Void in
-//                    if((responseData.result.value) != nil) {
-//                        
-//                        self.view.hideLoader()
-//                    }
-//                    else
-//                    {
-//                        self.view.hideLoader()
-//                    }
-//                    value = true
-//                    self.userNameTxtField.text = "";
-//                    self.passwordTxtField.text = "";
-//                   
-//                    
-//                    messageString = "Your message was sent successfully. Thanks."
-//                    self.view.endEditing(true)
-//                    self.SignInButton.isEnabled  = value
-//                    AlertBar.show(.info, message: messageString)
-//                }
-//            }
-//            else
-//            {
-//                alert(title: "No InternetConnection", message: "Internet connection appears to be offline", buttonTitle: "Ok")
-//                
-//                self.SignInButton.isEnabled  = true
-//            }
-//        }
-//        
-//        
-     
+       
+       var messageString = "";
+       var value  = false
+       
+        
+      print(["EmailId":userNameTxtField.text!,"PasswordDesc": passwordTxtField.text!])
+        
+       if(userNameTxtField.text == "")
+       {
+           messageString = "Please enter your first Name"
+           SignInButton.isEnabled  = value
+           AlertBar.show(.info, message: messageString)
+           
+           userNameTxtField.becomeFirstResponder()
+       }
+       else if(passwordTxtField.text == "")
+       {
+           messageString = "Please enter your last Name "
+           SignInButton.isEnabled  = value
+           AlertBar.show(.info, message: messageString)
+           passwordTxtField.becomeFirstResponder()
+       }
+       else
+       {
+           if(Utilities.hasConnectivity())
+           {
+            self.view.showLoader()
+            
+            let parameters: [String: String] = ["EmailId":userNameTxtField.text!,"PasswordDesc": passwordTxtField.text!]
+            let url = URL(string: "http://service.gradnext.com/api/User/SignInUser")!
+            var urlRequest = URLRequest(url: url)
+            urlRequest.httpMethod = "POST"
+            do {
+                urlRequest.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: [])
+            } catch {
+            }
+            urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            Alamofire.request(urlRequest).responseJSON {
+                response in
+                switch response.result {
+                    case .success:
+                if let value = response.result.value {
+                                    
+                let final =  value as! [String : Any]
+               
+               if (final["StatusMessage"] as! String == "Login Success")
+               {
+                   messageString = ""
+                
+
+                   self.alert(title:  "Info", message: final["StatusMessage"] as? String, buttonTitle: "Ok")
+               }
+               else{
+                AlertBar.show(.info, message: (final["StatusMessage"] as? String)!)
+                
+               }
+               
+           }
+            case .failure(let error):
+                    print(error)
+            }
+       
+                 self.view.hideLoader()
+
+                   value = true
+                   self.userNameTxtField.text = "";
+                   self.passwordTxtField.text = "";
+                  
+                   self.view.endEditing(true)
+                   self.SignInButton.isEnabled  = value
+               }
+           }
+           else
+           {
+               alert(title: "No InternetConnection", message: "Internet connection appears to be offline", buttonTitle: "Ok")
+               
+               self.SignInButton.isEnabled  = true
+           }
+       }
+       
+       
+  
         
         
         
         
-        self.performSegue(withIdentifier: "postJob", sender: nil)
+//        self.performSegue(withIdentifier: "postJob", sender: nil)
     }
     func methodOfReceivedNotification(notification: NSNotification){
         //Take Action on Notification
