@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ULI-8C-SzH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ULI-8C-SzH">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -313,11 +313,6 @@
                         <outlet property="scrollView" destination="sqs-ex-jxS" id="6e6-Mv-QOx"/>
                         <outlet property="userNameTxtField" destination="mcU-g1-Q3q" id="Ycb-Db-u1A"/>
                         <outlet property="viewRememberMe" destination="BCu-Mb-MzK" id="eYT-lI-FKc"/>
-                        <segue destination="cBY-2R-1vq" kind="show" identifier="loginToCompanyProfile" id="nFd-4B-COl"/>
-                        <segue destination="DqC-o9-rMv" kind="show" identifier="loginToCandidateProfile" id="Y7M-m5-wPC"/>
-                        <segue destination="QzW-Au-kZL" kind="show" identifier="candidateFilter" id="RG4-Zi-xlB"/>
-                        <segue destination="PJ7-r9-2YY" kind="show" identifier="addUser" id="ZPA-Ey-uCp"/>
-                        <segue destination="gCP-J7-Fd6" kind="show" identifier="postJob" id="jdg-9f-cU1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C07-YL-RET" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1070,7 +1065,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Vu0-s6-R7u" id="nHt-ws-0tH">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="99"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="UserPic" translatesAutoresizingMaskIntoConstraints="NO" id="Cv4-CD-Fxf">
@@ -1103,7 +1098,7 @@
                                         <rect key="frame" x="0.0" y="128" width="375" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uNh-r1-fuF" id="Kc2-hG-dex">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="69"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tm6-tA-Qs8">
@@ -1652,7 +1647,7 @@
         <!--Post Job View Controller-->
         <scene sceneID="SpL-zi-s6e">
             <objects>
-                <viewController id="gCP-J7-Fd6" customClass="PostJobViewController" customModule="GradNext" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PostJobViewController" id="gCP-J7-Fd6" customClass="PostJobViewController" customModule="GradNext" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lyH-D5-LIz"/>
                         <viewControllerLayoutGuide type="bottom" id="lyd-HK-9gL"/>
@@ -2021,7 +2016,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OM1-gR-WLH" id="Tic-cW-KFX">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="updateProfile" translatesAutoresizingMaskIntoConstraints="NO" id="ThE-gc-yk8">
@@ -2257,7 +2252,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="71"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ucR-U2-jU0" id="Zlt-9f-ZwR">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="71"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4UR-wY-4DP">
@@ -2285,7 +2280,7 @@
                                         <rect key="frame" x="0.0" y="99" width="375" height="40"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="umS-L1-s2c" id="voE-WD-EdG">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="39"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="REE-lc-Xgh">
@@ -2305,7 +2300,7 @@
                                         <rect key="frame" x="0.0" y="139" width="375" height="54"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KqI-PN-Jb2" id="9dr-Li-wTe">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="54"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="53"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="resume" translatesAutoresizingMaskIntoConstraints="NO" id="Rg4-0N-eQg">
@@ -2371,7 +2366,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="48"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fyM-UN-d0c" id="Kvk-l6-kQN">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="47"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="koL-yV-QYL">
@@ -2417,7 +2412,7 @@
                                         <rect key="frame" x="0.0" y="72" width="375" height="48"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Pw1-kU-U8B" id="cXg-hm-OCp">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="47"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cTT-V9-CDY">
@@ -2467,6 +2462,60 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FaE-nq-N2W" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1056.8" y="123.68815592203899"/>
+        </scene>
+        <!--Manage Job View Controller-->
+        <scene sceneID="5Ev-97-2pX">
+            <objects>
+                <viewController storyboardIdentifier="ManageJobViewController" id="2JD-iQ-Vnp" customClass="ManageJobViewController" customModule="GradNext" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="WMg-Rg-FFd"/>
+                        <viewControllerLayoutGuide type="bottom" id="E4k-EA-Wdi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="s0K-e5-yMk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HZT-cA-FLh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1167" y="2734"/>
+        </scene>
+        <!--Serach Talent View Controller-->
+        <scene sceneID="vc1-Lu-Swm">
+            <objects>
+                <viewController storyboardIdentifier="serachTalentViewController" id="7GW-Eo-mXu" customClass="serachTalentViewController" customModule="GradNext" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Rh0-bQ-Rdk"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ud8-kV-LlE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8HU-6v-ZGz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hj9-cN-kvY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1465" y="3427"/>
+        </scene>
+        <!--Company Home View Controller-->
+        <scene sceneID="w6G-6B-Le3">
+            <objects>
+                <viewController storyboardIdentifier="CompanyHomeViewController" id="oex-ky-My0" customClass="CompanyHomeViewController" customModule="GradNext" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2Xt-46-OnS"/>
+                        <viewControllerLayoutGuide type="bottom" id="LhF-pd-sGV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="WqT-Vb-0sM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iR7-xA-Icy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="935" y="1011"/>
         </scene>
     </scenes>
     <resources>

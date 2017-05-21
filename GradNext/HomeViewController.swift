@@ -55,7 +55,7 @@ class HomeViewController: UIViewController,UIScrollViewDelegate {
         {
                 
             let homeView   = UIView(frame: CGRect(x: self.view.frame.size.width * CGFloat(i), y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height-headerView.frame.origin.y+headerView.frame.size.height))
-            homeView.backgroundColor = UIColor.clear
+            homeView.backgroundColor = UIColor.white
          scrollView.addSubview(homeView)
         }
 

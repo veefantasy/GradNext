@@ -1079,7 +1079,6 @@ extension UIViewController {
     {
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.createMenuView()
         
     }
     public func toggleLeft() {

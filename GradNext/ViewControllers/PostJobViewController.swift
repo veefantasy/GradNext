@@ -25,6 +25,9 @@ class PostJobViewController: UIViewController , UITextFieldDelegate,UITextViewDe
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        self.setNavigationBarItem(controllerName: "Post Job")
+
         // Do any additional setup after loading the view.
         registerForKeyboardNotifications()
     }

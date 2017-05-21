@@ -1,22 +1,19 @@
 //
-//  UserShortListViewController.swift
+//  serachTalentViewController.swift
 //  GradNext
 //
-//  Created by Muthu Kumar M on 5/14/17.
+//  Created by Muthu Kumar M on 5/21/17.
 //  Copyright © 2017 swathi. All rights reserved.
 //
 
 import UIKit
 
-class UserShortListViewController: UIViewController {
+class serachTalentViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.view.backgroundColor = UIColor.white
-
-        self.navigationController?.navigationBar.topItem?.title = "My Shortlist";
-        self.setNavigationBarItem(controllerName: "My Shortlist")
+        self.setNavigationBarItem(controllerName: "Search Talent")
 
         // Do any additional setup after loading the view.
     }

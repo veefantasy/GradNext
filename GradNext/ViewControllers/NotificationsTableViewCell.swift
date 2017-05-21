@@ -9,7 +9,9 @@
 import UIKit
 
 class NotificationsTableViewCell: UITableViewCell {
-    @IBOutlet weak var imageView: UIImageView!
+    
+    
+    @IBOutlet weak var imageViews: UIImageView!
 
     @IBOutlet weak var lblText: UILabel!
     override func awakeFromNib() {

@@ -13,6 +13,7 @@ class ApplicationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.topItem?.title = "My Application";
+        self.view.backgroundColor = UIColor.white
 
         self.setNavigationBarItem(controllerName: "Application")
 

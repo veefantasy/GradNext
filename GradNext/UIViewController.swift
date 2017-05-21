@@ -13,7 +13,7 @@ extension UIViewController {
     func setNavigationBarItem(controllerName : String) {
         self.addLeftBarButtonWithImage(UIImage(named: "ic_menu_black_24dp")!)
         
-        if(controllerName ==  "Home" || controllerName == "Application")
+        if(controllerName ==  "Home" || controllerName == "Application" || controllerName == "My Shortlist"||controllerName == "Manage Job"||controllerName == "Post Job"||controllerName == "Search Talent")
         {
             self.addRightBarButtonWithImage(UIImage(named: "ic_notifications_black_24dp")!)
         }
@@ -21,8 +21,6 @@ extension UIViewController {
         {
             self.addRightBarButtonWithTwoImage(UIImage(named: "ic_notifications_black_24dp")!, _HomeImage: UIImage(named: "home")!)
         }
-        
-        
         self.slideMenuController()?.removeLeftGestures()
         self.slideMenuController()?.removeRightGestures()
         self.slideMenuController()?.addLeftGestures()

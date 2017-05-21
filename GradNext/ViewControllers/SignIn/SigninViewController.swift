@@ -10,14 +10,14 @@ import UIKit
 import Alamofire
 import AlertBar
 class SigninViewController: UIViewController ,UITextFieldDelegate{
-
+    
     @IBOutlet weak var SignInButton: UIButton!
     @IBOutlet weak var userNameTxtField: UITextField!
     @IBOutlet weak var passwordTxtField: UITextField!
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var viewRememberMe: UIView!
-     var activeField: UITextField?
+    var activeField: UITextField?
     var rememberMeCheckBox: CheckBox = CheckBox()
     
     override func viewDidLoad() {
@@ -32,7 +32,7 @@ class SigninViewController: UIViewController ,UITextFieldDelegate{
         passwordTxtField.attributedPlaceholder = NSAttributedString(string: "Password",
                                                                     attributes: [NSForegroundColorAttributeName: UIColor.lightGray])
         
-         registerForKeyboardNotifications()
+        registerForKeyboardNotifications()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -52,102 +52,115 @@ class SigninViewController: UIViewController ,UITextFieldDelegate{
         passwordTxtField.setLeftPaddingPoints(10)
         userNameTxtField.setLeftPaddingPoints(10)
     }
-
+    
     @IBAction func signInButtonClicked(_ sender: Any) {
         
-       
-       var messageString = "";
-       var value  = false
-       
         
-      print(["EmailId":userNameTxtField.text!,"PasswordDesc": passwordTxtField.text!])
+        var messageString = "";
+        var value  = false
         
-       if(userNameTxtField.text == "")
-       {
-           messageString = "Please enter your first Name"
-           SignInButton.isEnabled  = value
-           AlertBar.show(.info, message: messageString)
-           
-           userNameTxtField.becomeFirstResponder()
-       }
-       else if(passwordTxtField.text == "")
-       {
-           messageString = "Please enter your last Name "
-           SignInButton.isEnabled  = value
-           AlertBar.show(.info, message: messageString)
-           passwordTxtField.becomeFirstResponder()
-       }
-       else
-       {
-           if(Utilities.hasConnectivity())
-           {
-            self.view.showLoader()
+        
+        print(["EmailId":userNameTxtField.text!,"PasswordDesc": passwordTxtField.text!])
+        
+        if(userNameTxtField.text == "")
+        {
+            messageString = "Please enter your first Name"
+            SignInButton.isEnabled  = value
+            AlertBar.show(.info, message: messageString)
             
-            let parameters: [String: String] = ["EmailId":userNameTxtField.text!,"PasswordDesc": passwordTxtField.text!]
-            let url = URL(string: "http://service.gradnext.com/api/User/SignInUser")!
-            var urlRequest = URLRequest(url: url)
-            urlRequest.httpMethod = "POST"
-            do {
-                urlRequest.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: [])
-            } catch {
-            }
-            urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
-            Alamofire.request(urlRequest).responseJSON {
-                response in
-                switch response.result {
+            userNameTxtField.becomeFirstResponder()
+        }
+        else if(passwordTxtField.text == "")
+        {
+            messageString = "Please enter your last Name "
+            SignInButton.isEnabled  = value
+            AlertBar.show(.info, message: messageString)
+            passwordTxtField.becomeFirstResponder()
+        }
+        else
+        {
+            if(Utilities.hasConnectivity())
+            {
+                self.view.showLoader()
+                
+                let parameters: [String: String] = ["EmailId":userNameTxtField.text!,"PasswordDesc": passwordTxtField.text!]
+                let url = URL(string: "http://service.gradnext.com/api/User/SignInUser")!
+                var urlRequest = URLRequest(url: url)
+                urlRequest.httpMethod = "POST"
+                do {
+                    urlRequest.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: [])
+                } catch {
+                }
+                urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+                Alamofire.request(urlRequest).responseJSON {
+                    response in
+                    switch response.result {
                     case .success:
-                if let value = response.result.value {
-                                    
-                let final =  value as! [String : Any]
-               
-               if (final["StatusMessage"] as! String == "Login Success")
-               {
-                   messageString = ""
-                
-
-                   self.alert(title:  "Info", message: final["StatusMessage"] as? String, buttonTitle: "Ok")
-               }
-               else{
-                AlertBar.show(.info, message: (final["StatusMessage"] as? String)!)
-                
-               }
-               
-           }
-            case .failure(let error):
-                    print(error)
+                        if let value = response.result.value {
+                            
+                            let final =  value as! [String : Any]
+                            
+                            if (final["StatusMessage"] as! String == "Login Success")
+                            {
+                                messageString = ""
+                                
+                                let UserOptionCode = (final["User"] as? [String: Any])?["UserOptionCode"] as? String
+                                
+                                print(UserOptionCode!)
+                                
+                                let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+                                
+                                if (UserOptionCode == "CAND")
+                                {
+                                    appDelegate.window?.rootViewController = appDelegate.createMenuView()
+                                }
+                                else
+                                {
+                                    appDelegate.window?.rootViewController = appDelegate.companyMenuView()
+                                }
+                                
+                            }
+                            else{
+                                AlertBar.show(.info, message: (final["StatusMessage"] as? String)!)
+                                
+                            }
+                            
+                        }
+                    case .failure(let error):
+                        print(error)
+                    }
+                    
+                    self.view.hideLoader()
+                    
+                    value = true
+                    self.userNameTxtField.text = "";
+                    self.passwordTxtField.text = "";
+                    
+                    self.view.endEditing(true)
+                    self.SignInButton.isEnabled  = value
+                }
             }
-       
-                 self.view.hideLoader()
-
-                   value = true
-                   self.userNameTxtField.text = "";
-                   self.passwordTxtField.text = "";
-                  
-                   self.view.endEditing(true)
-                   self.SignInButton.isEnabled  = value
-               }
-           }
-           else
-           {
-               alert(title: "No InternetConnection", message: "Internet connection appears to be offline", buttonTitle: "Ok")
-               
-               self.SignInButton.isEnabled  = true
-           }
-       }
-       
-       
-  
+            else
+            {
+                alert(title: "No InternetConnection", message: "Internet connection appears to be offline", buttonTitle: "Ok")
+                
+                self.SignInButton.isEnabled  = true
+            }
+        }
         
         
         
         
-//        self.performSegue(withIdentifier: "postJob", sender: nil)
+        
+        
+        
+        //        self.performSegue(withIdentifier: "postJob", sender: nil)
     }
     func methodOfReceivedNotification(notification: NSNotification){
         //Take Action on Notification
         self.SignInButton.isEnabled  = true
     }
-   
+    
     func createRememberMeCheckBox()
     {
         rememberMeCheckBox = CheckBox(delegate: self)
@@ -183,7 +196,7 @@ class SigninViewController: UIViewController ,UITextFieldDelegate{
         return false
     }
     
-   
+    
     func registerForKeyboardNotifications(){
         //Adding notifies on keyboard appearing
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWasShown(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
@@ -223,21 +236,21 @@ class SigninViewController: UIViewController ,UITextFieldDelegate{
         
     }
     func textFieldDidBeginEditing(_ textField: UITextField){
-       // Utilities.setTextFieldCornerRadius(forTextField: textField, withRadius: 3.0, withBorderColor: UIColor.blue)
-       // Utilities.setTextFieldBorderBelow(forTextField: textField,color: UIColor.blue)
-       
+        // Utilities.setTextFieldCornerRadius(forTextField: textField, withRadius: 3.0, withBorderColor: UIColor.blue)
+        // Utilities.setTextFieldBorderBelow(forTextField: textField,color: UIColor.blue)
+        
         
         activeField = textField
     }
     
     func textFieldDidEndEditing(_ textField: UITextField){
         //Utilities.setTextFieldCornerRadius(forTextField: textField, withRadius: 3.0, withBorderColor: UIColor.gray)
-       //  Utilities.setTextFieldBorderBelow(forTextField: textField,color: UIColor.gray)
+        //  Utilities.setTextFieldBorderBelow(forTextField: textField,color: UIColor.gray)
         activeField = nil
     }
-  
-
-      // MARK: CheckBox Delegate Method
+    
+    
+    // MARK: CheckBox Delegate Method
     func didSelectedCheckBox(_ checkbox: CheckBox!, checked: Bool) {
         
         if(checkbox == rememberMeCheckBox){
@@ -258,6 +271,6 @@ class SigninViewController: UIViewController ,UITextFieldDelegate{
      // Pass the selected object to the new view controller.
      }
      */
-
-
+    
+    
 }
