@@ -22,6 +22,15 @@
 		4D52737D1EC8AD4100F127A0 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D52737C1EC8AD4100F127A0 /* TableViewCell.swift */; };
 		4D5273811EC8CF1F00F127A0 /* UserShortListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5273801EC8CF1F00F127A0 /* UserShortListViewController.swift */; };
 		E8618AE282A8F319FDBBBA83 /* Pods_GradNext.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2674BB98347D00F71EE15AF6 /* Pods_GradNext.framework */; };
+		F2416A9B1ED1B86800C19363 /* CandidateProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2416A981ED1B86800C19363 /* CandidateProfileTableViewCell.swift */; };
+		F2416A9C1ED1B86800C19363 /* SecondTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2416A991ED1B86800C19363 /* SecondTableViewCell.swift */; };
+		F2416A9D1ED1B86800C19363 /* ThirdTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2416A9A1ED1B86800C19363 /* ThirdTableViewCell.swift */; };
+		F2416A9F1ED1B86D00C19363 /* CandidateMainProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2416A9E1ED1B86D00C19363 /* CandidateMainProfileViewController.swift */; };
+		F2416AA31ED1B8DE00C19363 /* SkillTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2416AA11ED1B8DE00C19363 /* SkillTableViewCell.swift */; };
+		F2416AA41ED1B8DE00C19363 /* SelectedSkillsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2416AA21ED1B8DE00C19363 /* SelectedSkillsTableViewCell.swift */; };
+		F2416AA61ED1B8E800C19363 /* SelectSkillsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2416AA51ED1B8E800C19363 /* SelectSkillsViewController.swift */; };
+		F2416AA91ED1B9E600C19363 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2416AA81ED1B9E600C19363 /* NotificationsViewController.swift */; };
+		F2416AAB1ED1BA0900C19363 /* NotificationsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2416AAA1ED1BA0900C19363 /* NotificationsTableViewCell.swift */; };
 		F24E74321EC867ED0061826F /* DLRadioButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F24E74311EC867ED0061826F /* DLRadioButton.m */; };
 		F24E743A1EC88DF90061826F /* CompanyAddUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24E74391EC88DF90061826F /* CompanyAddUserViewController.swift */; };
 		F24E743D1EC89CBA0061826F /* PostJobViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24E743C1EC89CBA0061826F /* PostJobViewController.swift */; };
@@ -58,6 +67,15 @@
 		4D5273801EC8CF1F00F127A0 /* UserShortListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserShortListViewController.swift; sourceTree = "<group>"; };
 		E26B4850DD196B5A01EDB370 /* Pods-GradNext.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GradNext.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GradNext/Pods-GradNext.debug.xcconfig"; sourceTree = "<group>"; };
 		F1BCD2D0435A995256118447 /* Pods-GradNext.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GradNext.release.xcconfig"; path = "Pods/Target Support Files/Pods-GradNext/Pods-GradNext.release.xcconfig"; sourceTree = "<group>"; };
+		F2416A981ED1B86800C19363 /* CandidateProfileTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CandidateProfileTableViewCell.swift; sourceTree = "<group>"; };
+		F2416A991ED1B86800C19363 /* SecondTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondTableViewCell.swift; sourceTree = "<group>"; };
+		F2416A9A1ED1B86800C19363 /* ThirdTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdTableViewCell.swift; sourceTree = "<group>"; };
+		F2416A9E1ED1B86D00C19363 /* CandidateMainProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CandidateMainProfileViewController.swift; sourceTree = "<group>"; };
+		F2416AA11ED1B8DE00C19363 /* SkillTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkillTableViewCell.swift; sourceTree = "<group>"; };
+		F2416AA21ED1B8DE00C19363 /* SelectedSkillsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedSkillsTableViewCell.swift; sourceTree = "<group>"; };
+		F2416AA51ED1B8E800C19363 /* SelectSkillsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectSkillsViewController.swift; sourceTree = "<group>"; };
+		F2416AA81ED1B9E600C19363 /* NotificationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
+		F2416AAA1ED1BA0900C19363 /* NotificationsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsTableViewCell.swift; sourceTree = "<group>"; };
 		F24E74301EC867ED0061826F /* DLRadioButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLRadioButton.h; sourceTree = "<group>"; };
 		F24E74311EC867ED0061826F /* DLRadioButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLRadioButton.m; sourceTree = "<group>"; };
 		F24E74331EC86BA70061826F /* GradNex-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GradNex-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -154,6 +172,36 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F2416A971ED1B84800C19363 /* CandidateMainProfile */ = {
+			isa = PBXGroup;
+			children = (
+				F2416A9E1ED1B86D00C19363 /* CandidateMainProfileViewController.swift */,
+				F2416A981ED1B86800C19363 /* CandidateProfileTableViewCell.swift */,
+				F2416A991ED1B86800C19363 /* SecondTableViewCell.swift */,
+				F2416A9A1ED1B86800C19363 /* ThirdTableViewCell.swift */,
+			);
+			name = CandidateMainProfile;
+			sourceTree = "<group>";
+		};
+		F2416AA01ED1B8CC00C19363 /* SelectSkills */ = {
+			isa = PBXGroup;
+			children = (
+				F2416AA51ED1B8E800C19363 /* SelectSkillsViewController.swift */,
+				F2416AA11ED1B8DE00C19363 /* SkillTableViewCell.swift */,
+				F2416AA21ED1B8DE00C19363 /* SelectedSkillsTableViewCell.swift */,
+			);
+			name = SelectSkills;
+			sourceTree = "<group>";
+		};
+		F2416AA71ED1B9A300C19363 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				F2416AA81ED1B9E600C19363 /* NotificationsViewController.swift */,
+				F2416AAA1ED1BA0900C19363 /* NotificationsTableViewCell.swift */,
+			);
+			name = Notifications;
+			sourceTree = "<group>";
+		};
 		F24E74341EC86C110061826F /* CheckBox */ = {
 			isa = PBXGroup;
 			children = (
@@ -185,8 +233,11 @@
 		F24E74371EC88DBE0061826F /* Candidate */ = {
 			isa = PBXGroup;
 			children = (
+				F2416AA71ED1B9A300C19363 /* Notifications */,
+				F2416AA01ED1B8CC00C19363 /* SelectSkills */,
+				F2416A971ED1B84800C19363 /* CandidateMainProfile */,
 				F28F35C51EC8440900E38053 /* CandidateFilter */,
-				F26476111EBC915D0069C041 /* CandidateProfile */,
+				F26476111EBC915D0069C041 /* CandidateEditProfile */,
 			);
 			name = Candidate;
 			sourceTree = "<group>";
@@ -207,11 +258,12 @@
 			name = PostJob;
 			sourceTree = "<group>";
 		};
-		F26476111EBC915D0069C041 /* CandidateProfile */ = {
+		F26476111EBC915D0069C041 /* CandidateEditProfile */ = {
 			isa = PBXGroup;
 			children = (
 				F26476121EBCA0C20069C041 /* CandidateProfileViewController.swift */,
 			);
+			name = CandidateEditProfile;
 			path = CandidateProfile;
 			sourceTree = "<group>";
 		};
@@ -433,8 +485,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				F26C73411EC850F5001F9641 /* CheckBox.m in Sources */,
+				F2416AA31ED1B8DE00C19363 /* SkillTableViewCell.swift in Sources */,
+				F2416AA61ED1B8E800C19363 /* SelectSkillsViewController.swift in Sources */,
+				F2416AA91ED1B9E600C19363 /* NotificationsViewController.swift in Sources */,
 				F2ECB5791EBB870D00C4B2E9 /* CompanyProfileViewController.swift in Sources */,
 				F2DCEEBD1EAD0FE300D996BC /* LandingViewController.swift in Sources */,
+				F2416A9D1ED1B86800C19363 /* ThirdTableViewCell.swift in Sources */,
 				F28F35C71EC8442100E38053 /* CandidateFilterViewController.swift in Sources */,
 				4D5273811EC8CF1F00F127A0 /* UserShortListViewController.swift in Sources */,
 				4D1EA0A11EC7327A007AA187 /* RightViewController.swift in Sources */,
@@ -444,9 +500,14 @@
 				F26476131EBCA0C20069C041 /* CandidateProfileViewController.swift in Sources */,
 				4D1EA09B1EC7322D007AA187 /* HomeViewController.swift in Sources */,
 				F2DCEEC11EAD100A00D996BC /* Utilities.swift in Sources */,
+				F2416AAB1ED1BA0900C19363 /* NotificationsTableViewCell.swift in Sources */,
 				4D1EA0A31EC733E5007AA187 /* SlideMenuController.swift in Sources */,
 				4D52737D1EC8AD4100F127A0 /* TableViewCell.swift in Sources */,
 				F24E74321EC867ED0061826F /* DLRadioButton.m in Sources */,
+				F2416A9B1ED1B86800C19363 /* CandidateProfileTableViewCell.swift in Sources */,
+				F2416A9C1ED1B86800C19363 /* SecondTableViewCell.swift in Sources */,
+				F2416A9F1ED1B86D00C19363 /* CandidateMainProfileViewController.swift in Sources */,
+				F2416AA41ED1B8DE00C19363 /* SelectedSkillsTableViewCell.swift in Sources */,
 				F2DCEEBE1EAD0FE300D996BC /* SigninViewController.swift in Sources */,
 				4D42EE721EBF787C00675DFC /* Reachability.m in Sources */,
 				4D1EA09F1EC73272007AA187 /* LeftViewController.swift in Sources */,
