@@ -126,10 +126,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         nvc.tabBarItem = UITabBarItem(title: "Home", image: UIImage(named:"Home_Tab"), selectedImage: UIImage(named:"Home_TabSelected"))
         
-        channel.tabBarItem = UITabBarItem(title: "My Applications", image: UIImage(named:""), selectedImage: UIImage(named:""))
+        channel.tabBarItem = UITabBarItem(title: "My Applications", image: UIImage(named:"myapp_tab"), selectedImage: UIImage(named:"myapp_tab"))
         
         
-        shortList.tabBarItem = UITabBarItem(title: "My Shortlist", image: UIImage(named:""), selectedImage: UIImage(named:""))
+        shortList.tabBarItem = UITabBarItem(title: "My Shortlist", image: UIImage(named:"profile_tab"), selectedImage: UIImage(named:"profile_tab"))
         
         
         tabBar.viewControllers  = [nvc,channel,shortList]

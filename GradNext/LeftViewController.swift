@@ -10,9 +10,9 @@ import UIKit
 
 class LeftViewController: UIViewController {
 
-    var menus = ["Company Profile","Messages","Manage Subscription","Notificaitons","Settings","Logout"]
+    var menus = ["Candidate Profile","Messages","Manage Subscription","Notificaitons","Settings","Logout"]
     
-    var menusImage = ["","menu_candidateprofile","menu_message","menu_notification","menu_settings","menu_logout"]
+    var menusImage = ["menu_candidateprofile","menu_message","menu_message","menu_notification","menu_settings","menu_logout"]
 
     @IBOutlet weak var leftTableView: UITableView!
 
@@ -74,7 +74,7 @@ extension LeftViewController : UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return menus.count
+        return menus.count+1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -98,10 +98,10 @@ extension LeftViewController : UITableViewDataSource {
         {
             let cell = tableView.dequeueReusableCell(withIdentifier: "MenuCell", for: indexPath) as! TableViewCell
             cell.textLabel?.font = UIFont(name: "HelveticaNeue", size: 16)
-            cell.menuLabel?.text = menus[indexPath.row]
+            cell.menuLabel?.text = menus[indexPath.row-1]
             cell.menuLabel?.textColor =  UIColor.white
 
-           cell.iconImageView.image = UIImage(named: menusImage[indexPath.row])
+           cell.iconImageView.image = UIImage(named: menusImage[indexPath.row-1])
             cell.iconImageView?.layer.masksToBounds = true
             cell.iconImageView?.layer.cornerRadius = 20
             cell.backgroundColor = Utilities.UIColorFromRGB(rgbValue: 0x242424)
