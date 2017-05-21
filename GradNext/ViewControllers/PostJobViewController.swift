@@ -25,6 +25,9 @@ class PostJobViewController: UIViewController , UITextFieldDelegate,UITextViewDe
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.title = "Post Job"
+        self.navigationController?.navigationBar.topItem?.title = "Post Job";
+        
         
         self.setNavigationBarItem(controllerName: "Post Job")
 

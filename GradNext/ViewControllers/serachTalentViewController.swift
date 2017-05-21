@@ -12,7 +12,9 @@ class serachTalentViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        self.title = "Search Talent"
+        self.navigationController?.navigationBar.topItem?.title = "Search Talent";
         self.setNavigationBarItem(controllerName: "Search Talent")
 
         // Do any additional setup after loading the view.

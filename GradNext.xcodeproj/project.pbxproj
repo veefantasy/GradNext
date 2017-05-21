@@ -21,6 +21,7 @@
 		4D24598F1ED1CC4D001600EA /* CompanyHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D24598C1ED1CC4D001600EA /* CompanyHomeViewController.swift */; };
 		4D2459901ED1CC4D001600EA /* ManageJobViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D24598D1ED1CC4D001600EA /* ManageJobViewController.swift */; };
 		4D2459911ED1CC4D001600EA /* serachTalentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D24598E1ED1CC4D001600EA /* serachTalentViewController.swift */; };
+		4D2459931ED1DE20001600EA /* SharedManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2459921ED1DE20001600EA /* SharedManager.swift */; };
 		4D42EE721EBF787C00675DFC /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D42EE711EBF787C00675DFC /* Reachability.m */; };
 		4D52737D1EC8AD4100F127A0 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D52737C1EC8AD4100F127A0 /* TableViewCell.swift */; };
 		4D5273811EC8CF1F00F127A0 /* UserShortListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5273801EC8CF1F00F127A0 /* UserShortListViewController.swift */; };
@@ -67,6 +68,7 @@
 		4D24598C1ED1CC4D001600EA /* CompanyHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompanyHomeViewController.swift; sourceTree = "<group>"; };
 		4D24598D1ED1CC4D001600EA /* ManageJobViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManageJobViewController.swift; sourceTree = "<group>"; };
 		4D24598E1ED1CC4D001600EA /* serachTalentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = serachTalentViewController.swift; sourceTree = "<group>"; };
+		4D2459921ED1DE20001600EA /* SharedManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedManager.swift; sourceTree = "<group>"; };
 		4D42EE701EBF787C00675DFC /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		4D42EE711EBF787C00675DFC /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		4D52737C1EC8AD4100F127A0 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
@@ -290,6 +292,7 @@
 				F24E74351EC86C290061826F /* RadioButton */,
 				F24E74341EC86C110061826F /* CheckBox */,
 				F2DCEEC01EAD100A00D996BC /* Utilities.swift */,
+				4D2459921ED1DE20001600EA /* SharedManager.swift */,
 				F290E1D01EBBA41F008D35A2 /* Extensions.swift */,
 			);
 			path = Utilities;
@@ -493,6 +496,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D2459931ED1DE20001600EA /* SharedManager.swift in Sources */,
 				F26C73411EC850F5001F9641 /* CheckBox.m in Sources */,
 				F2416AA31ED1B8DE00C19363 /* SkillTableViewCell.swift in Sources */,
 				F2416AA61ED1B8E800C19363 /* SelectSkillsViewController.swift in Sources */,

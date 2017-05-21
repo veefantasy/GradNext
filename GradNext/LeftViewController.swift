@@ -20,8 +20,13 @@ class LeftViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.view.backgroundColor = Utilities.UIColorFromRGB(rgbValue: 0x242424)
-        self.leftTableView.tableFooterView = UIView(frame: CGRect.zero)
+        self.view.backgroundColor = UIColor.white
+        
+    SharedManager.sharedInstance.userLabelText  =   UserDefaults.standard.value(forKey: "UserLabel") as! String?
+    SharedManager.sharedInstance.userDetailLabelText =  UserDefaults.standard.value(forKey: "UserDetailLabel") as! String?
+        
+    self.view.backgroundColor = Utilities.UIColorFromRGB(rgbValue: 0x242424)
+    self.leftTableView.tableFooterView = UIView(frame: CGRect.zero)
  self.leftTableView.backgroundColor =  Utilities.UIColorFromRGB(rgbValue: 0x242424)
         // Do any additional setup after loading the view.
     }
@@ -79,8 +84,8 @@ extension LeftViewController : UITableViewDataSource {
         {
             let cell = tableView.dequeueReusableCell(withIdentifier: "HeaderCell", for: indexPath) as! TableViewCell
             cell.userImageView.image = UIImage(named : "")
-            cell.nameLabel.text =  "Simmons"
-            cell.companyLabel.text =  "Hcl Technologies"
+            cell.nameLabel.text =  SharedManager.sharedInstance.userLabelText!
+            cell.companyLabel.text =  SharedManager.sharedInstance.userDetailLabelText!
             cell.userImageView.image = UIImage(named : "UserPic")
             cell.nameLabel?.textColor =  UIColor.white
             cell.companyLabel?.textColor =  UIColor.white

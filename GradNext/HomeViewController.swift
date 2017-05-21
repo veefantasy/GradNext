@@ -41,10 +41,12 @@ class HomeViewController: UIViewController,UIScrollViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "Search"
+        
+      
+        
+        self.title = "GradNext"
         self.navigationController?.navigationBar.topItem?.title = "GradNext";
 
-        
         scrollView.frame =  CGRect(x: 0, y: headerView.frame.origin.y+headerView.frame.size.height, width: self.view.frame.size.width, height: self.view.frame.size.height-headerView.frame.origin.y+headerView.frame.size.height)
         scrollView.isPagingEnabled = true
         scrollView.delegate = self

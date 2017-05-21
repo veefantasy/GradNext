@@ -15,6 +15,39 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //createMenuView()
         
+        
+        let userOption = UserDefaults.standard.value(forKey: "UserOption")
+        //  print(patientID!)
+        if userOption != nil {
+            
+            let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+
+            if (userOption as! String == "CAND")
+             {
+                appDelegate.window?.rootViewController = createMenuView()
+            }
+             else
+             {
+                appDelegate.window?.rootViewController = companyMenuView()
+            }
+            
+        }
+        else
+        {
+            
+            
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            
+            let leftViewController = storyboard.instantiateViewController(withIdentifier: "LandingViewController") as! LandingViewController
+            
+            
+            let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+            appDelegate.window?.rootViewController =  leftViewController
+            
+        }
+        
+
+        
         // Override point for customization after application launch.
         return true
     }

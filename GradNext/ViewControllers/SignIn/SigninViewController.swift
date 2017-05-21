@@ -33,6 +33,10 @@ class SigninViewController: UIViewController ,UITextFieldDelegate{
                                                                     attributes: [NSForegroundColorAttributeName: UIColor.lightGray])
         
         registerForKeyboardNotifications()
+        
+        
+
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -96,30 +100,53 @@ class SigninViewController: UIViewController ,UITextFieldDelegate{
                     response in
                     switch response.result {
                     case .success:
-                        if let value = response.result.value {
-                            
-                            let final =  value as! [String : Any]
-                            
-                            if (final["StatusMessage"] as! String == "Login Success")
-                            {
-                                messageString = ""
-                                
-                                let UserOptionCode = (final["User"] as? [String: Any])?["UserOptionCode"] as? String
-                                
-                                print(UserOptionCode!)
-                                
-                                let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
-                                
-                                if (UserOptionCode == "CAND")
-                                {
-                                    appDelegate.window?.rootViewController = appDelegate.createMenuView()
-                                }
-                                else
-                                {
-                                    appDelegate.window?.rootViewController = appDelegate.companyMenuView()
-                                }
-                                
-                            }
+           if let value = response.result.value {
+               
+               let final =  value as! [String : Any]
+               
+               
+               if (final["StatusMessage"] as! String == "Login Success")
+               {
+                   
+                   messageString = ""
+                   
+                   let UserOptionCode = (final["User"] as? [String: Any])?["UserOptionCode"] as? String
+                   
+                
+                UserDefaults.standard.setValue(UserOptionCode, forKey: "UserOption")
+
+                
+                   let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+                   
+                   if (UserOptionCode == "CAND")
+                   {
+                       SharedManager.sharedInstance.userLabelText = ((final["User"] as? [String: Any])?["UserFirstName"] as? String)! + ((final["User"] as? [String: Any])?["UserLastName"] as? String)!
+
+                    
+                    
+                    UserDefaults.standard.setValue( SharedManager.sharedInstance.userLabelText, forKey: "UserLabel")
+                    
+                   SharedManager.sharedInstance.userDetailLabelText = ((final["User"] as? [String: Any])?["EmailId"] as? String)!
+                    
+                    UserDefaults.standard.setValue( SharedManager.sharedInstance.userDetailLabelText, forKey: "UserDetailLabel")
+
+                  
+                  appDelegate.window?.rootViewController = appDelegate.createMenuView()
+              }
+              else
+              {
+            SharedManager.sharedInstance.userLabelText = ((final["User"] as? [String: Any])?["UserFirstName"] as? String)! + ((final["User"] as? [String: Any])?["UserLastName"] as? String)!
+                
+            UserDefaults.standard.setValue( SharedManager.sharedInstance.userLabelText, forKey: "UserLabel")
+
+            SharedManager.sharedInstance.userDetailLabelText = ((final["Company"] as? [String: Any])?["CompanyAddress1"] as? String)!
+                
+                UserDefaults.standard.setValue( SharedManager.sharedInstance.userDetailLabelText, forKey: "UserDetailLabel")
+
+                
+                  appDelegate.window?.rootViewController = appDelegate.companyMenuView()
+              }
+          }
                             else{
                                 AlertBar.show(.info, message: (final["StatusMessage"] as? String)!)
                                 

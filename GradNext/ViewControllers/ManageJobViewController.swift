@@ -13,6 +13,10 @@ class ManageJobViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        
+        self.title = "Manage Job"
+        self.navigationController?.navigationBar.topItem?.title = "Manage Job";
         self.setNavigationBarItem(controllerName: "Manage Job")
 
         // Do any additional setup after loading the view.
