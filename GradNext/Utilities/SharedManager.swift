@@ -19,7 +19,8 @@ final class SharedManager {
     var userLabelText: String?
     var userDetailLabelText: String?
     var isCheckValue : String?
-    
+    var sessionID: String?
+
     
  
     

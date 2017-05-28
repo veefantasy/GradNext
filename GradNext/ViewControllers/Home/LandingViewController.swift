@@ -16,7 +16,7 @@ class LandingViewController: UIViewController {
     @IBAction func exploreAction(_ sender: Any) {
         
        let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
-       appDelegate.window?.rootViewController = appDelegate.createMenuView()
+       appDelegate.window?.rootViewController = appDelegate.ExploreMenu()
     }
     override func viewDidLoad() {
         super.viewDidLoad()

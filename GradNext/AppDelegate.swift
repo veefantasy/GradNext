@@ -13,8 +13,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        //createMenuView()
-        
         
         let userOption = UserDefaults.standard.value(forKey: "UserOption")
         //  print(patientID!)
@@ -30,19 +28,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
              {
                 appDelegate.window?.rootViewController = companyMenuView()
             }
-            
         }
         else
         {
             
-            
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            
-            let leftViewController = storyboard.instantiateViewController(withIdentifier: "LandingViewController") as! LandingViewController
-            
-            
+
             let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
-            appDelegate.window?.rootViewController =  leftViewController
+            appDelegate.window?.rootViewController =  LandingView()
             
         }
         
@@ -50,6 +42,51 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Override point for customization after application launch.
         return true
+    }
+    
+    public func LandingView()->UIViewController
+    {
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        let leftViewController = storyboard.instantiateViewController(withIdentifier: "LandingViewController") as! LandingViewController
+        
+        
+        return leftViewController
+        
+ 
+        
+        
+    }
+    
+    
+    
+    public func ExploreMenu()->UIViewController
+    {
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        let exploreViewController = storyboard.instantiateViewController(withIdentifier: "ExploreViewController") as! ExploreViewController
+        
+        let tabBar :UITabBarController = UITabBarController()
+        let nvc: UINavigationController = UINavigationController()
+        nvc.viewControllers = [exploreViewController]
+        
+        nvc.tabBarItem = UITabBarItem(title: "Home", image: UIImage(named:""), selectedImage: UIImage(named:""))
+        
+        tabBar.viewControllers  = [exploreViewController]
+        
+        UITabBar.appearance().tintColor = Utilities.UIColorFromRGB(rgbValue: 0x39B7ED)
+        UITabBar.appearance().selectedImageTintColor = Utilities.UIColorFromRGB(rgbValue: 0x242424)
+        
+        UINavigationBar.appearance().tintColor = Utilities.UIColorFromRGB(rgbValue: 0x242424)
+
+        
+        return tabBar//search,myapplication,my shortlist
+        
+//        let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+//        appDelegate.window?.rootViewController =  exploreViewController
+        
     }
     
     public func companyMenuView()-> SlideMenuController{
@@ -97,7 +134,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return slideMenuController
         
     }
-    
     
     
     public func createMenuView()-> SlideMenuController{

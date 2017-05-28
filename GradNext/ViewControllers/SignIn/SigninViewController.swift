@@ -100,9 +100,14 @@ class SigninViewController: UIViewController ,UITextFieldDelegate{
                     response in
                     switch response.result {
                     case .success:
-           if let value = response.result.value {
+            if let value = response.result.value {
                
                let final =  value as! [String : Any]
+                
+                print(final)
+                //SessionId
+                
+                
                
                
                if (final["StatusMessage"] as! String == "Login Success")
@@ -111,9 +116,16 @@ class SigninViewController: UIViewController ,UITextFieldDelegate{
                    messageString = ""
                    
                    let UserOptionCode = (final["User"] as? [String: Any])?["UserOptionCode"] as? String
-                   
+                
+                
+               let sessionId = ((final["User"] as? [String: Any])?["SessionId"] as? String)!
+                
                 
                 UserDefaults.standard.setValue(UserOptionCode, forKey: "UserOption")
+
+                UserDefaults.standard.setValue(sessionId, forKey: "SessionId")
+
+                print(sessionId)
 
                 
                    let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -121,8 +133,6 @@ class SigninViewController: UIViewController ,UITextFieldDelegate{
                    if (UserOptionCode == "CAND")
                    {
                        SharedManager.sharedInstance.userLabelText = ((final["User"] as? [String: Any])?["UserFirstName"] as? String)! + ((final["User"] as? [String: Any])?["UserLastName"] as? String)!
-
-                    
                     
                     UserDefaults.standard.setValue( SharedManager.sharedInstance.userLabelText, forKey: "UserLabel")
                     
@@ -135,6 +145,7 @@ class SigninViewController: UIViewController ,UITextFieldDelegate{
               }
               else
               {
+
             SharedManager.sharedInstance.userLabelText = ((final["User"] as? [String: Any])?["UserFirstName"] as? String)! + ((final["User"] as? [String: Any])?["UserLastName"] as? String)!
                 
             UserDefaults.standard.setValue( SharedManager.sharedInstance.userLabelText, forKey: "UserLabel")
@@ -147,12 +158,12 @@ class SigninViewController: UIViewController ,UITextFieldDelegate{
                   appDelegate.window?.rootViewController = appDelegate.companyMenuView()
               }
           }
-                            else{
-                                AlertBar.show(.info, message: (final["StatusMessage"] as? String)!)
+           else{
+                       AlertBar.show(.info, message: (final["StatusMessage"] as? String)!)
                                 
-                            }
+                }
                             
-                        }
+                    }
                     case .failure(let error):
                         print(error)
                     }

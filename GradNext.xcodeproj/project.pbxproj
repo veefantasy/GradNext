@@ -25,6 +25,7 @@
 		4D42EE721EBF787C00675DFC /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D42EE711EBF787C00675DFC /* Reachability.m */; };
 		4D52737D1EC8AD4100F127A0 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D52737C1EC8AD4100F127A0 /* TableViewCell.swift */; };
 		4D5273811EC8CF1F00F127A0 /* UserShortListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5273801EC8CF1F00F127A0 /* UserShortListViewController.swift */; };
+		4DFD842C1ED994D800AF7527 /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFD842B1ED994D800AF7527 /* ExploreViewController.swift */; };
 		E8618AE282A8F319FDBBBA83 /* Pods_GradNext.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2674BB98347D00F71EE15AF6 /* Pods_GradNext.framework */; };
 		F2416A9B1ED1B86800C19363 /* CandidateProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2416A981ED1B86800C19363 /* CandidateProfileTableViewCell.swift */; };
 		F2416A9C1ED1B86800C19363 /* SecondTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2416A991ED1B86800C19363 /* SecondTableViewCell.swift */; };
@@ -73,6 +74,7 @@
 		4D42EE711EBF787C00675DFC /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		4D52737C1EC8AD4100F127A0 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		4D5273801EC8CF1F00F127A0 /* UserShortListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserShortListViewController.swift; sourceTree = "<group>"; };
+		4DFD842B1ED994D800AF7527 /* ExploreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
 		E26B4850DD196B5A01EDB370 /* Pods-GradNext.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GradNext.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GradNext/Pods-GradNext.debug.xcconfig"; sourceTree = "<group>"; };
 		F1BCD2D0435A995256118447 /* Pods-GradNext.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GradNext.release.xcconfig"; path = "Pods/Target Support Files/Pods-GradNext/Pods-GradNext.release.xcconfig"; sourceTree = "<group>"; };
 		F2416A981ED1B86800C19363 /* CandidateProfileTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CandidateProfileTableViewCell.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 				140A35CA1D096A7D00D89FD8 /* AppDelegate.swift */,
 				4D42EE701EBF787C00675DFC /* Reachability.h */,
 				4D42EE711EBF787C00675DFC /* Reachability.m */,
+				4DFD842B1ED994D800AF7527 /* ExploreViewController.swift */,
 				4D1EA09A1EC7322D007AA187 /* HomeViewController.swift */,
 				4D1EA09E1EC73272007AA187 /* LeftViewController.swift */,
 				4D5273801EC8CF1F00F127A0 /* UserShortListViewController.swift */,
@@ -407,7 +410,7 @@
 				TargetAttributes = {
 					140A35C61D096A7D00D89FD8 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = VS7R82J633;
+						DevelopmentTeam = 46AAQHF37A;
 						LastSwiftMigration = 0820;
 					};
 				};
@@ -511,6 +514,7 @@
 				4D1EA0A61EC73439007AA187 /* UIApplication.swift in Sources */,
 				F2ECB5761EBB86E400C4B2E9 /* JoinNowViewController.swift in Sources */,
 				140A35CB1D096A7D00D89FD8 /* AppDelegate.swift in Sources */,
+				4DFD842C1ED994D800AF7527 /* ExploreViewController.swift in Sources */,
 				F26476131EBCA0C20069C041 /* CandidateProfileViewController.swift in Sources */,
 				4D1EA09B1EC7322D007AA187 /* HomeViewController.swift in Sources */,
 				F2DCEEC11EAD100A00D996BC /* Utilities.swift in Sources */,
@@ -651,7 +655,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = VS7R82J633;
+				DEVELOPMENT_TEAM = 46AAQHF37A;
 				INFOPLIST_FILE = GradNext/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -669,7 +673,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = VS7R82J633;
+				DEVELOPMENT_TEAM = 46AAQHF37A;
 				INFOPLIST_FILE = GradNext/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
