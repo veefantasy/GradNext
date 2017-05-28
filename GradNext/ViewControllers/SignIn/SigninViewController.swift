@@ -105,11 +105,7 @@ class SigninViewController: UIViewController ,UITextFieldDelegate{
                let final =  value as! [String : Any]
                 
                 print(final)
-                //SessionId
-                
-                
-               
-               
+            
                if (final["StatusMessage"] as! String == "Login Success")
                {
                    

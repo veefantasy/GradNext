@@ -30,6 +30,7 @@ class LeftViewController: UIViewController {
     SharedManager.sharedInstance.userLabelText  =   UserDefaults.standard.value(forKey: "UserLabel") as! String?
         
         SharedManager.sharedInstance.sessionID  =   UserDefaults.standard.value(forKey: "SessionId") as! String?
+        
 
     SharedManager.sharedInstance.userDetailLabelText =  UserDefaults.standard.value(forKey: "UserDetailLabel") as! String?
         
@@ -74,6 +75,18 @@ class LeftViewController: UIViewController {
                 if let value = response.result.value {
                     
                     print(value)
+                    
+                    
+                    
+                    UserDefaults.standard.setValue( nil, forKey: "UserLabel")
+                    
+                    
+                    UserDefaults.standard.setValue( nil, forKey: "UserDetailLabel")
+                    
+                    UserDefaults.standard.setValue(nil, forKey: "UserOption")
+                    
+                    UserDefaults.standard.setValue(nil, forKey: "SessionId")
+                    
                     
                     let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
                     appDelegate.window?.rootViewController =  appDelegate.LandingView()

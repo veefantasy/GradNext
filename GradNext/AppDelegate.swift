@@ -15,8 +15,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         let userOption = UserDefaults.standard.value(forKey: "UserOption")
-        //  print(patientID!)
-        if userOption != nil {
+        
+        if  let user = userOption
+        {
+            if !(user as! String).isEmpty {
             
             let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
 
@@ -27,6 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
              else
              {
                 appDelegate.window?.rootViewController = companyMenuView()
+            }
             }
         }
         else
