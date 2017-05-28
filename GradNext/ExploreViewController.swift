@@ -17,22 +17,25 @@ class ExploreViewController: UIViewController ,UIScrollViewDelegate{
     let scrollView  = UIScrollView()
     
     
+    @IBAction func SearchJobsAction(_ sender: Any) {
+        
+        gotoLogin()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
-        
-        
-        
         let navBar: UINavigationBar = UINavigationBar(frame: CGRect(x: 0, y: 20, width: self.view.frame.size.width, height: 44))
         self.view.addSubview(navBar);
         let navItem = UINavigationItem(title: "GradNext");
-        let doneItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.done, target: nil, action: #selector(getter: UIAccessibilityCustomAction.selector));
+        let doneItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.action, target: nil, action: #selector(gotoLogin));
         
-        let leftItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.bookmarks, target: nil, action: #selector(getter: UIAccessibilityCustomAction.selector));
+        let leftItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.bookmarks, target: nil, action: #selector(gotoLogin));
 
         
         navItem.leftBarButtonItem = leftItem;
+        
+        navItem.rightBarButtonItem = doneItem;
+
         navBar.setItems([navItem], animated: false)
         
        self.title = "Home"
@@ -57,6 +60,13 @@ class ExploreViewController: UIViewController ,UIScrollViewDelegate{
 
         
         // Do any additional setup after loading the view.
+    }
+    
+    func gotoLogin()
+    {
+        let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.window?.rootViewController =  appDelegate.LandingView()
+
     }
 
     override func didReceiveMemoryWarning() {

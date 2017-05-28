@@ -1286,6 +1286,7 @@
                                             <color key="titleColor" red="0.50196078430000002" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
+                                            <action selector="SearchJobsAction:" destination="DJd-H0-PZM" eventType="touchUpInside" id="CAo-zr-0jF"/>
                                             <action selector="scrollMove:" destination="GYE-af-CGV" eventType="touchUpInside" id="Nx1-3G-fOl"/>
                                         </connections>
                                     </button>
@@ -1298,6 +1299,7 @@
                                             <color key="titleColor" red="0.50196078430000002" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
+                                            <action selector="SearchJobsAction:" destination="DJd-H0-PZM" eventType="touchUpInside" id="0ze-Kb-StJ"/>
                                             <action selector="scrollMove:" destination="GYE-af-CGV" eventType="touchUpInside" id="B9m-ED-HZT"/>
                                         </connections>
                                     </button>

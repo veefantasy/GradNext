@@ -58,6 +58,11 @@ class LeftViewController: UIViewController {
 
     func logout()
     {
+        if(Utilities.hasConnectivity())
+        {
+            self.view.showLoader()
+            
+        
         let parameters: [String: String] = ["SessionId":SharedManager.sharedInstance.sessionID! ]
         
         let url = URL(string: "http://service.gradnext.com/api/User/SignoutUser")!
@@ -95,14 +100,24 @@ class LeftViewController: UIViewController {
                 }
             case .failure(let error):
                 print(error)
+                
+                self.view.hideLoader()
+
             }
             
             
         }
         
     }
+    else
+    {
+        alert(title: "No InternetConnection", message: "Internet connection appears to be offline", buttonTitle: "Ok")
+        
+        self.view.hideLoader()
+
+    }
     
-    
+    }
 }
 extension LeftViewController : UITableViewDelegate {
    
