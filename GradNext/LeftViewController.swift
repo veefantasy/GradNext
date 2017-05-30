@@ -10,8 +10,8 @@ import UIKit
 import Alamofire
 class LeftViewController: UIViewController {
 
-    var menus = ["My Profile","Messages","Notificaitons","Settings","Logout"]
-    var menusImage = ["menu_candidateprofile","menu_message","menu_notification","menu_settings","menu_logout"]
+    var menus = ["Home","My Profile","Messages","Notificaitons","Settings","Logout"]
+    var menusImage = ["menu_candidateprofile","menu_candidateprofile","menu_message","menu_notification","menu_settings","menu_logout"]
 
     
     var companymenus = ["Company Profile","Messages","Manage Subscription","Notificaitons","Settings","Logout"]
@@ -123,15 +123,36 @@ extension LeftViewController : UITableViewDelegate {
    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        logout()
+       print(indexPath.row)
 
         if ((UserDefaults.standard.value(forKey: "UserOption") as! String) == "CAND")
         {            print("Candidate World")
         
+            self.slideMenuController()?.closeLeft()
+            switch indexPath.row {
+            case 1:
+                let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+                appDelegate.window?.rootViewController = appDelegate.createMenuView()
+            case 2:
+               
+                let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+                appDelegate.window?.rootViewController = appDelegate.createMyProfileView()
+            case 6:
+                logout()
+            default:
+                break
+            }
+            
             
         }
         else{
-            
+            switch indexPath.row {
+            case 6:
+                logout()
+            default:
+                break
+            }
+
             print("company World")
 
         }

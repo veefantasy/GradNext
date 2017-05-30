@@ -1045,24 +1045,62 @@ extension UIViewController {
     public func addLeftBarButtonWithImage(_ buttonImage: UIImage) {
         let leftButton: UIBarButtonItem = UIBarButtonItem(image: buttonImage, style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.toggleLeft))
       
-          let leftButton1: UIBarButtonItem = UIBarButtonItem(image: UIImage(named:"message"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.toggleLeft))
+         let leftButton1: UIBarButtonItem = UIBarButtonItem(image: UIImage(named:"message"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.messageButton))
         navigationItem.leftBarButtonItems = [leftButton,leftButton1]
 
     }
+    func messageButton() {
+        
+        
+    }
+    
+    public func addMyProfileHomeButton(_ buttonImage: UIImage) {
+        
+       let leftButton: UIBarButtonItem = UIBarButtonItem(image: buttonImage, style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.toggleLeft))
+        navigationItem.leftBarButtonItems = [leftButton]
+
+    }
+    public func addMyProfileEditButton(_ buttonImage: UIImage) {
+        
+        let rightButton: UIBarButtonItem = UIBarButtonItem(image: buttonImage, style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.editProfile))
+        navigationItem.rightBarButtonItems = [rightButton]
+        
+    }
+    
+    func editProfile() {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "CandidateProfileViewController") as! CandidateProfileViewController
+        self.present(vc, animated: true, completion: nil)
+    }
+    
+  
+    
     
     public func addRightBarButtonWithImage(_ buttonImage: UIImage) {
-        let rightButton: UIBarButtonItem = UIBarButtonItem(image: buttonImage, style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.toggleRight))
+        let rightButton: UIBarButtonItem = UIBarButtonItem(image: buttonImage, style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.notificationButton))
         
         
-        let rightButton1: UIBarButtonItem = UIBarButtonItem(image: UIImage(named:"filter"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.toggleRight))
+        let rightButton1: UIBarButtonItem = UIBarButtonItem(image: UIImage(named:"filter"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.filterButton))
         
         
         navigationItem.rightBarButtonItems = [rightButton,rightButton1]
 //        navigationItem.rightBarButtonItem = rightButton
         
+    }
+    
+    func notificationButton() {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "NotificationsViewController") as! NotificationsViewController
+        self.present(vc, animated: true, completion: nil)
+    }
+    
+    func filterButton() {
         
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "CandidateFilterViewController") as! CandidateFilterViewController
+        self.present(vc, animated: true, completion: nil)
         
     }
+    
+    
+    
     
     //self.addRightBarButtonWithTwoImage(UIImage(named: "ic_menu_black_24dp")!, _HomeImage: UIImage(named: "home")!)
     
@@ -1075,6 +1113,22 @@ extension UIViewController {
         navigationItem.rightBarButtonItems = [rightButton,rightButton1]
         
     }
+    
+    public func companyRightnavigationItem(_ buttonImage: UIImage)
+    {
+        
+        let rightButton: UIBarButtonItem = UIBarButtonItem(image: buttonImage, style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.postJobButton))
+        
+      
+        navigationItem.rightBarButtonItems = [rightButton]
+        
+    }
+    func postJobButton() {
+        
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "PostJobViewController") as! PostJobViewController
+        self.present(vc, animated: true, completion: nil)
+    }
+    
     func goHome()
     {
         

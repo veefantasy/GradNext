@@ -204,11 +204,12 @@ class SigninViewController: UIViewController ,UITextFieldDelegate{
         
         if UserDefaults.standard.object(forKey: "RememberMe") != nil{
             if UserDefaults.standard.object(forKey: "RememberMe") as! String == "Yes"{
-                rememberMeCheckBox.checked = true
-                userNameTxtField.text = UserDefaults.standard.object(forKey: "Username") as! String?
-                passwordTxtField.text = UserDefaults.standard.object(forKey: "Password") as! String?
+                              rememberMeCheckBox.checked = true
             }else{
                 rememberMeCheckBox.checked = false
+                userNameTxtField.text = UserDefaults.standard.object(forKey: "Username") as! String?
+                passwordTxtField.text = UserDefaults.standard.object(forKey: "Password") as! String?
+
             }
         }
     }

@@ -14,6 +14,9 @@ class CandidateMainProfileViewController: UIViewController ,UITableViewDelegate,
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+       
+        self.navigationController?.navigationBar.topItem?.title = "My Profile";
+        self.setNavigationBarItem(controllerName: "My Profile")
     }
 
     override func didReceiveMemoryWarning() {

@@ -49,14 +49,17 @@ class PostJobViewController: UIViewController , UITextFieldDelegate,UITextViewDe
         
     }
     
-    @IBAction func closeButtonClicked(_ sender: Any) {
-           self.presentingViewController?.dismiss(animated: true, completion: nil)
+    @IBAction func closeButton(_ sender: Any) {
+        self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
+   
     
     @IBAction func submitButtonClicked(_ sender: Any) {
         
     }
     
+    @IBAction func postJobButtonClicked(_ sender: Any) {
+    }
     
     @IBAction func jobTypeButtonClicked(_ sender: Any) {
     }

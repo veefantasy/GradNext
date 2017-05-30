@@ -38,7 +38,7 @@ class NotificationsViewController: UIViewController,UITableViewDelegate,UITableV
     public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
        
-            return 40
+            return 73
             
     
         
@@ -49,6 +49,9 @@ class NotificationsViewController: UIViewController,UITableViewDelegate,UITableV
         return CGFloat.leastNormalMagnitude
     }
     
+    @IBAction func closeButton(_ sender: Any) {
+           self.presentingViewController?.dismiss(animated: true, completion: nil)
+    }
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat
     {
         return CGFloat.leastNormalMagnitude
