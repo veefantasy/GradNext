@@ -35,6 +35,9 @@ extension UIViewController {
                 case "My Profile":
                     self.addMyProfileHomeButton(UIImage(named: "ic_menu_black_24dp")!)
                     self.addMyProfileEditButton(UIImage(named: "edit")!)
+                case "Notifications":
+                    self.addMyProfileHomeButton(UIImage(named: "ic_menu_black_24dp")!)
+                  //  self.addMyProfileEditButton(UIImage(named: "edit")!)
                 default:
                     break
                 }

@@ -13,6 +13,9 @@ class NotificationsViewController: UIViewController,UITableViewDelegate,UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.navigationController?.navigationBar.topItem?.title = "Notifications";
+        self.setNavigationBarItem(controllerName: "Notifications")
+
         // Do any additional setup after loading the view.
     }
 

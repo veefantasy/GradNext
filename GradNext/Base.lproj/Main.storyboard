@@ -2076,7 +2076,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="74" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fb9-d3-cHI">
-                                <rect key="frame" x="0.0" y="72" width="375" height="595"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NotificationsTableViewCell" rowHeight="74" id="OM1-gR-WLH" customClass="NotificationsTableViewCell" customModule="GradNext" customModuleProvider="target">
@@ -2111,7 +2111,7 @@
                                 </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YNf-EN-aPe">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="62"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nD0-yy-m3p">
                                         <rect key="frame" x="20" y="19" width="32" height="32"/>
@@ -2144,7 +2144,7 @@
                                     <constraint firstItem="DjC-7b-q1o" firstAttribute="top" secondItem="YNf-EN-aPe" secondAttribute="top" constant="25" id="cja-sc-1ml"/>
                                     <constraint firstItem="DjC-7b-q1o" firstAttribute="centerX" secondItem="YNf-EN-aPe" secondAttribute="centerX" id="feH-xU-VZC"/>
                                     <constraint firstItem="nD0-yy-m3p" firstAttribute="leading" secondItem="YNf-EN-aPe" secondAttribute="leading" constant="20" id="p0z-UE-uof"/>
-                                    <constraint firstAttribute="height" constant="70" id="pU7-Yp-hpL"/>
+                                    <constraint firstAttribute="height" constant="62" id="pU7-Yp-hpL"/>
                                     <constraint firstItem="nD0-yy-m3p" firstAttribute="top" secondItem="YNf-EN-aPe" secondAttribute="top" constant="19" id="slw-df-vxo"/>
                                 </constraints>
                             </view>

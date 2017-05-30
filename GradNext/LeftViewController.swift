@@ -128,15 +128,29 @@ extension LeftViewController : UITableViewDelegate {
         if ((UserDefaults.standard.value(forKey: "UserOption") as! String) == "CAND")
         {            print("Candidate World")
         
-            self.slideMenuController()?.closeLeft()
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+           // self.slideMenuController()?.closeLeft()
             switch indexPath.row {
             case 1:
-                let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
-                appDelegate.window?.rootViewController = appDelegate.createMenuView()
+               
+                let mainViewController = storyboard.instantiateViewController(withIdentifier: "MainViewController") as! HomeViewController
+                let nvc: UINavigationController = UINavigationController()
+                nvc.viewControllers = [mainViewController]
+                 self.slideMenuController()?.changeMainViewController(nvc, close: true)
             case 2:
                
-                let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
-                appDelegate.window?.rootViewController = appDelegate.createMyProfileView()
+                let mainViewController = storyboard.instantiateViewController(withIdentifier: "CandidateMainProfileViewController") as! CandidateMainProfileViewController
+                let nvc: UINavigationController = UINavigationController()
+                nvc.viewControllers = [mainViewController]
+
+                self.slideMenuController()?.changeMainViewController(nvc, close: true)
+            case 4:
+                
+              let vc = self.storyboard?.instantiateViewController(withIdentifier: "NotificationsViewController") as! NotificationsViewController
+                let nvc: UINavigationController = UINavigationController()
+                nvc.viewControllers = [vc]
+                
+                self.slideMenuController()?.changeMainViewController(nvc, close: true)
             case 6:
                 logout()
             default:
