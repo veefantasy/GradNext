@@ -8,7 +8,6 @@ target ‘GradNext’ do
   pod 'Kingfisher', '~> 3.2'
   pod 'MBProgressHUD', '~> 1.0'
   pod 'AlertBar', '~> 0.3'
-
-
+  pod 'SDWebImage', '~> 4.0'
 
 end

@@ -7,23 +7,93 @@
 //
 
 import UIKit
-
-class ExploreViewController: UIViewController ,UIScrollViewDelegate{
+import Alamofire
+import Kingfisher
+class ExploreViewController: UIViewController ,UIScrollViewDelegate,UITableViewDelegate,UITableViewDataSource{
 
     
     @IBOutlet weak var leftButton: UIButton!
     @IBOutlet weak var RightButton: UIButton!
     @IBOutlet weak var headerView: UIView!
     let scrollView  = UIScrollView()
+
+    var temp  = 0
+     var nameArray = [String]()
+    var imageArray = [String]()
+     var CompanyName = [String]()
     
+
+   var tableView : UITableView!
     
     @IBAction func SearchJobsAction(_ sender: Any) {
         
-        gotoLogin()
+      
+        if (((sender as AnyObject).tag) == 0)
+        {
+            leftButton.backgroundColor = Utilities.UIColorFromRGB(rgbValue: 0xf5f5f5)
+            leftButton.setTitleColor(Utilities.UIColorFromRGB(rgbValue: 0x800000), for: .normal)
+            
+            RightButton.backgroundColor = Utilities.UIColorFromRGB(rgbValue: 0xe33936)
+            RightButton.setTitleColor(Utilities.UIColorFromRGB(rgbValue: 0xf5f5f5), for: .normal)
+        }
+        else
+        {
+            RightButton.backgroundColor = Utilities.UIColorFromRGB(rgbValue: 0xf5f5f5)
+            RightButton.setTitleColor(Utilities.UIColorFromRGB(rgbValue: 0x800000), for: .normal)
+            
+            leftButton.backgroundColor = Utilities.UIColorFromRGB(rgbValue: 0xe33936)
+            leftButton.setTitleColor(Utilities.UIColorFromRGB(rgbValue: 0xf5f5f5), for: .normal)
+            
+        }
+        
+        print(self.view.frame.size.width * CGFloat((sender as AnyObject).tag))
+        scrollView.setContentOffset(CGPoint(x: self.view.frame.size.width * CGFloat((sender as AnyObject).tag), y: 0),animated: true)
+
+//        gotoLogin()
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if(Utilities.hasConnectivity())
+        {
+            self.view.showLoader()
+            
+            let url = URL(string: "http://service.gradnext.com/api/Job/GetAllCompanies?PageNumber=1&RowsPerPage=10")!
+            let urlRequest = URLRequest(url: url)
+            
+            Alamofire.request(urlRequest).responseJSON {
+                response in
+                switch response.result {
+                case .success:
+                    
+              if let value = response.result.value {
+                        
+                    let final =  value as! [String : Any]
+                    if let result = final["jobs"] as? NSArray {
+                            
+                        print(result.count)
+                        
+                        for values in result {
+                        
+                        if let value = values as? [String:Any] {
+                            
+                            self.imageArray.append(value["CompanyLogoPath"]! as! String)
 
+                            self.nameArray.append(value["JobTitleName"]! as! String)
+
+                            self.CompanyName.append(value["CompanyName"]! as! String)
+
+                            
+                            }
+                        }
+                        }
+              self.tableView?.reloadData()
+                    }
+                case .failure(let error):
+                    print(error)
+                }
+            }
+        }
         let navBar: UINavigationBar = UINavigationBar(frame: CGRect(x: 0, y: 20, width: self.view.frame.size.width, height: 44))
         self.view.addSubview(navBar);
         let navItem = UINavigationItem(title: "GradNext");
@@ -49,12 +119,19 @@ class ExploreViewController: UIViewController ,UIScrollViewDelegate{
         
         for  i in 0...1
         {
-            
             let homeView   = UIView(frame: CGRect(x: self.view.frame.size.width * CGFloat(i), y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height-headerView.frame.origin.y+headerView.frame.size.height))
             homeView.backgroundColor = UIColor.white
-            scrollView.addSubview(homeView)
+            //scrollView.addSubview(homeView)
+
+             tableView = UITableView()
+             tableView.frame = CGRect( x: self.view.frame.size.width * CGFloat(i), y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height-headerView.frame.origin.y+headerView.frame.size.height)
+            tableView.dataSource  = self
+            tableView.delegate = self
+            tableView.tag  = i
+            tableView.backgroundColor = UIColor.white
+            tableView.tableFooterView = UIView(frame: CGRect.zero)
+            scrollView.addSubview(tableView)
         }
-        
         
         self.setNavigationBarItem(controllerName: "Home")
 
@@ -92,6 +169,51 @@ class ExploreViewController: UIViewController ,UIScrollViewDelegate{
             
         }
     }
+
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
+        print("Hello World")
+        
+        if(self.nameArray.count > 0)
+       {
+            return (self.nameArray.count)
+        }
+
+        return 0
+
+    }
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
+    {
+        return 50
+    }
+     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    {
+        
+        var cell  = tableView.dequeueReusableCell(withIdentifier: "Cell")
+         cell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: "myIdentifier")
+
+        if( tableView.tag == 0)
+        {
+        cell?.textLabel?.text = "Hello World"
+        }
+        
+        else
+        {
+            
+            cell?.textLabel?.text = self.nameArray[indexPath.row]
+            // self.imageArray
+            let url = URL(string: "http://service.gradnext.com/\(self.imageArray[indexPath.row])" )
+            cell?.imageView?.sd_setImage(with: url)
+            cell?.detailTextLabel?.text =  self.CompanyName[indexPath.row]
+        }
+        return  cell!
+    }
+    
+
+    
+    
 
     /*
     // MARK: - Navigation
