@@ -3,9 +3,6 @@ PODS:
   - AlertBar (0.3.1)
   - Kingfisher (3.5.2)
   - MBProgressHUD (1.0.0)
-  - SDWebImage (4.0.0):
-    - SDWebImage/Core (= 4.0.0)
-  - SDWebImage/Core (4.0.0)
   - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
@@ -13,7 +10,6 @@ DEPENDENCIES:
   - AlertBar (~> 0.3)
   - Kingfisher (~> 3.2)
   - MBProgressHUD (~> 1.0)
-  - SDWebImage (~> 4.0)
   - SwiftyJSON (~> 3.1)
 
 SPEC CHECKSUMS:
@@ -21,9 +17,8 @@ SPEC CHECKSUMS:
   AlertBar: 645c5df4afe51b6c2abd5702bd58af27463834b6
   Kingfisher: 9950e382c500b6834ce004c7c4131c444e90c3a1
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
-  SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 85a23ef4f3b68d970c2bef3c6ed617ac41040eca
+PODFILE CHECKSUM: 9e124a5ebbb0f5908570a79caa02b4de6c0b457e
 
 COCOAPODS: 1.2.0

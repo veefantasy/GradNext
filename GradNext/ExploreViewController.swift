@@ -205,7 +205,7 @@ class ExploreViewController: UIViewController ,UIScrollViewDelegate,UITableViewD
             cell?.textLabel?.text = self.nameArray[indexPath.row]
             // self.imageArray
             let url = URL(string: "http://service.gradnext.com/\(self.imageArray[indexPath.row])" )
-            cell?.imageView?.sd_setImage(with: url)
+        //    cell?.imageView?.sd_setImage(with: url)
             cell?.detailTextLabel?.text =  self.CompanyName[indexPath.row]
         }
         return  cell!

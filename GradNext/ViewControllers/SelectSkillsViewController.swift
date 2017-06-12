@@ -14,12 +14,17 @@ class SelectSkillsViewController: UIViewController ,UITableViewDelegate,UITableV
     @IBOutlet weak var selectedSkillsTableView: UITableView!
     @IBOutlet weak var skillsTableView: UITableView!
     var searchActive : Bool = false
-    var data = ["Solution Type A","Solution Type B","Solution Type C","Solution Type D","Solution Type E","Solution Type F","Solution Type G"]
+    var data = [".Net","iOS","Android","Java","MainFrame","SAP","AnjularJS"]
     var filtered:[String] = []
     
     var selectedData:[String] = []
     
     @IBOutlet weak var searchBar: UISearchBar!
+    @IBAction func closeButtonClicked(_ sender: Any) {
+         self.presentingViewController?.dismiss(animated: true, completion: nil)
+        
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
