@@ -128,7 +128,7 @@ class ExploreViewController: UIViewController ,UIScrollViewDelegate,UITableViewD
             tableView.dataSource  = self
             tableView.delegate = self
             tableView.tag  = i
-            tableView.backgroundColor = UIColor.white
+            tableView.backgroundColor = UIColor.red
             tableView.tableFooterView = UIView(frame: CGRect.zero)
             scrollView.addSubview(tableView)
         }
@@ -201,18 +201,13 @@ class ExploreViewController: UIViewController ,UIScrollViewDelegate,UITableViewD
         
         else
         {
-            
             cell?.textLabel?.text = self.nameArray[indexPath.row]
-            // self.imageArray
             let url = URL(string: "http://service.gradnext.com/\(self.imageArray[indexPath.row])" )
             cell?.imageView?.sd_setImage(with: url)
             cell?.detailTextLabel?.text =  self.CompanyName[indexPath.row]
         }
         return  cell!
     }
-    
-
-    
     
 
     /*

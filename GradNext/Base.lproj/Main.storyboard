@@ -1273,34 +1273,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IP1-jW-a2D">
-                                <rect key="frame" x="0.0" y="85" width="375" height="40"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wgh-T9-rp2">
+                                <rect key="frame" x="0.0" y="57" width="375" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t4J-ar-h7d">
-                                        <rect key="frame" x="24" y="5" width="148" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ko6-re-7Sn">
+                                        <rect key="frame" x="35" y="15" width="46" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
-                                        <state key="normal" title="Open Jobs">
-                                            <color key="titleColor" red="0.50196078430000002" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
+                                        <state key="normal" title="Button"/>
                                         <connections>
-                                            <action selector="SearchJobsAction:" destination="DJd-H0-PZM" eventType="touchUpInside" id="CAo-zr-0jF"/>
-                                            <action selector="scrollMove:" destination="GYE-af-CGV" eventType="touchUpInside" id="Nx1-3G-fOl"/>
+                                            <action selector="SearchJobsAction:" destination="DJd-H0-PZM" eventType="touchUpInside" id="ipV-Hy-Z0B"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PNI-OS-5z6">
-                                        <rect key="frame" x="202" y="5" width="148" height="30"/>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gJd-e4-jT5">
+                                        <rect key="frame" x="304" y="15" width="46" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
-                                        <state key="normal" title="Expired Jobs">
-                                            <color key="titleColor" red="0.50196078430000002" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
+                                        <state key="normal" title="Button"/>
                                         <connections>
-                                            <action selector="SearchJobsAction:" destination="DJd-H0-PZM" eventType="touchUpInside" id="0ze-Kb-StJ"/>
-                                            <action selector="scrollMove:" destination="GYE-af-CGV" eventType="touchUpInside" id="B9m-ED-HZT"/>
+                                            <action selector="SearchJobsAction:" destination="DJd-H0-PZM" eventType="touchUpInside" id="G3G-io-x63"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1310,9 +1300,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="RightButton" destination="PNI-OS-5z6" id="QOm-bQ-IjJ"/>
-                        <outlet property="headerView" destination="IP1-jW-a2D" id="m7D-w7-Mvl"/>
-                        <outlet property="leftButton" destination="t4J-ar-h7d" id="lug-nS-mZi"/>
+                        <outlet property="RightButton" destination="gJd-e4-jT5" id="YlT-1P-EdF"/>
+                        <outlet property="headerView" destination="Wgh-T9-rp2" id="GDN-cP-rlf"/>
+                        <outlet property="leftButton" destination="Ko6-re-7Sn" id="HJs-pB-PTs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SJZ-e3-tZk" userLabel="First Responder" sceneMemberID="firstResponder"/>
