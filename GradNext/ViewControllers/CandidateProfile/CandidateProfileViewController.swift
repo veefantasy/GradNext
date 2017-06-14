@@ -49,6 +49,15 @@ class CandidateProfileViewController: UIViewController,UITextFieldDelegate,UIIma
         
     }
 
+    @IBAction func addSkillsButtonClicked(_ sender: Any) {
+        
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "SelectSkillsViewController") as! SelectSkillsViewController
+        self.present(vc, animated: true, completion: nil)
+    }
+    @IBAction func closeButtonClicked(_ sender: Any) {
+          self.presentingViewController?.dismiss(animated: true, completion: nil)
+    }
+    
     func customViews() {
         Utilities.setTextFieldCornerRadius(forTextField: firstName, withRadius: 3.0, withBorderColor: UIColor.gray)
         Utilities.setTextFieldCornerRadius(forTextField: lastName, withRadius: 3.0, withBorderColor: UIColor.gray)

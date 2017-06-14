@@ -41,6 +41,7 @@
 		F24E743D1EC89CBA0061826F /* PostJobViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24E743C1EC89CBA0061826F /* PostJobViewController.swift */; };
 		F26476131EBCA0C20069C041 /* CandidateProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26476121EBCA0C20069C041 /* CandidateProfileViewController.swift */; };
 		F26C73411EC850F5001F9641 /* CheckBox.m in Sources */ = {isa = PBXBuildFile; fileRef = F26C73401EC850F5001F9641 /* CheckBox.m */; };
+		F27B4B331EEEBE4E0068B365 /* ExploreJobViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27B4B321EEEBE4E0068B365 /* ExploreJobViewController.swift */; };
 		F28F35C71EC8442100E38053 /* CandidateFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28F35C61EC8442100E38053 /* CandidateFilterViewController.swift */; };
 		F290E1D11EBBA41F008D35A2 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F290E1D01EBBA41F008D35A2 /* Extensions.swift */; };
 		F2DCEEBD1EAD0FE300D996BC /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DCEEB81EAD0FE300D996BC /* LandingViewController.swift */; };
@@ -94,6 +95,7 @@
 		F26476121EBCA0C20069C041 /* CandidateProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CandidateProfileViewController.swift; sourceTree = "<group>"; };
 		F26C733F1EC850F5001F9641 /* CheckBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckBox.h; sourceTree = "<group>"; };
 		F26C73401EC850F5001F9641 /* CheckBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckBox.m; sourceTree = "<group>"; };
+		F27B4B321EEEBE4E0068B365 /* ExploreJobViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreJobViewController.swift; sourceTree = "<group>"; };
 		F28F35C61EC8442100E38053 /* CandidateFilterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CandidateFilterViewController.swift; sourceTree = "<group>"; };
 		F290E1D01EBBA41F008D35A2 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		F2C4A2A81EC859F100445888 /* GradNext-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GradNext-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -237,6 +239,7 @@
 				F24E743B1EC89C8F0061826F /* PostJob */,
 				F24E74381EC88DE50061826F /* CompanyAddUser */,
 				F2ECB5771EBB86F800C4B2E9 /* CompanyProfile */,
+				F27B4B321EEEBE4E0068B365 /* ExploreJobViewController.swift */,
 			);
 			name = Company;
 			sourceTree = "<group>";
@@ -410,7 +413,7 @@
 				TargetAttributes = {
 					140A35C61D096A7D00D89FD8 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = 9AA5P948KD;
+						DevelopmentTeam = VS7R82J633;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Manual;
 					};
@@ -508,6 +511,7 @@
 				F2416AA91ED1B9E600C19363 /* NotificationsViewController.swift in Sources */,
 				F2ECB5791EBB870D00C4B2E9 /* CompanyProfileViewController.swift in Sources */,
 				F2DCEEBD1EAD0FE300D996BC /* LandingViewController.swift in Sources */,
+				F27B4B331EEEBE4E0068B365 /* ExploreJobViewController.swift in Sources */,
 				F2416A9D1ED1B86800C19363 /* ThirdTableViewCell.swift in Sources */,
 				F28F35C71EC8442100E38053 /* CandidateFilterViewController.swift in Sources */,
 				4D5273811EC8CF1F00F127A0 /* UserShortListViewController.swift in Sources */,
@@ -656,15 +660,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				DEVELOPMENT_TEAM = 9AA5P948KD;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = VS7R82J633;
 				INFOPLIST_FILE = GradNext/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.GradNext.GradNext;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "1cfed2f4-1b40-4bdd-9b94-1f3e85b8643a";
-				PROVISIONING_PROFILE_SPECIFIER = GradNext;
+				PROVISIONING_PROFILE = "72d29073-3970-4c95-80b0-b2bc9c57ffe7";
+				PROVISIONING_PROFILE_SPECIFIER = "WILDCARD PROFILE";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/$(SWIFT_MODULE_NAME)-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
