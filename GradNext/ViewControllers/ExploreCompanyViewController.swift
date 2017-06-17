@@ -22,7 +22,6 @@ class ExploreCompanyViewController: UIViewController, UITableViewDelegate, UITab
     }
     @IBAction func closeButtonClicked(_ sender: Any) {
         self.presentingViewController?.dismiss(animated: true, completion: nil)
-
     }
    
     @IBAction func loadMoreButton(_ sender: Any) {

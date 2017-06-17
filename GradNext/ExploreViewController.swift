@@ -225,7 +225,20 @@ class ExploreViewController: UIViewController ,UIScrollViewDelegate,UITableViewD
         return  cell!
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    {
+        tableView.deselectRow(at: indexPath, animated: true)
+        if(tableView.tag   == 0)
+        {
+            self.performSegue(withIdentifier: "ExploreJobView", sender: self)
+        }
+        else{
+            self.performSegue(withIdentifier: "ExploreCompanyView", sender: self)
 
+        }
+        
+    }
+    
     /*
     // MARK: - Navigation
 
