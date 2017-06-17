@@ -45,12 +45,18 @@ class ExploreJobViewController: UIViewController {
     }
     
     @IBAction func shortlistButtonClicked(_ sender: Any) {
+        
+        Utilities.gotoLogin()
     }
    
     @IBAction func applyButtonClicked(_ sender: Any) {
+        Utilities.gotoLogin()
+
     }
 
     @IBAction func messageButtonClicked(_ sender: Any) {
+        Utilities.gotoLogin()
+
     }
     /*
     // MARK: - Navigation
