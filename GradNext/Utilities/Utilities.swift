@@ -70,7 +70,11 @@ class Utilities: NSObject {
         )
     }
 
-    
+   class func gotoLogin()
+    {
+        let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.window?.rootViewController =  appDelegate.LandingView()
+    }
  
     
 }

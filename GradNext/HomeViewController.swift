@@ -27,7 +27,6 @@ class HomeViewController: UIViewController,UIScrollViewDelegate {
         
         leftButton.backgroundColor = Utilities.UIColorFromRGB(rgbValue: 0xe33936)
         leftButton.setTitleColor(Utilities.UIColorFromRGB(rgbValue: 0xf5f5f5), for: .normal)
-            
         }
         
             scrollView.setContentOffset(CGPoint(x: self.view.frame.size.width * CGFloat((sender as AnyObject).tag), y: 0), animated: true)
@@ -41,9 +40,7 @@ class HomeViewController: UIViewController,UIScrollViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
       
-        
         self.title = "GradNext"
         self.navigationController?.navigationBar.topItem?.title = "GradNext";
 
@@ -55,10 +52,9 @@ class HomeViewController: UIViewController,UIScrollViewDelegate {
 
         for  i in 0...1
         {
-                
             let homeView   = UIView(frame: CGRect(x: self.view.frame.size.width * CGFloat(i), y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height-headerView.frame.origin.y+headerView.frame.size.height))
             homeView.backgroundColor = UIColor.white
-         scrollView.addSubview(homeView)
+            scrollView.addSubview(homeView)
         }
 
         
