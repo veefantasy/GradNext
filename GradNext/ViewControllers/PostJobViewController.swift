@@ -8,9 +8,12 @@
 
 import UIKit
 
-class PostJobViewController: UIViewController , UITextFieldDelegate,UITextViewDelegate{
+class PostJobViewController: UIViewController , UITextFieldDelegate,UITextViewDelegate,UITableViewDelegate, UITableViewDataSource{
     @IBOutlet weak var txtYearOfGraduation: UITextField!
 
+    @IBOutlet weak var viewHeight: NSLayoutConstraint!
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableViewHeight: NSLayoutConstraint!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var btnSubmit: UIButton!
     @IBOutlet weak var btnJobType: UIButton!
@@ -35,6 +38,19 @@ class PostJobViewController: UIViewController , UITextFieldDelegate,UITextViewDe
         registerForKeyboardNotifications()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        
+        if SharedManager.sharedInstance.selectedSkills.count == 0 {
+            tableViewHeight.constant = 0
+            viewHeight.constant = 720
+        } else {
+            tableViewHeight.constant = 86
+            viewHeight.constant = 800
+            
+        }
+        tableView.reloadData()
+        
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -46,7 +62,9 @@ class PostJobViewController: UIViewController , UITextFieldDelegate,UITextViewDe
     }
     
     @IBAction func skillsButtonClicked(_ sender: Any) {
-        
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "SelectSkillsViewController") as! SelectSkillsViewController
+        self.present(vc, animated: true, completion: nil)
+
     }
     
     @IBAction func closeButton(_ sender: Any) {
@@ -176,7 +194,39 @@ class PostJobViewController: UIViewController , UITextFieldDelegate,UITextViewDe
         activeTextView = nil
     }
 
-
+    //MARK: Tableview delegates and datasources
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    func tableView( _ tableView: UITableView, heightForHeaderInSection section: Int ) -> CGFloat
+    {
+        return CGFloat.leastNormalMagnitude
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat
+    {
+        return CGFloat.leastNormalMagnitude
+    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+            return SharedManager.sharedInstance.selectedSkills.count
+        
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let notificationsCell = tableView.dequeueReusableCell(withIdentifier: "SkillsResultTableViewCell") as! SkillsResultTableViewCell
+        
+        notificationsCell.lblSkills.text = SharedManager.sharedInstance.selectedSkills[indexPath.row]
+        return notificationsCell
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 36
+    }
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return nil
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
    
     /*
     // MARK: - Navigation

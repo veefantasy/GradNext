@@ -48,4 +48,6 @@ final class SharedManager {
     
     var treatmentDetailedTherapyType = String()
     
+    var selectedSkills = [String]()
+    
 }

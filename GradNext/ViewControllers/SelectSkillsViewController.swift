@@ -11,6 +11,7 @@ import UIKit
 class SelectSkillsViewController: UIViewController ,UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate{
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var selectedSkillsTableView: UITableView!
     @IBOutlet weak var skillsTableView: UITableView!
     var searchActive : Bool = false
@@ -22,7 +23,7 @@ class SelectSkillsViewController: UIViewController ,UITableViewDelegate,UITableV
     @IBOutlet weak var searchBar: UISearchBar!
     @IBAction func closeButtonClicked(_ sender: Any) {
          self.presentingViewController?.dismiss(animated: true, completion: nil)
-        
+         SharedManager.sharedInstance.selectedSkills.removeAll()
         
     }
     override func viewDidLoad() {
@@ -171,14 +172,25 @@ class SelectSkillsViewController: UIViewController ,UITableViewDelegate,UITableV
             print(true)  // true
         } else {
              selectedData.append(selectedValue)
+            
         }
         selectedSkillsTableView.reloadData()
+        let count = String(format: "%d", selectedData.count)
+        lblTitle.text = "Selected Skills"+"("+count+")"
+       
       }
     
+    @IBAction func submitButtonClicked(_ sender: Any) {
+        self.presentingViewController?.dismiss(animated: true, completion: nil)
+        SharedManager.sharedInstance.selectedSkills = selectedData
+    }
     func closeButton(sender: UIButton){
         selectedData.remove(at: sender.tag)
         selectedSkillsTableView.reloadData()
-      
+        let count = String(format: "%d", selectedData.count)
+        lblTitle.text = "Selected Skills"+"("+count+")"
+        
+       
        
     }
 }
