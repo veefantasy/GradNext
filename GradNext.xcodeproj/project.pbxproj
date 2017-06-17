@@ -22,6 +22,8 @@
 		4D2459901ED1CC4D001600EA /* ManageJobViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D24598D1ED1CC4D001600EA /* ManageJobViewController.swift */; };
 		4D2459911ED1CC4D001600EA /* serachTalentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D24598E1ED1CC4D001600EA /* serachTalentViewController.swift */; };
 		4D2459931ED1DE20001600EA /* SharedManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2459921ED1DE20001600EA /* SharedManager.swift */; };
+		4D40AF421EF5642C00489423 /* EMyApplicaitonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D40AF411EF5642C00489423 /* EMyApplicaitonViewController.swift */; };
+		4D40AF441EF5644200489423 /* EMyShortListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D40AF431EF5644200489423 /* EMyShortListViewController.swift */; };
 		4D42EE721EBF787C00675DFC /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D42EE711EBF787C00675DFC /* Reachability.m */; };
 		4D52737D1EC8AD4100F127A0 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D52737C1EC8AD4100F127A0 /* TableViewCell.swift */; };
 		4D5273811EC8CF1F00F127A0 /* UserShortListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5273801EC8CF1F00F127A0 /* UserShortListViewController.swift */; };
@@ -71,6 +73,8 @@
 		4D24598D1ED1CC4D001600EA /* ManageJobViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManageJobViewController.swift; sourceTree = "<group>"; };
 		4D24598E1ED1CC4D001600EA /* serachTalentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = serachTalentViewController.swift; sourceTree = "<group>"; };
 		4D2459921ED1DE20001600EA /* SharedManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedManager.swift; sourceTree = "<group>"; };
+		4D40AF411EF5642C00489423 /* EMyApplicaitonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EMyApplicaitonViewController.swift; sourceTree = "<group>"; };
+		4D40AF431EF5644200489423 /* EMyShortListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EMyShortListViewController.swift; sourceTree = "<group>"; };
 		4D42EE701EBF787C00675DFC /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		4D42EE711EBF787C00675DFC /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		4D52737C1EC8AD4100F127A0 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
@@ -143,6 +147,8 @@
 				4D42EE701EBF787C00675DFC /* Reachability.h */,
 				4D42EE711EBF787C00675DFC /* Reachability.m */,
 				4DFD842B1ED994D800AF7527 /* ExploreViewController.swift */,
+				4D40AF411EF5642C00489423 /* EMyApplicaitonViewController.swift */,
+				4D40AF431EF5644200489423 /* EMyShortListViewController.swift */,
 				4D1EA09A1EC7322D007AA187 /* HomeViewController.swift */,
 				4D1EA09E1EC73272007AA187 /* LeftViewController.swift */,
 				4D5273801EC8CF1F00F127A0 /* UserShortListViewController.swift */,
@@ -510,8 +516,10 @@
 				4D24598F1ED1CC4D001600EA /* CompanyHomeViewController.swift in Sources */,
 				F2416AA91ED1B9E600C19363 /* NotificationsViewController.swift in Sources */,
 				F2ECB5791EBB870D00C4B2E9 /* CompanyProfileViewController.swift in Sources */,
+				4D40AF421EF5642C00489423 /* EMyApplicaitonViewController.swift in Sources */,
 				F2DCEEBD1EAD0FE300D996BC /* LandingViewController.swift in Sources */,
 				F27B4B331EEEBE4E0068B365 /* ExploreJobViewController.swift in Sources */,
+				4D40AF441EF5644200489423 /* EMyShortListViewController.swift in Sources */,
 				F2416A9D1ED1B86800C19363 /* ThirdTableViewCell.swift in Sources */,
 				F28F35C71EC8442100E38053 /* CandidateFilterViewController.swift in Sources */,
 				4D5273811EC8CF1F00F127A0 /* UserShortListViewController.swift in Sources */,

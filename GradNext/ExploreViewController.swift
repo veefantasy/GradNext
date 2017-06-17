@@ -27,7 +27,6 @@ class ExploreViewController: UIViewController ,UIScrollViewDelegate,UITableViewD
     
     @IBAction func SearchJobsAction(_ sender: Any) {
         
-      
         if (((sender as AnyObject).tag) == 0)
         {
             leftButton.backgroundColor = Utilities.UIColorFromRGB(rgbValue: 0xf5f5f5)
@@ -53,6 +52,12 @@ class ExploreViewController: UIViewController ,UIScrollViewDelegate,UITableViewD
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        leftButton.backgroundColor = Utilities.UIColorFromRGB(rgbValue: 0xf5f5f5)
+        leftButton.setTitleColor(Utilities.UIColorFromRGB(rgbValue: 0x800000), for: .normal)
+        
+        RightButton.backgroundColor = Utilities.UIColorFromRGB(rgbValue: 0xe33936)
+        RightButton.setTitleColor(Utilities.UIColorFromRGB(rgbValue: 0xf5f5f5), for: .normal)
         
         if(Utilities.hasConnectivity())
         {
@@ -99,15 +104,10 @@ class ExploreViewController: UIViewController ,UIScrollViewDelegate,UITableViewD
         let navItem = UINavigationItem(title: "GradNext");
         let doneItem = UIBarButtonItem(image: UIImage(named:"filter"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.gotoLogin));
         
-        //filter
-        
-//        let leftButton1: UIBarButtonItem = UIBarButtonItem(image: UIImage(named:"message"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.messageButton))
 
-        
         let leftItem = UIBarButtonItem(image: UIImage(named:"message"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.gotoLogin))
             
-           // UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.bookmarks, target: nil, action: #selector(gotoLogin));
-        
+   
            let leftItem1 =  UIBarButtonItem(image: UIImage(named:"ic_notifications_black_24dp"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.gotoLogin))
 
         
@@ -121,6 +121,7 @@ class ExploreViewController: UIViewController ,UIScrollViewDelegate,UITableViewD
 //        self.navigationController?.navigationBar.topItem?.title = "GradNext";
         
         scrollView.frame =  CGRect(x: 0, y:  headerView.frame.origin.y+headerView.frame.size.height, width: self.view.frame.size.width, height: self.view.frame.size.height-headerView.frame.origin.y+headerView.frame.size.height )
+        scrollView.tag = 101
         scrollView.isPagingEnabled = true
         scrollView.delegate = self
         scrollView.contentSize = CGSize(width: self.view.frame.size.width*2, height:self.view.frame.size.height-headerView.frame.origin.y+headerView.frame.size.height)
@@ -128,16 +129,14 @@ class ExploreViewController: UIViewController ,UIScrollViewDelegate,UITableViewD
         
         for  i in 0...1
         {
-//            let homeView   = UIView(frame: CGRect(x: self.view.frame.size.width * CGFloat(i), y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height-headerView.frame.origin.y+headerView.frame.size.height))
-//            homeView.backgroundColor = UIColor.white
-//            //scrollView.addSubview(homeView)
+
 
              tableView = UITableView()
              tableView.frame = CGRect( x: self.view.frame.size.width * CGFloat(i), y: 0, width: self.view.frame.size.width, height: scrollView.frame.size.height)
             tableView.dataSource  = self
             tableView.delegate = self
             tableView.tag  = i
-            tableView.backgroundColor = UIColor.red
+            tableView.backgroundColor = UIColor.white
             tableView.tableFooterView = UIView(frame: CGRect.zero)
             scrollView.addSubview(tableView)
         }
@@ -160,6 +159,9 @@ class ExploreViewController: UIViewController ,UIScrollViewDelegate,UITableViewD
         // Dispose of any resources that can be recreated.
     }
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView)    {
+        
+        if( scrollView.tag == 101)
+        {
         if (scrollView.contentOffset.x == 0)
         {
             leftButton.backgroundColor = Utilities.UIColorFromRGB(rgbValue: 0xf5f5f5)
@@ -175,20 +177,24 @@ class ExploreViewController: UIViewController ,UIScrollViewDelegate,UITableViewD
             
             leftButton.backgroundColor = Utilities.UIColorFromRGB(rgbValue: 0xe33936)
             leftButton.setTitleColor(Utilities.UIColorFromRGB(rgbValue: 0xf5f5f5), for: .normal)
-            
+        }
         }
     }
 
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        print("Hello World")
+        if (tableView.tag == 0)
+        {
+            return 10
+        }
+        else{
         
         if(self.nameArray.count > 0)
-       {
+        {
             return (self.nameArray.count)
         }
-
+        }
         return 0
 
     }

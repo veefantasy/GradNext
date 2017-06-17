@@ -75,9 +75,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let nvc: UINavigationController = UINavigationController()
         nvc.viewControllers = [exploreViewController]
         
+        
+        
+        
+        let eMyApplicaitonViewController = storyboard.instantiateViewController(withIdentifier: "EMyApplicaitonViewController") as! EMyApplicaitonViewController
+        let eMyApp: UINavigationController = UINavigationController()
+        eMyApp.viewControllers = [eMyApplicaitonViewController]
+        
+        
         nvc.tabBarItem = UITabBarItem(title: "Home", image: UIImage(named:""), selectedImage: UIImage(named:""))
         
-        tabBar.viewControllers  = [exploreViewController]
+        eMyApp.tabBarItem = UITabBarItem(title: "My Application", image: UIImage(named:""), selectedImage: UIImage(named:""))
+        
+        let eMyShortListViewController = storyboard.instantiateViewController(withIdentifier: "EMyShortListViewController") as! EMyShortListViewController
+        let eMyShort: UINavigationController = UINavigationController()
+        eMyShort.viewControllers = [eMyShortListViewController]
+
+        eMyShort.tabBarItem = UITabBarItem(title: "Shortlist", image: UIImage(named:""), selectedImage: UIImage(named:""))
+
+        
+        tabBar.viewControllers  = [exploreViewController,eMyApp,eMyShort]
         
         UITabBar.appearance().tintColor = Utilities.UIColorFromRGB(rgbValue: 0x39B7ED)
         UITabBar.appearance().selectedImageTintColor = Utilities.UIColorFromRGB(rgbValue: 0x242424)
