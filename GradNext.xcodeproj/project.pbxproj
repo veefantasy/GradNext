@@ -527,6 +527,7 @@
 				F2416AA91ED1B9E600C19363 /* NotificationsViewController.swift in Sources */,
 				F2ECB5791EBB870D00C4B2E9 /* CompanyProfileViewController.swift in Sources */,
 				F26594091EF5519700CA953B /* SkillsResultTableViewCell.swift in Sources */,
+				4D40AF421EF5642C00489423 /* EMyApplicaitonViewController.swift in Sources */,
 				F2DCEEBD1EAD0FE300D996BC /* LandingViewController.swift in Sources */,
 				F27B4B331EEEBE4E0068B365 /* ExploreJobViewController.swift in Sources */,
 				4D40AF441EF5644200489423 /* EMyShortListViewController.swift in Sources */,
