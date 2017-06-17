@@ -56,7 +56,7 @@ class ExploreViewController: UIViewController ,UIScrollViewDelegate,UITableViewD
         
         if(Utilities.hasConnectivity())
         {
-            self.view.showLoader()
+//            self.view.showLoader()
             
             let url = URL(string: "http://service.gradnext.com/api/Job/GetAllCompanies?PageNumber=1&RowsPerPage=10")!
             let urlRequest = URLRequest(url: url)
@@ -97,12 +97,21 @@ class ExploreViewController: UIViewController ,UIScrollViewDelegate,UITableViewD
         let navBar: UINavigationBar = UINavigationBar(frame: CGRect(x: 0, y: 20, width: self.view.frame.size.width, height: 44))
         self.view.addSubview(navBar);
         let navItem = UINavigationItem(title: "GradNext");
-        let doneItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.action, target: nil, action: #selector(gotoLogin));
+        let doneItem = UIBarButtonItem(image: UIImage(named:"filter"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.gotoLogin));
         
-        let leftItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.bookmarks, target: nil, action: #selector(gotoLogin));
+        //filter
+        
+//        let leftButton1: UIBarButtonItem = UIBarButtonItem(image: UIImage(named:"message"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.messageButton))
 
         
-        navItem.leftBarButtonItem = leftItem;
+        let leftItem = UIBarButtonItem(image: UIImage(named:"message"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.gotoLogin))
+            
+           // UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.bookmarks, target: nil, action: #selector(gotoLogin));
+        
+           let leftItem1 =  UIBarButtonItem(image: UIImage(named:"ic_notifications_black_24dp"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.gotoLogin))
+
+        
+        navItem.leftBarButtonItems = [leftItem,leftItem1];
         
         navItem.rightBarButtonItem = doneItem;
 
@@ -111,7 +120,7 @@ class ExploreViewController: UIViewController ,UIScrollViewDelegate,UITableViewD
        self.title = "Home"
 //        self.navigationController?.navigationBar.topItem?.title = "GradNext";
         
-        scrollView.frame =  CGRect(x: 0, y: headerView.frame.origin.y+headerView.frame.size.height, width: self.view.frame.size.width, height: self.view.frame.size.height-headerView.frame.origin.y+headerView.frame.size.height)
+        scrollView.frame =  CGRect(x: 0, y:  headerView.frame.origin.y+headerView.frame.size.height, width: self.view.frame.size.width, height: self.view.frame.size.height-headerView.frame.origin.y+headerView.frame.size.height )
         scrollView.isPagingEnabled = true
         scrollView.delegate = self
         scrollView.contentSize = CGSize(width: self.view.frame.size.width*2, height:self.view.frame.size.height-headerView.frame.origin.y+headerView.frame.size.height)
@@ -119,12 +128,12 @@ class ExploreViewController: UIViewController ,UIScrollViewDelegate,UITableViewD
         
         for  i in 0...1
         {
-            let homeView   = UIView(frame: CGRect(x: self.view.frame.size.width * CGFloat(i), y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height-headerView.frame.origin.y+headerView.frame.size.height))
-            homeView.backgroundColor = UIColor.white
-            //scrollView.addSubview(homeView)
+//            let homeView   = UIView(frame: CGRect(x: self.view.frame.size.width * CGFloat(i), y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height-headerView.frame.origin.y+headerView.frame.size.height))
+//            homeView.backgroundColor = UIColor.white
+//            //scrollView.addSubview(homeView)
 
              tableView = UITableView()
-             tableView.frame = CGRect( x: self.view.frame.size.width * CGFloat(i), y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height-headerView.frame.origin.y+headerView.frame.size.height)
+             tableView.frame = CGRect( x: self.view.frame.size.width * CGFloat(i), y: 0, width: self.view.frame.size.width, height: scrollView.frame.size.height)
             tableView.dataSource  = self
             tableView.delegate = self
             tableView.tag  = i
@@ -204,7 +213,7 @@ class ExploreViewController: UIViewController ,UIScrollViewDelegate,UITableViewD
             
             cell?.textLabel?.text = self.nameArray[indexPath.row]
             // self.imageArray
-            let url = URL(string: "http://service.gradnext.com/\(self.imageArray[indexPath.row])" )
+           // let url = URL(string: "http://service.gradnext.com/\(self.imageArray[indexPath.row])" )
         //    cell?.imageView?.sd_setImage(with: url)
             cell?.detailTextLabel?.text =  self.CompanyName[indexPath.row]
         }

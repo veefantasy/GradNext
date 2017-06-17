@@ -79,9 +79,7 @@ class LeftViewController: UIViewController {
             case .success:
                 if let value = response.result.value {
                     
-                    print(value)
-                    
-                    
+                    print(value)                    
                     
                     UserDefaults.standard.setValue( nil, forKey: "UserLabel")
                     
