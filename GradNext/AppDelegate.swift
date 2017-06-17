@@ -121,11 +121,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let postJob: UINavigationController = UINavigationController()
         postJob.viewControllers = [postjobViewController]
         
-        let userlistViewController = storyboard.instantiateViewController(withIdentifier: "ManageJobViewController") as! ManageJobViewController
+        let userlistViewController = storyboard.instantiateViewController(withIdentifier: "JobDetailsCompanyHomeViewController") as! JobDetailsCompanyHomeViewController
         let manageJob: UINavigationController = UINavigationController()
         manageJob.viewControllers = [userlistViewController]
         
-        let mainViewController = storyboard.instantiateViewController(withIdentifier: "CompanyHomeViewController") as! CompanyHomeViewController
+        let mainViewController = storyboard.instantiateViewController(withIdentifier: "SearchTalentViewController") as! SearchTalentViewController
         let nvc: UINavigationController = UINavigationController()
         nvc.viewControllers = [mainViewController]
         

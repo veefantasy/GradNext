@@ -1,3 +1,4 @@
+
 //
 //  UIViewControllerExtension.swift
 //  SlideMenuControllerSwift
@@ -47,10 +48,18 @@ extension UIViewController {
             } else {
                 
                 
-                self.addLeftBarButtonWithImage(UIImage(named: "ic_menu_black_24dp")!)
                 
-                self.companyRightnavigationItem(UIImage(named: "add")!)
                 
+                switch controllerName {
+                case "Search Talent":
+                    self.addLeftBarButton(UIImage(named: "ic_menu_black_24dp")!)
+                  
+                default:
+                    self.addLeftBarButtonWithImage(UIImage(named: "ic_menu_black_24dp")!)
+                    self.companyRightnavigationItem(UIImage(named: "add")!)
+
+               }
+            
             }
             
             
