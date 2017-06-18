@@ -9,6 +9,7 @@
 import UIKit
 
 class CandidateMainProfileViewController: UIViewController ,UITableViewDelegate,UITableViewDataSource{
+    @IBOutlet weak var closeButton: UIButton!
   
 
     override func viewDidLoad() {
@@ -24,6 +25,9 @@ class CandidateMainProfileViewController: UIViewController ,UITableViewDelegate,
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func closeButtonClicked(_ sender: Any) {
+         self.presentingViewController?.dismiss(animated: true, completion: nil)
+    }
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
       
         return 1

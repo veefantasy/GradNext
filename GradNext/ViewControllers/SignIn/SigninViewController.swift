@@ -105,6 +105,7 @@ class SigninViewController: UIViewController ,UITextFieldDelegate{
                let final =  value as! [String : Any]
                 
                 print(final)
+                print(final["IsFirstTimeLogin"])
             
                if (final["StatusMessage"] as! String == "Login Success")
                {
@@ -128,7 +129,8 @@ class SigninViewController: UIViewController ,UITextFieldDelegate{
                    
                    if (UserOptionCode == "CAND")
                    {
-                       SharedManager.sharedInstance.userLabelText = ((final["User"] as? [String: Any])?["UserFirstName"] as? String)! + ((final["User"] as? [String: Any])?["UserLastName"] as? String)!
+                    
+                    SharedManager.sharedInstance.userLabelText = ((final["User"] as? [String: Any])?["UserFirstName"] as? String)! + ((final["User"] as? [String: Any])?["UserLastName"] as? String)!
                     
                     UserDefaults.standard.setValue( SharedManager.sharedInstance.userLabelText, forKey: "UserLabel")
                     
@@ -141,18 +143,30 @@ class SigninViewController: UIViewController ,UITextFieldDelegate{
               }
               else
               {
-
-            SharedManager.sharedInstance.userLabelText = ((final["User"] as? [String: Any])?["UserFirstName"] as? String)! + ((final["User"] as? [String: Any])?["UserLastName"] as? String)!
                 
-            UserDefaults.standard.setValue( SharedManager.sharedInstance.userLabelText, forKey: "UserLabel")
-
-            SharedManager.sharedInstance.userDetailLabelText = ((final["Company"] as? [String: Any])?["CompanyAddress1"] as? String)!
+                if let isFirstTime = final["IsFirstTimeLogin"] as? Bool {
+                    
+                    if isFirstTime == false {
+                        SharedManager.sharedInstance.userLabelText = ((final["User"] as? [String: Any])?["UserFirstName"] as? String)! + ((final["User"] as? [String: Any])?["UserLastName"] as? String)!
+                        UserDefaults.standard.setValue( SharedManager.sharedInstance.userLabelText, forKey: "UserLabel")
+                        
+                        SharedManager.sharedInstance.userDetailLabelText = ((final["Company"] as? [String: Any])?["CompanyAddress1"] as? String)!
+                        
+                        UserDefaults.standard.setValue( SharedManager.sharedInstance.userDetailLabelText, forKey: "UserDetailLabel")
+                        appDelegate.window?.rootViewController = appDelegate.companyMenuView()
+                        
+                    } else {
+                        
+                        let vc = self.storyboard?.instantiateViewController(withIdentifier: "CompanyProfileViewController") as! CompanyProfileViewController
+                        self.present(vc, animated: true, completion: nil)
+                       
+                    }
+                    
+                    
+                }
                 
-                UserDefaults.standard.setValue( SharedManager.sharedInstance.userDetailLabelText, forKey: "UserDetailLabel")
-
                 
-                  appDelegate.window?.rootViewController = appDelegate.companyMenuView()
-              }
+                         }
           }
            else{
                        AlertBar.show(.info, message: (final["StatusMessage"] as? String)!)

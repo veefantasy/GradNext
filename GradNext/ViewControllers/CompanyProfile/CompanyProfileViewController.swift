@@ -80,7 +80,9 @@ class CompanyProfileViewController: UIViewController, UITextFieldDelegate,UIImag
     }
     
     @IBAction func createButtonClicked(_ sender: Any) {
+          let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
         
+        appDelegate.window?.rootViewController = appDelegate.companyMenuView()
     }
     
     // MARK: - UIImagePickerControllerDelegate Methods

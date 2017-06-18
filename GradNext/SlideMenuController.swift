@@ -1042,6 +1042,13 @@ extension UIViewController {
         return nil
     }
     
+    public func addLeftBarButton(_ buttonImage: UIImage) {
+    
+     let leftButton: UIBarButtonItem = UIBarButtonItem(image: buttonImage, style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.toggleLeft))
+          navigationItem.leftBarButtonItems = [leftButton]
+    }
+    
+    
     public func addLeftBarButtonWithImage(_ buttonImage: UIImage) {
         let leftButton: UIBarButtonItem = UIBarButtonItem(image: buttonImage, style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.toggleLeft))
       
