@@ -18,9 +18,21 @@ class ExploreViewController: UIViewController ,UIScrollViewDelegate,UITableViewD
     let scrollView  = UIScrollView()
 
     var temp  = 0
-     var nameArray = [String]()
-    var imageArray = [String]()
-     var CompanyName = [String]()
+    var nameArray = [String]()
+    var imageLocoArray = [String]()
+    var imageIconArray = [String]()
+    var stateName = [String]()
+    var SuburbName = [String]()
+    var PostCode = [String]()
+    var CompanyDescription = [String]()
+
+
+
+    var imageurl = ""
+    var companyName = ""
+    var companyDetail = ""
+    var address = ""
+    var finalString = ""
     
 
    var tableView : UITableView!
@@ -50,6 +62,61 @@ class ExploreViewController: UIViewController ,UIScrollViewDelegate,UITableViewD
 
 //        gotoLogin()
     }
+    
+    func jsonParser(string : String)
+    {
+        if(Utilities.hasConnectivity())
+        {
+            tableView.showLoader()
+            
+            //            self.view.showLoader()
+            
+            let url = URL(string: string)!
+                
+            let urlRequest = URLRequest(url: url)
+            
+            Alamofire.request(urlRequest).responseJSON {
+                response in
+                switch response.result {
+                case .success:
+                    
+                    if let value = response.result.value {
+                        
+                        let final =  value as! [String : Any]
+                        if let result = final["CompanyList"] as? NSArray {
+                            
+                            print(result.count)
+                            
+                            for values in result {
+                                
+                                if let value = values as? [String:Any] {
+                            //CompanyDescription
+            self.CompanyDescription.append(value["CompanyDescription"]! as! String)
+            self.imageLocoArray.append(value["LogoPath"]! as! String)
+                         //CompanyName
+            self.nameArray.append(value["CompanyName"]! as! String)
+                                    //IconPath
+             self.imageIconArray.append(value["IconPath"]! as! String)
+
+            self.stateName.append(value["StateName"]! as! String)
+             self.SuburbName.append(value["SuburbName"]! as! String)
+              self.PostCode.append(value["PostCode"]! as! String)
+                         
+                                    
+                                }
+                            }
+                        }
+                        self.tableView?.reloadData()
+                    }
+                case .failure(let error):
+                    print(error)
+                }
+                
+                self.tableView.hideLoader()
+            }
+        }
+
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -59,47 +126,7 @@ class ExploreViewController: UIViewController ,UIScrollViewDelegate,UITableViewD
         RightButton.backgroundColor = Utilities.UIColorFromRGB(rgbValue: 0xe33936)
         RightButton.setTitleColor(Utilities.UIColorFromRGB(rgbValue: 0xf5f5f5), for: .normal)
         
-        if(Utilities.hasConnectivity())
-        {
-//            self.view.showLoader()
-            
-            let url = URL(string: "http://service.gradnext.com/api/Job/GetAllCompanies?PageNumber=1&RowsPerPage=10")!
-            let urlRequest = URLRequest(url: url)
-            
-            Alamofire.request(urlRequest).responseJSON {
-                response in
-                switch response.result {
-                case .success:
-                    
-              if let value = response.result.value {
-                        
-                    let final =  value as! [String : Any]
-                    if let result = final["jobs"] as? NSArray {
-                            
-                        print(result.count)
-                        
-                        for values in result {
-                        
-                        if let value = values as? [String:Any] {
-                            
-                            self.imageArray.append(value["CompanyLogoPath"]! as! String)
-
-                            self.nameArray.append(value["JobTitleName"]! as! String)
-
-                            self.CompanyName.append(value["CompanyName"]! as! String)
-
-                            
-                            }
-                        }
-                        }
-              self.tableView?.reloadData()
-                    }
-                case .failure(let error):
-                    print(error)
-                }
-            }
-        }
-        let navBar: UINavigationBar = UINavigationBar(frame: CGRect(x: 0, y: 20, width: self.view.frame.size.width, height: 44))
+               let navBar: UINavigationBar = UINavigationBar(frame: CGRect(x: 0, y: 20, width: self.view.frame.size.width, height: 44))
         self.view.addSubview(navBar);
         let navItem = UINavigationItem(title: "GradNext");
         let doneItem = UIBarButtonItem(image: UIImage(named:"filter"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.gotoLogin));
@@ -141,6 +168,9 @@ class ExploreViewController: UIViewController ,UIScrollViewDelegate,UITableViewD
             scrollView.addSubview(tableView)
         }
         
+        //http://service.gradnext.com/api/Company/GetAllCompany?PageNumber=1&RowsPerPage=10
+
+        jsonParser(string: "http://service.gradnext.com/api/Company/GetAllCompany?PageNumber=1&RowsPerPage=10")
         self.setNavigationBarItem(controllerName: "Home")
 
         
@@ -186,7 +216,7 @@ class ExploreViewController: UIViewController ,UIScrollViewDelegate,UITableViewD
     {
         if (tableView.tag == 0)
         {
-            return 10
+            return 1
         }
         else{
         
@@ -208,10 +238,20 @@ class ExploreViewController: UIViewController ,UIScrollViewDelegate,UITableViewD
         
         var cell  = tableView.dequeueReusableCell(withIdentifier: "Cell")
          cell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: "myIdentifier")
+        
+        let Label = UILabel(frame: CGRect(x: 250, y: 15, width: 100, height: 21))
+        Label.font = UIFont.italicSystemFont(ofSize: 16.0)
+        Label.textColor = UIColor.lightGray
+        Label.textAlignment = .center
+        cell?.addSubview(Label)
 
         if( tableView.tag == 0)
         {
-        cell?.textLabel?.text = "Hello World"
+            cell?.textLabel?.text = "F#"
+            cell?.detailTextLabel?.text = "Accenture"
+            Label.text = "12 days Left"
+
+
         }
         
         else
@@ -220,7 +260,11 @@ class ExploreViewController: UIViewController ,UIScrollViewDelegate,UITableViewD
             // self.imageArray
            // let url = URL(string: "http://service.gradnext.com/\(self.imageArray[indexPath.row])" )
         //    cell?.imageView?.sd_setImage(with: url)
-            cell?.detailTextLabel?.text =  self.CompanyName[indexPath.row]
+            
+             finalString = self.stateName[indexPath.row] + "," + self.SuburbName[indexPath.row] + "," + self.PostCode[indexPath.row]
+            cell?.detailTextLabel?.text =  finalString
+            Label.removeFromSuperview()
+
         }
         return  cell!
     }
@@ -230,23 +274,45 @@ class ExploreViewController: UIViewController ,UIScrollViewDelegate,UITableViewD
         tableView.deselectRow(at: indexPath, animated: true)
         if(tableView.tag   == 0)
         {
+            
+
             self.performSegue(withIdentifier: "ExploreJobView", sender: self)
         }
         else{
-            self.performSegue(withIdentifier: "ExploreCompanyView", sender: self)
+            
+            companyName = self.nameArray[indexPath.row]
+            address = finalString
+            companyDetail = self.CompanyDescription[indexPath.row]
+            companyName = self.nameArray[indexPath.row]
+            imageurl = self.imageIconArray[indexPath.row]
 
+            self.performSegue(withIdentifier: "ExploreCompanyView", sender: self)
         }
         
     }
     
-    /*
+
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if(segue.identifier == "ExploreJobView")
+        {
+        }
+        else
+        {
+            let viewControl =  segue.destination as! ExploreCompanyViewController
+            viewControl.companyName = companyName
+            viewControl.imageurl = imageurl
+            viewControl.address = address
+            viewControl.companyDetail = companyDetail
+
+ 
+        }
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
+    
 
 }

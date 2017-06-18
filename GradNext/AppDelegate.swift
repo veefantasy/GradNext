@@ -54,12 +54,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let leftViewController = storyboard.instantiateViewController(withIdentifier: "LandingViewController") as! LandingViewController
         
-        
         return leftViewController
-        
  
-        
-        
     }
     
     
@@ -76,12 +72,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         nvc.viewControllers = [exploreViewController]
         
         
-        
-        
         let eMyApplicaitonViewController = storyboard.instantiateViewController(withIdentifier: "EMyApplicaitonViewController") as! EMyApplicaitonViewController
         let eMyApp: UINavigationController = UINavigationController()
         eMyApp.viewControllers = [eMyApplicaitonViewController]
-        
         
         nvc.tabBarItem = UITabBarItem(title: "Home", image: UIImage(named:""), selectedImage: UIImage(named:""))
         
@@ -93,7 +86,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         eMyShort.tabBarItem = UITabBarItem(title: "Shortlist", image: UIImage(named:""), selectedImage: UIImage(named:""))
 
-        
         tabBar.viewControllers  = [exploreViewController,eMyApp,eMyShort]
         
         UITabBar.appearance().tintColor = Utilities.UIColorFromRGB(rgbValue: 0x39B7ED)
@@ -101,11 +93,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UINavigationBar.appearance().tintColor = Utilities.UIColorFromRGB(rgbValue: 0x242424)
 
-        
-        return tabBar//search,myapplication,my shortlist
-        
-//        let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
-//        appDelegate.window?.rootViewController =  exploreViewController
+        return tabBar
         
     }
     
@@ -117,15 +105,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let leftViewController = storyboard.instantiateViewController(withIdentifier: "LeftViewcontroller") as! LeftViewController
         let rightViewController = storyboard.instantiateViewController(withIdentifier: "RightViewcontroller") as! RightViewController
         
-        let postjobViewController = storyboard.instantiateViewController(withIdentifier: "PostJobViewController") as! PostJobViewController
+        let companyHomeViewController = storyboard.instantiateViewController(withIdentifier: "CompanyHomeViewController") as! CompanyHomeViewController
         let postJob: UINavigationController = UINavigationController()
-        postJob.viewControllers = [postjobViewController]
+        postJob.viewControllers = [companyHomeViewController]
         
         let userlistViewController = storyboard.instantiateViewController(withIdentifier: "CompanyMainProfileViewController") as! CompanyMainProfileViewController
         let manageJob: UINavigationController = UINavigationController()
         manageJob.viewControllers = [userlistViewController]
         
-        let mainViewController = storyboard.instantiateViewController(withIdentifier: "SearchTalentViewController") as! SearchTalentViewController
+        let mainViewController = storyboard.instantiateViewController(withIdentifier: "CompanySearchTalentViewController") as! CompanySearchTalentViewController
         let nvc: UINavigationController = UINavigationController()
         nvc.viewControllers = [mainViewController]
         
@@ -137,7 +125,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         manageJob.tabBarItem = UITabBarItem(title: "Manage Job", image: UIImage(named:""), selectedImage: UIImage(named:""))
         
         
-        nvc.tabBarItem = UITabBarItem(title: "Serach Talent", image: UIImage(named:""), selectedImage: UIImage(named:""))
+        nvc.tabBarItem = UITabBarItem(title: "Search Talent", image: UIImage(named:""), selectedImage: UIImage(named:""))
         
         tabBar.viewControllers  = [postJob,manageJob,nvc]
         

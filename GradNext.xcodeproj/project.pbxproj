@@ -18,6 +18,7 @@
 		4D1EA0A31EC733E5007AA187 /* SlideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1EA0A21EC733E5007AA187 /* SlideMenuController.swift */; };
 		4D1EA0A61EC73439007AA187 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1EA0A51EC73439007AA187 /* UIApplication.swift */; };
 		4D1EA0A81EC73754007AA187 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1EA0A71EC73754007AA187 /* UIViewController.swift */; };
+		4D1F9EF51EF640D600FE94E0 /* CompanySearchTalentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1F9EF41EF640D600FE94E0 /* CompanySearchTalentViewController.swift */; };
 		4D24598F1ED1CC4D001600EA /* CompanyHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D24598C1ED1CC4D001600EA /* CompanyHomeViewController.swift */; };
 		4D2459901ED1CC4D001600EA /* ManageJobViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D24598D1ED1CC4D001600EA /* ManageJobViewController.swift */; };
 		4D2459911ED1CC4D001600EA /* serachTalentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D24598E1ED1CC4D001600EA /* serachTalentViewController.swift */; };
@@ -76,6 +77,7 @@
 		4D1EA0A41EC73416007AA187 /* SlideMenuControllerSwift.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideMenuControllerSwift.h; sourceTree = "<group>"; };
 		4D1EA0A51EC73439007AA187 /* UIApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIApplication.swift; path = Utilities/UIApplication.swift; sourceTree = "<group>"; };
 		4D1EA0A71EC73754007AA187 /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		4D1F9EF41EF640D600FE94E0 /* CompanySearchTalentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompanySearchTalentViewController.swift; sourceTree = "<group>"; };
 		4D24598C1ED1CC4D001600EA /* CompanyHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompanyHomeViewController.swift; sourceTree = "<group>"; };
 		4D24598D1ED1CC4D001600EA /* ManageJobViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManageJobViewController.swift; sourceTree = "<group>"; };
 		4D24598E1ED1CC4D001600EA /* serachTalentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = serachTalentViewController.swift; sourceTree = "<group>"; };
@@ -263,6 +265,7 @@
 				F24E74381EC88DE50061826F /* CompanyAddUser */,
 				F2ECB5771EBB86F800C4B2E9 /* CompanyProfile */,
 				F27B4B321EEEBE4E0068B365 /* ExploreJobViewController.swift */,
+				4D1F9EF41EF640D600FE94E0 /* CompanySearchTalentViewController.swift */,
 				F26594061EF5128D00CA953B /* ExploreCompanyDetailsTableViewCell.swift */,
 				F26594041EF4F4C900CA953B /* ExploreCompanyViewController.swift */,
 			);
@@ -554,6 +557,7 @@
 				F26594101EF59FBA00CA953B /* JobDetailsCompanyHomeViewController.swift in Sources */,
 				4D40AF441EF5644200489423 /* EMyShortListViewController.swift in Sources */,
 				F2416A9D1ED1B86800C19363 /* ThirdTableViewCell.swift in Sources */,
+				4D1F9EF51EF640D600FE94E0 /* CompanySearchTalentViewController.swift in Sources */,
 				F28F35C71EC8442100E38053 /* CandidateFilterViewController.swift in Sources */,
 				4D5273811EC8CF1F00F127A0 /* UserShortListViewController.swift in Sources */,
 				4D1EA0A11EC7327A007AA187 /* RightViewController.swift in Sources */,
