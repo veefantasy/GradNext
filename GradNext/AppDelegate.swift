@@ -113,7 +113,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let manageJob: UINavigationController = UINavigationController()
         manageJob.viewControllers = [userlistViewController]
         
-        let mainViewController = storyboard.instantiateViewController(withIdentifier: "CompanySearchTalentViewController") as! CompanySearchTalentViewController
+        let mainViewController = storyboard.instantiateViewController(withIdentifier: "CompSearchTalentViewController") as! SearchTalentViewController
         let nvc: UINavigationController = UINavigationController()
         nvc.viewControllers = [mainViewController]
         
