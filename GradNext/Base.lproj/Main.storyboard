@@ -527,7 +527,7 @@
                                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="closeButtonClicked:" destination="DqC-o9-rMv" eventType="touchUpInside" id="xfa-Wt-f05"/>
+                                                            <action selector="closeButtonClicked:" destination="cBY-2R-1vq" eventType="touchUpInside" id="hVG-2B-xlm"/>
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Company Profile" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j5N-78-myZ">
@@ -627,7 +627,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ghi-Zf-VGE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2095" y="1895"/>
+            <point key="canvasLocation" x="2206" y="1881"/>
         </scene>
         <!--Company Main Profile View Controller-->
         <scene sceneID="OMa-dg-OZe">
@@ -644,8 +644,8 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EVh-uP-ar7">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dkd-Ax-cGw">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="800"/>
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dkd-Ax-cGw">
+                                        <rect key="frame" x="0.0" y="-200" width="375" height="800"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lKq-bc-ddm">
                                                 <rect key="frame" x="0.0" y="156" width="375" height="40"/>
@@ -732,6 +732,9 @@
                                                 <state key="normal" title="Post a Job ">
                                                     <color key="titleColor" red="0.92549019610000005" green="0.94509803920000002" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="postJobButtonClicked:" destination="itH-fY-OxC" eventType="touchUpInside" id="jcn-Vr-hHg"/>
+                                                </connections>
                                             </button>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="73" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LBa-RO-BNA">
                                                 <rect key="frame" x="0.0" y="641" width="375" height="128"/>
@@ -746,6 +749,12 @@
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Y4S-Ri-DCC" id="8gi-2K-Lpe">
                                                             <rect key="frame" x="0.0" y="0.0" width="375" height="72"/>
                                                             <autoresizingMask key="autoresizingMask"/>
+                                                            <subviews>
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="myProfile" translatesAutoresizingMaskIntoConstraints="NO" id="5vX-Di-AAv">
+                                                                    <rect key="frame" x="8" y="16" width="40" height="40"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                </imageView>
+                                                            </subviews>
                                                         </tableViewCellContentView>
                                                     </tableViewCell>
                                                 </prototypes>
@@ -767,6 +776,9 @@
                                                             <constraint firstAttribute="height" constant="32" id="Qhe-mB-ohv"/>
                                                         </constraints>
                                                         <state key="normal" image="add"/>
+                                                        <connections>
+                                                            <action selector="addbuttonClicked:" destination="itH-fY-OxC" eventType="touchUpInside" id="x2m-xc-Q9u"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.87834745650000001" green="0.87849187849999999" blue="0.87831670049999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -842,7 +854,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oEo-WE-YqS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2797.5999999999999" y="1894.9025487256374"/>
+            <point key="canvasLocation" x="2938" y="1858"/>
         </scene>
         <!--Candidate Profile View Controller-->
         <scene sceneID="co4-WM-v77">
@@ -1649,7 +1661,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ko6-re-7Sn">
-                                        <rect key="frame" x="35" y="16" width="117" height="30"/>
+                                        <rect key="frame" x="24" y="16" width="160" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
@@ -1661,7 +1673,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gJd-e4-jT5">
-                                        <rect key="frame" x="233" y="16" width="117" height="30"/>
+                                        <rect key="frame" x="200" y="16" width="160" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.49804360043009904" green="0.96883469820022583" blue="0.57838397687382015" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
@@ -1688,7 +1700,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SJZ-e3-tZk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3453.5999999999999" y="2995.9520239880062"/>
+            <point key="canvasLocation" x="2648.8000000000002" y="2632.5337331334335"/>
         </scene>
         <!--My Short List View Controller-->
         <scene sceneID="tYo-ck-whp">
@@ -2613,7 +2625,7 @@
         <!--Company Add User View Controller-->
         <scene sceneID="hSE-nI-aoY">
             <objects>
-                <viewController id="PJ7-r9-2YY" customClass="CompanyAddUserViewController" customModule="GradNext" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CompanyAddUserViewController" id="PJ7-r9-2YY" customClass="CompanyAddUserViewController" customModule="GradNext" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MB1-XB-22V"/>
                         <viewControllerLayoutGuide type="bottom" id="6h3-tp-wdN"/>
@@ -3555,7 +3567,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FRE-sP-1q9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2310" y="2272"/>
+            <point key="canvasLocation" x="1842" y="2633"/>
         </scene>
         <!--Company Home View Controller-->
         <scene sceneID="w6G-6B-Le3">
@@ -3650,6 +3662,7 @@
         <image name="drop_down" width="32" height="32"/>
         <image name="edit" width="32" height="32"/>
         <image name="gallery" width="32" height="32"/>
+        <image name="myProfile" width="32" height="32"/>
         <image name="resume" width="32" height="39"/>
         <image name="updateProfile" width="56" height="49"/>
         <image name="video_play" width="93" height="76"/>

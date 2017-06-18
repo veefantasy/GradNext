@@ -14,6 +14,9 @@ class CompanyMainProfileViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.title = "Company Profile"
+        self.navigationController?.navigationBar.topItem?.title = "Company Profile";
+        self.setNavigationBarItem(controllerName: "Company Profile")
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,7 +24,18 @@ class CompanyMainProfileViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+  
+    @IBAction func addbuttonClicked(_ sender: Any) {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "CompanyAddUserViewController") as! CompanyAddUserViewController
+        self.present(vc, animated: true, completion: nil)
+        
+    }
 
+    @IBAction func postJobButtonClicked(_ sender: Any) {
+        
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "PostJobViewController") as! PostJobViewController
+        self.present(vc, animated: true, completion: nil)
+    }
     /*
     // MARK: - Navigation
 

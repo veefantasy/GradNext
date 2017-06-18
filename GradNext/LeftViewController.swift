@@ -13,9 +13,9 @@ class LeftViewController: UIViewController {
     var menus = ["Home","My Profile","Messages","Notificaitons","Settings","Logout"]
     var menusImage = ["menu_candidateprofile","menu_candidateprofile","menu_message","menu_notification","menu_settings","menu_logout"]
     
-    var companymenus = ["Company Profile","Messages","Manage Subscription","Notificaitons","Settings","Logout"]
+    var companymenus = ["Home","Company Profile","Messages","Manage Subscription","Notificaitons","Settings","Logout"]
 
-     var companymenusImage = ["menu_candidateprofile","menu_message","menu_message","menu_notification","menu_settings","menu_logout"]
+     var companymenusImage = ["menu_candidateprofile","menu_candidateprofile","menu_message","menu_message","menu_notification","menu_settings","menu_logout"]
 
     @IBOutlet weak var leftTableView: UITableView!
 
@@ -156,8 +156,44 @@ extension LeftViewController : UITableViewDelegate {
             
         }
         else{
+             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             switch indexPath.row {
-            case 6:
+            case 1 :
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let leftViewController = storyboard.instantiateViewController(withIdentifier: "LeftViewcontroller") as! LeftViewController
+                let rightViewController = storyboard.instantiateViewController(withIdentifier: "RightViewcontroller") as! RightViewController
+                
+                let companyHomeViewController = storyboard.instantiateViewController(withIdentifier: "CompanyHomeViewController") as! CompanyHomeViewController
+                let postJob: UINavigationController = UINavigationController()
+                postJob.viewControllers = [companyHomeViewController]
+                
+                let userlistViewController = storyboard.instantiateViewController(withIdentifier: "CompanyMainProfileViewController") as! CompanyMainProfileViewController
+                let manageJob: UINavigationController = UINavigationController()
+                manageJob.viewControllers = [userlistViewController]
+                
+                let mainViewController = storyboard.instantiateViewController(withIdentifier: "CompSearchTalentViewController") as! SearchTalentViewController
+                let nvc: UINavigationController = UINavigationController()
+                nvc.viewControllers = [mainViewController]
+                
+                
+                let tabBar :UITabBarController = UITabBarController()
+                
+                postJob.tabBarItem = UITabBarItem(title: "Post Job", image: UIImage(named:""), selectedImage: UIImage(named:""))
+                
+                manageJob.tabBarItem = UITabBarItem(title: "Manage Job", image: UIImage(named:""), selectedImage: UIImage(named:""))
+                
+                nvc.tabBarItem = UITabBarItem(title: "Search Talent", image: UIImage(named:""), selectedImage: UIImage(named:""))
+                tabBar.viewControllers  = [postJob,manageJob,nvc]
+                UITabBar.appearance().tintColor = Utilities.UIColorFromRGB(rgbValue: 0x39B7ED)
+                UITabBar.appearance().selectedImageTintColor = Utilities.UIColorFromRGB(rgbValue: 0x242424)
+                UINavigationBar.appearance().tintColor = Utilities.UIColorFromRGB(rgbValue: 0x242424)
+                self.slideMenuController()?.changeMainViewController(tabBar, close: true)
+            case 2:
+                let mainViewController = storyboard.instantiateViewController(withIdentifier: "CompanyMainProfileViewController") as! CompanyMainProfileViewController
+                let nvc: UINavigationController = UINavigationController()
+                nvc.viewControllers = [mainViewController]
+                self.slideMenuController()?.changeMainViewController(nvc, close: true)
+            case 7:
                 logout()
             default:
                 break

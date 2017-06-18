@@ -1130,6 +1130,22 @@ extension UIViewController {
         navigationItem.rightBarButtonItems = [rightButton]
         
     }
+    public func companyEditProfilenavigationItem(_ buttonImage: UIImage)
+    {
+        
+        let rightButton: UIBarButtonItem = UIBarButtonItem(image: buttonImage, style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.editProfileButton))
+        
+        
+        navigationItem.rightBarButtonItems = [rightButton]
+        
+    }
+    
+    func editProfileButton() {
+        
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "CompanyProfileViewController") as! CompanyProfileViewController
+        self.present(vc, animated: true, completion: nil)
+    }
+    
     func postJobButton() {
         
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "PostJobViewController") as! PostJobViewController

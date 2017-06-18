@@ -51,6 +51,10 @@ extension UIViewController {
                 
                 
                 switch controllerName {
+                
+                case "Company Profile":
+                     self.addLeftBarButton(UIImage(named: "ic_menu_black_24dp")!)
+                    self.companyEditProfilenavigationItem(UIImage(named: "edit")!)
                 case "Search Talent":
                     self.addLeftBarButton(UIImage(named: "ic_menu_black_24dp")!)
                   
