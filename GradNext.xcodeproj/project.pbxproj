@@ -48,6 +48,7 @@
 		F265940C1EF5819900CA953B /* SearchTalentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F265940B1EF5819900CA953B /* SearchTalentViewController.swift */; };
 		F265940E1EF58C1F00CA953B /* SearchTalentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F265940D1EF58C1F00CA953B /* SearchTalentTableViewCell.swift */; };
 		F26594101EF59FBA00CA953B /* JobDetailsCompanyHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F265940F1EF59FBA00CA953B /* JobDetailsCompanyHomeViewController.swift */; };
+		F26C69C51EF6D620008081CC /* CompanyMainProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26C69C41EF6D620008081CC /* CompanyMainProfileViewController.swift */; };
 		F26C73411EC850F5001F9641 /* CheckBox.m in Sources */ = {isa = PBXBuildFile; fileRef = F26C73401EC850F5001F9641 /* CheckBox.m */; };
 		F27B4B331EEEBE4E0068B365 /* ExploreJobViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27B4B321EEEBE4E0068B365 /* ExploreJobViewController.swift */; };
 		F28F35C71EC8442100E38053 /* CandidateFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28F35C61EC8442100E38053 /* CandidateFilterViewController.swift */; };
@@ -109,6 +110,7 @@
 		F265940B1EF5819900CA953B /* SearchTalentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTalentViewController.swift; sourceTree = "<group>"; };
 		F265940D1EF58C1F00CA953B /* SearchTalentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTalentTableViewCell.swift; sourceTree = "<group>"; };
 		F265940F1EF59FBA00CA953B /* JobDetailsCompanyHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobDetailsCompanyHomeViewController.swift; sourceTree = "<group>"; };
+		F26C69C41EF6D620008081CC /* CompanyMainProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompanyMainProfileViewController.swift; sourceTree = "<group>"; };
 		F26C733F1EC850F5001F9641 /* CheckBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckBox.h; sourceTree = "<group>"; };
 		F26C73401EC850F5001F9641 /* CheckBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckBox.m; sourceTree = "<group>"; };
 		F27B4B321EEEBE4E0068B365 /* ExploreJobViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreJobViewController.swift; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 		F24E74361EC88DB40061826F /* Company */ = {
 			isa = PBXGroup;
 			children = (
+				F26C69C41EF6D620008081CC /* CompanyMainProfileViewController.swift */,
 				F265940F1EF59FBA00CA953B /* JobDetailsCompanyHomeViewController.swift */,
 				F265940A1EF5817800CA953B /* SearchTalent */,
 				F24E743B1EC89C8F0061826F /* PostJob */,
@@ -543,6 +546,7 @@
 				F26594051EF4F4C900CA953B /* ExploreCompanyViewController.swift in Sources */,
 				F2416AA91ED1B9E600C19363 /* NotificationsViewController.swift in Sources */,
 				F2ECB5791EBB870D00C4B2E9 /* CompanyProfileViewController.swift in Sources */,
+				F26C69C51EF6D620008081CC /* CompanyMainProfileViewController.swift in Sources */,
 				F26594091EF5519700CA953B /* SkillsResultTableViewCell.swift in Sources */,
 				4D40AF421EF5642C00489423 /* EMyApplicaitonViewController.swift in Sources */,
 				F2DCEEBD1EAD0FE300D996BC /* LandingViewController.swift in Sources */,

@@ -81,6 +81,10 @@ class SearchTalentViewController: UIViewController, UITextFieldDelegate ,UITable
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "CandidateMainProfileViewController") as! CandidateMainProfileViewController
+        self.present(vc, animated: true, completion: nil)
+
+        
     }
 
     /*
