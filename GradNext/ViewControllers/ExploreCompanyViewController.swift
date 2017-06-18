@@ -10,8 +10,42 @@ import UIKit
 
 class ExploreCompanyViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    @IBOutlet weak var companyInfoTextView: UITextView!
+    @IBOutlet weak var companyAddressLabel: UILabel!
+    @IBOutlet weak var companySubLabel: UILabel!
+    @IBOutlet weak var companyLabel: UILabel!
+    @IBOutlet weak var LogoButton: UIButton!
+    
+    var imageurl = ""
+    var companyName = ""
+    var companyDetail = ""
+    var address = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print(imageurl)
+        print(companyName)
+        print(companyDetail)
+        print(address)
+        
+//        let url = URL(string: "http://service.gradnext.com\(imageurl)])" )
+//        print(url)
+
+        
+//        let data = NSData.init(contentsOf: url!)
+        
+//        print(data)
+        
+//        let image = UIImage(data: data as! Data)
+        
+//        LogoButton.setImage(image, for: UIControlState.normal)
+        companyInfoTextView.text    = companyDetail
+        companyLabel.text    = companyName
+//imageurl
+        companySubLabel.text    = companyName
+        companyAddressLabel.text    = address
+
 
         // Do any additional setup after loading the view.
     }

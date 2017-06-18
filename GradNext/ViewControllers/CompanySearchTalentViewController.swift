@@ -69,7 +69,9 @@ class CompanySearchTalentViewController: UIViewController {
             //http://service.gradnext.com/api/Job/GetCompOpenJobs
             
             if(Utilities.hasConnectivity())
+                
             {
+                
                 let parameters: [String: String] = param
                 let url = URL(string: url)!
                 var urlRequest = URLRequest(url: url)

@@ -59,6 +59,8 @@ class CompanyHomeViewController: UIViewController ,UIScrollViewDelegate,UITableV
 
         if(Utilities.hasConnectivity())
         {
+            tableView.showLoader()
+            
             let parameters: [String: String] = param
             let url = URL(string: url)!
             var urlRequest = URLRequest(url: url)
@@ -72,7 +74,7 @@ class CompanyHomeViewController: UIViewController ,UIScrollViewDelegate,UITableV
                 response in
 
                 switch response.result {
-                    
+
                     
                 case .success:
                     print(response.result)
@@ -89,11 +91,8 @@ class CompanyHomeViewController: UIViewController ,UIScrollViewDelegate,UITableV
                             for values in result {
                                 
                                 if let value = values as? [String:Any] {
-                                    
                                     self.hoursLeftArray.append(value["JobTitleName"]! as! String)
-                                    
                                     self.nameArray.append(value["JobTitleName"]! as! String)
-                                    
                                     self.CompanyName.append(value["CompanyName"]! as! String)
                                 }
                             }
@@ -105,7 +104,7 @@ class CompanyHomeViewController: UIViewController ,UIScrollViewDelegate,UITableV
                     print(error)
                 }
                 
-                self.view.hideLoader()
+                self.tableView.hideLoader()
                 
                 //                value = true
                 
@@ -133,7 +132,6 @@ class CompanyHomeViewController: UIViewController ,UIScrollViewDelegate,UITableV
         self.view.addSubview(scrollView)
         
         
-  
         
         for  i in 0...1
         {
@@ -247,9 +245,7 @@ class CompanyHomeViewController: UIViewController ,UIScrollViewDelegate,UITableV
         {
           
             Label.text = "Expired"
-            cell?.addSubview(Label)
             cell?.textLabel?.text="Job Test"
-            
             
         }
             
@@ -274,6 +270,9 @@ class CompanyHomeViewController: UIViewController ,UIScrollViewDelegate,UITableV
             //    cell?.imageView?.sd_setImage(with: url)
             
         }
+        
+        cell?.addSubview(Label)
+
         return  cell!
     }
     
@@ -292,7 +291,7 @@ class CompanyHomeViewController: UIViewController ,UIScrollViewDelegate,UITableV
         
     }
     
-    /*
+    
      // MARK: - Navigation
      
      // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -300,6 +299,6 @@ class CompanyHomeViewController: UIViewController ,UIScrollViewDelegate,UITableV
      // Get the new view controller using segue.destinationViewController.
      // Pass the selected object to the new view controller.
      }
-     */
+     
     
 }
