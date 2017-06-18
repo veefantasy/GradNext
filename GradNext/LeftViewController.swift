@@ -12,7 +12,6 @@ class LeftViewController: UIViewController {
 
     var menus = ["Home","My Profile","Messages","Notificaitons","Settings","Logout"]
     var menusImage = ["menu_candidateprofile","menu_candidateprofile","menu_message","menu_notification","menu_settings","menu_logout"]
-
     
     var companymenus = ["Company Profile","Messages","Manage Subscription","Notificaitons","Settings","Logout"]
 
@@ -31,7 +30,6 @@ class LeftViewController: UIViewController {
         
         SharedManager.sharedInstance.sessionID  =   UserDefaults.standard.value(forKey: "SessionId") as! String?
         
-
     SharedManager.sharedInstance.userDetailLabelText =  UserDefaults.standard.value(forKey: "UserDetailLabel") as! String?
         
     self.view.backgroundColor = Utilities.UIColorFromRGB(rgbValue: 0x242424)
@@ -190,8 +188,6 @@ extension LeftViewController : UITableViewDelegate {
 extension LeftViewController : UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-
         
         if ((UserDefaults.standard.value(forKey: "UserOption") as! String) == "CAND")
         {

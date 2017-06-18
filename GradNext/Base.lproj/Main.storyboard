@@ -3190,12 +3190,70 @@
                     <view key="view" contentMode="scaleToFill" id="WqT-Vb-0sM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9yv-44-WV8">
+                                <rect key="frame" x="0.0" y="57" width="375" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4zA-bF-Wrg">
+                                        <rect key="frame" x="35" y="15" width="117" height="33"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                        <state key="normal" title="Open Jobs">
+                                            <color key="titleColor" red="0.50196078430000002" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="SearchJobsAction:" destination="oex-ky-My0" eventType="touchUpInside" id="07s-Ub-Qnp"/>
+                                            <action selector="SearchJobsAction:" destination="DJd-H0-PZM" eventType="touchUpInside" id="wng-g2-VBc"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Cb-bR-1b2">
+                                        <rect key="frame" x="233" y="15" width="117" height="33"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.49804360040000001" green="0.96883469820000001" blue="0.57838397689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                        <state key="normal" title="Expired Jobs">
+                                            <color key="titleColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="SearchJobsAction:" destination="oex-ky-My0" eventType="touchUpInside" id="1n7-gb-qep"/>
+                                            <action selector="SearchJobsAction:" destination="DJd-H0-PZM" eventType="touchUpInside" id="ydA-2z-HNl"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.89019607840000003" green="0.22352941179999999" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="RightButton" destination="2Cb-bR-1b2" id="RYX-h6-ckP"/>
+                        <outlet property="headerView" destination="9yv-44-WV8" id="QWU-Xp-evd"/>
+                        <outlet property="leftButton" destination="4zA-bF-Wrg" id="KPC-zi-nVY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iR7-xA-Icy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="935" y="1011"/>
+        </scene>
+        <!--Company Search Talent View Controller-->
+        <scene sceneID="3fT-iM-EPF">
+            <objects>
+                <viewController storyboardIdentifier="CompanySearchTalentViewController" id="7Q3-tK-IoS" customClass="CompanySearchTalentViewController" customModule="GradNext" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Xzt-eG-i1U"/>
+                        <viewControllerLayoutGuide type="bottom" id="YyT-Mv-7cX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GMz-eW-cl7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0rt-XJ-lNm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1679" y="1012"/>
         </scene>
     </scenes>
     <resources>
